@@ -41,7 +41,9 @@ composition changes fast — four of these five boards replaced members within f
 
 | Path | What it is |
 |---|---|
-| `index.html` | The published site. **Generated** — edit `build_site.py`, not this. |
+| `index.html` | Published site: findings, chart, provenance. **Generated** — edit `build_site.py`, not this. |
+| `members.html` | Published site: the member-by-member table. Generated. |
+| `analysis.html` | Published site: the full write-up. Generated. |
 | `data/*.json` | Source of truth: one file per agency, 42 member records, verified 2026-08-27 |
 | `data_2026_03/*.json` | Archived March 2026 snapshot, kept for the longitudinal comparison |
 | `latam_transit_board_analysis.md` | The full written analysis |
@@ -84,8 +86,10 @@ python3 build_site.py                      # regenerates index.html (stdlib only
 pip install openpyxl && python3 create_spreadsheet.py   # regenerates the xlsx
 ```
 
-`build_site.py` asserts the member count so a silent roster edit cannot slip through; if
-you change `data/`, update that check. `judgment_call` and `classification_note` are
+`build_site.py` emits three pages that share one stylesheet and script, and asserts the
+member count so a silent roster edit cannot slip through; if you change `data/`, update that
+check. Tables carry `data-label` on every cell so they stack into labelled cards below 760px
+rather than scrolling sideways. `judgment_call` and `classification_note` are
 optional per-member fields — where present they render as a visible marker and an
 explanation on the site.
 

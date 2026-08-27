@@ -64,14 +64,24 @@ def _inline(text):
 
 
 def _table(rows):
-    """rows: list of raw '| a | b |' lines, including the |---| separator."""
+    """rows: list of raw '| a | b |' lines, including the |---| separator.
+
+    Each cell carries data-label with its column heading, so the responsive
+    CSS can stack the table into labelled rows on a narrow screen instead of
+    forcing a sideways scroll.
+    """
     cells = [[c.strip() for c in r.strip().strip("|").split("|")] for r in rows]
     header, body = cells[0], cells[2:]  # cells[1] is the alignment separator
-    out = ['<div class="scroll"><table>', "<thead><tr>"]
+    labels = [re.sub(r"[*`]", "", c) for c in header]
+    out = ['<div class="scroll"><table class="stack">', "<thead><tr>"]
     out += [f"<th>{_inline(c)}</th>" for c in header]
     out.append("</tr></thead><tbody>")
     for row in body:
-        out.append("<tr>" + "".join(f"<td>{_inline(c)}</td>" for c in row) + "</tr>")
+        tds = "".join(
+            f'<td data-label="{html.escape(labels[i] if i < len(labels) else "")}">{_inline(c)}</td>'
+            for i, c in enumerate(row)
+        )
+        out.append("<tr>" + tds + "</tr>")
     out.append("</tbody></table></div>")
     return "".join(out)
 
@@ -309,22 +319,26 @@ def build_table(agencies):
             conf = m.get("confidence", "Unknown")
             # A judgment call is a classification that could defensibly have gone the
             # other way. The reasoning is published beside it rather than buried.
-            jc = ('<span class="jc" title="This classification could reasonably have gone '
-                  'the other way.">judgment call</span>') if m.get("judgment_call") else ""
+            jc = ('<a class="jc" href="analysis.html#judgment-calls" '
+                  'title="This classification could reasonably have gone the other way. '
+                  'Read what was weighed.">judgment call</a>') if m.get("judgment_call") else ""
             note = ('<span class="jcnote">' + html.escape(m["classification_note"]) + "</span>"
                     if m.get("classification_note") else "")
             rows.append(
                 f'<tr data-agency="{html.escape(d["city"])}"'
                 f' data-cat="{html.escape(m["classification"])}"'
                 f' data-conf="{html.escape(conf)}">'
-                f'<td class="tname">{html.escape(m["name"])}</td>'
-                f'<td>{html.escape(d["city"])}</td>'
-                f'<td class="tpos">{html.escape(m.get("position",""))}</td>'
-                f'<td class="tcat"><i class="sw s{cat_i}"></i>'
+                f'<td class="tname" data-label="Member">{html.escape(m["name"])}</td>'
+                f'<td data-label="Agency">{html.escape(d["city"])}</td>'
+                f'<td class="tpos" data-label="Position">{html.escape(m.get("position",""))}</td>'
+                f'<td class="tcat" data-label="Classification"><i class="sw s{cat_i}"></i>'
                 f'{html.escape(SHORT[m["classification"]])}{jc}</td>'
-                f'<td><span class="conf c{html.escape(conf.lower())}">{html.escape(conf)}</span></td>'
-                f'<td class="tsrc">{srcs or "—"}</td>'
-                f'<td class="trat">{html.escape(m.get("rationale",""))}{note}</td></tr>'
+                f'<td data-label="Confidence"><span class="conf c{html.escape(conf.lower())}">'
+                f'{html.escape(conf)}</span></td>'
+                f'<td class="tsrc" data-label="Sources">{srcs or "—"}</td>'
+                f'<td class="trat" data-label="Rationale"><details open>'
+                f'<summary>Why this classification</summary>'
+                f'{html.escape(m.get("rationale",""))}{note}</details></td></tr>'
             )
     return "".join(rows)
 
@@ -482,6 +496,7 @@ thead th{
 #members thead th[aria-sort=descending]::after{content:" ▼"}
 .tname{font-family:Archivo,sans-serif; font-weight:600; font-size:14.5px; white-space:nowrap}
 .tpos{width:190px; font-size:13.5px; color:var(--ink2)}
+.trat details{display:block} .trat summary{display:none}
 .trat{width:430px; font-size:13.5px; line-height:1.5; color:var(--ink2)}
 #members td:nth-child(2){white-space:nowrap; font-size:14px}
 .tcat{white-space:nowrap; font-size:13.5px}
@@ -498,6 +513,67 @@ thead th{
 .conf{font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; padding:2px 7px; border-radius:99px; border:1px solid var(--rule); color:var(--ink2); white-space:nowrap}
 .chigh{border-color:var(--ink2); color:var(--ink)}
 .clow{border-color:var(--s2); color:var(--s2)}
+
+/* ---- headline result cards on the front page ------------------------ */
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(248px,1fr)); gap:2px; background:var(--rule); border:1px solid var(--rule); border-radius:3px; overflow:hidden}
+.card{background:var(--panel); padding:24px 22px 22px}
+.cardnum{display:block; font-size:44px; line-height:.95; letter-spacing:-.03em; color:var(--s0)}
+.cardlab{display:block; margin:8px 0 12px; font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink3)}
+.card p{margin:0; font-size:15.5px; line-height:1.55; color:var(--ink2)}
+
+/* ---- site nav & cross-page provenance strip ------------------------- */
+nav.site{border-bottom:1px solid var(--rule); background:var(--panel); position:sticky; top:0; z-index:40}
+nav.site .wrap{display:flex; gap:4px; align-items:center; padding-top:0; padding-bottom:0; flex-wrap:wrap}
+nav.site a{
+  display:block; padding:14px 14px; text-decoration:none; color:var(--ink2);
+  font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.11em;
+  text-transform:uppercase; border-bottom:2px solid transparent; margin-bottom:-1px;
+}
+nav.site a:hover{color:var(--ink)}
+nav.site a[aria-current]{color:var(--ink); border-bottom-color:var(--ink)}
+nav.site .home{font-family:Archivo,sans-serif; font-variation-settings:'wdth' 112; font-weight:800; font-size:14px; letter-spacing:-.01em; text-transform:none; padding-right:20px}
+.strip{background:var(--panel); border-bottom:1px solid var(--rule)}
+.strip .wrap{padding-top:14px; padding-bottom:14px}
+.strip p{margin:0; font-size:14.5px; color:var(--ink2); line-height:1.5; max-width:75ch}
+.strip strong{color:var(--ink)}
+.pagehead{padding:44px 0 0}
+.pagehead h1{margin:8px 0 0; font-size:clamp(30px,5vw,52px)}
+.pagehead .lede{margin-top:14px}
+
+/* ---- responsive tables: stack into labelled cards, never scroll sideways ---- */
+@media (max-width:760px){
+  .scroll{overflow-x:visible}
+  table.stack, #members{min-width:0; width:100%; background:transparent}
+  table.stack thead, #members thead{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+  table.stack tr, #members tbody tr{
+    display:block; background:var(--panel); border:1px solid var(--rule);
+    border-radius:4px; padding:4px 2px; margin:0 0 12px;
+  }
+  table.stack td, #members tbody td{
+    display:block; border:0; border-bottom:1px solid var(--rule2);
+    padding:9px 13px; width:auto; max-width:none; font-size:15px;
+  }
+  table.stack tr td:last-child, #members tbody tr td:last-child{border-bottom:0}
+  table.stack td::before, #members tbody td::before{
+    content:attr(data-label); display:block; margin-bottom:4px;
+    font-family:'JetBrains Mono',monospace; font-size:9.5px;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--ink3);
+  }
+  table.stack td:empty{display:none}
+  .tname{font-size:16px}
+  .trat,.tpos{width:auto}
+  .controls{position:sticky; top:47px; z-index:30; background:var(--paper); padding:10px 0; margin:0 0 14px}
+  .controls select,.controls input{flex:1 1 100%}
+  .trat summary{
+    display:block; cursor:pointer; color:var(--s0); font-size:13px;
+    font-family:'JetBrains Mono',monospace; letter-spacing:.03em; padding:2px 0;
+  }
+  .trat details[open] summary{margin-bottom:7px}
+  .tsrc a{margin:0 5px 5px 0}
+  .controls{position:static; padding:0}
+  nav.site a{padding:12px 10px; font-size:10px}
+  nav.site .home{padding-right:10px; font-size:13px}
+}
 
 /* ---- prose ----------------------------------------------------------- */
 .prose h1{display:none}
@@ -560,6 +636,10 @@ JS = """
     d.addEventListener('mouseleave',function(){tip.style.opacity=0;});
   });
 
+  if(matchMedia('(max-width:760px)').matches){
+    document.querySelectorAll('.trat details[open]').forEach(function(d){d.removeAttribute('open');});
+  }
+
   var tbl=document.getElementById('members'); if(!tbl) return;
   var body=tbl.tBodies[0], rows=[].slice.call(body.rows);
   var fa=document.getElementById('f-agency'), fc=document.getElementById('f-cat'),
@@ -609,22 +689,55 @@ medium- and low-confidence rows as leads, not findings.</p>
 <p>Board composition changes fast — four of these five boards replaced members within five
 months. These rosters are current as of 27 August 2026 and will go stale.</p>"""
 
-PAGE = """<!doctype html>
+NAV = """<nav class="site"><div class="wrap">
+  <a class="home" href="index.html">Who runs Latin America's metros</a>
+  <a href="index.html"__C_INDEX__>The findings</a>
+  <a href="members.html"__C_MEMBERS__>The members</a>
+  <a href="analysis.html"__C_ANALYSIS__>Full analysis</a>
+</div></nav>"""
+
+# Deep links land on members.html or analysis.html without passing the masthead,
+# so the provenance travels with them.
+STRIP = """<div class="strip"><div class="wrap"><p>
+<strong>AI-assisted research.</strong> These rosters and classifications were researched
+and written by Claude (Anthropic's AI), verified 27 August 2026, and are Claude's judgment
+applied to Richard Day's categories — not an official designation by any agency. Seven
+classification calls were adjudicated by Steffany Bahamon and are flagged individually.
+<a href="index.html#how-this-was-made">Read the full statement</a>.
+</p></div></div>"""
+
+SHELL = """<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Who Runs Latin America's Metros</title>
-<meta name="description" content="Board composition for five major Latin American metro agencies, classified with Richard Day's five-category framework. AI-assisted research; sources and confidence ratings per member.">
-<meta property="og:title" content="Who Runs Latin America's Metros">
-<meta property="og:description" content="Every board member of five Latin American metro agencies, classified with Richard Day's framework, sourced and confidence-rated.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http%3A//www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='2' fill='%23fcfcfb'/><rect x='2' y='3'  width='12' height='2.4' rx='.6' fill='%23488fe6'/><rect x='2' y='6.8' width='12' height='2.4' rx='.6' fill='%23ca6a10'/><rect x='2' y='10.6' width='8'  height='2.4' rx='.6' fill='%23733b97'/></svg>">
+<title>__TITLE__</title>
+<meta name="description" content="__DESC__">
+<meta property="og:title" content="__TITLE__">
+<meta property="og:description" content="__DESC__">
+<link rel="icon" href="__FAVICON__">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>__CSS__</style>
 </head><body>
 <div id="tip" role="status" aria-live="polite"></div>
+__NAV__
+__BODY__
+<footer><div class="wrap">
+  <p><strong>Source data and code:</strong>
+  <a href="https://github.com/sbahamon/latam-transit-analysis" rel="noopener">github.com/sbahamon/latam-transit-analysis</a>.
+  The five JSON files in <code>data/</code> are the source of truth; these pages are
+  generated from them by <code>build_site.py</code>. The March 2026 rosters this
+  supersedes are archived in <code>data_2026_03/</code>.</p>
+  <p>Framework and the sixteen comparison agencies: Richard Day,
+  <a href="https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies" rel="noopener">A City That Works</a>.
+  Research by Claude, edited by Steffany Bahamon. MIT licensed.</p>
+</div></footer>
+<script>__JS__</script>
+</body></html>
+"""
 
+INDEX_BODY = """
 <header class="mast"><div class="wrap">
   <p class="eyebrow">Addendum · A City That Works · March 2026</p>
   <h1 class="title dsp">Who runs Latin&nbsp;America's metros</h1>
@@ -637,7 +750,7 @@ PAGE = """<!doctype html>
     <span class="eyebrow">Edited by Steffany Bahamon</span>
     <span class="eyebrow">Rosters verified 27 Aug 2026</span>
   </div>
-  <div class="prov">__PROV__</div>
+  <div class="prov" id="how-this-was-made">__PROV__</div>
 </div></header>
 
 <main>
@@ -664,7 +777,68 @@ PAGE = """<!doctype html>
   <div class="chartbox">
     <div class="legend">__LEGEND__</div>
     __CHART__
-    <p class="chartnote"><strong>The two halves of this chart are five months apart.</strong>
+    __CAPTION__
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sechead"><h2 class="sec dsp">What the data shows</h2></div>
+  <div class="cards">__FINDINGS__</div>
+  <p class="lede" style="margin-top:30px">The evidence for all of this is the
+  <a href="members.html">member-by-member table</a>, and the reasoning is in the
+  <a href="analysis.html">full analysis</a>.</p>
+</div></section>
+</main>
+"""
+
+MEMBERS_BODY = """
+__STRIP__
+<main><div class="wrap">
+  <div class="pagehead">
+    <p class="eyebrow">The evidence</p>
+    <h1 class="dsp">The __N__ members</h1>
+    <p class="lede">Every classification with its rationale, confidence rating and sources.
+    If a claim on this site matters to you, check it here. Rows marked
+    <span class="jc">judgment call</span> could reasonably have been classified the other
+    way; the rationale says what was weighed.</p>
+  </div>
+  <div class="controls">
+    <select id="f-agency"><option value="">All agencies</option>__OPT_AGENCY__</select>
+    <select id="f-cat"><option value="">All categories</option>__OPT_CAT__</select>
+    <input id="f-q" type="search" placeholder="Search names, roles, rationale…" aria-label="Search members">
+    <span class="count" id="f-count"></span>
+  </div>
+  <div class="scroll"><table id="members" class="stack">
+    <thead><tr><th>Member</th><th>Agency</th><th>Position</th><th>Classification</th>
+    <th>Confidence</th><th>Sources</th><th>Rationale</th></tr></thead>
+    <tbody>__ROWS__</tbody>
+  </table></div>
+</div></main>
+"""
+
+ANALYSIS_BODY = """
+__STRIP__
+<main><div class="wrap narrow">
+  <div class="pagehead">
+    <p class="eyebrow">The argument</p>
+    <h1 class="dsp">Full analysis</h1>
+    <p class="lede">The complete write-up, including the corrections made to the March 2026
+    version and the seven classification calls that could have gone either way.</p>
+  </div>
+  <div class="prose">__PROSE__</div>
+</div></main>
+"""
+
+FAVICON = ("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20"
+           "viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20"
+           "rx%3D%272%27%20fill%3D%27%23fcfcfb%27/%3E%3Crect%20x%3D%272%27%20y%3D%273%27%20"
+           "width%3D%2712%27%20height%3D%272.4%27%20rx%3D%27.6%27%20fill%3D%27%23488fe6%27/%3E"
+           "%3Crect%20x%3D%272%27%20y%3D%276.8%27%20width%3D%2712%27%20height%3D%272.4%27%20"
+           "rx%3D%27.6%27%20fill%3D%27%23ca6a10%27/%3E%3Crect%20x%3D%272%27%20y%3D%2710.6%27%20"
+           "width%3D%278%27%20height%3D%272.4%27%20rx%3D%27.6%27%20fill%3D%27%23733b97%27/%3E%3C/svg%3E")
+
+
+CAPTION = """<p class="chartnote"><strong>The two halves of this chart are five months apart.</strong>
     The sixteen Asian, European and US rows are Richard Day's work, as of March 2026,
     computed from the
     <a href="https://docs.google.com/spreadsheets/d/12KmU7QuP1y_RL8nuinrsIOYETISfXiLqXqi0EtSa_1Y/edit?gid=0" rel="noopener">member-level list he published</a>
@@ -672,51 +846,55 @@ PAGE = """<!doctype html>
     <a href="https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies" rel="noopener">“Put real experts in charge of transit”</a>
     (A City That Works, March 2026) — 222 board members — rather than read off his chart
     image. His agencies have not been re-verified here and some have likely changed since.
-    The five Latin American rows are computed from the member records below and are current
-    as of <strong>27 August 2026</strong>. Two of Day's rows sum to 99% or 101% from
-    rounding; one figure differs from his published chart, where LTA Singapore's
-    other-management share is 76% in his data (13 of 17 seats) but labelled 77%. Chart
-    rebuilt, not reproduced.</p>
-  </div>
-</div></section>
+    The five Latin American rows are computed from the member records and are current as of
+    <strong>27 August 2026</strong>. Two of Day's rows sum to 99% or 101% from rounding; one
+    figure differs from his published chart, where LTA Singapore's other-management share is
+    76% in his data (13 of 17 seats) but labelled 77%. Chart rebuilt, not reproduced.</p>"""
 
-<section><div class="wrap">
-  <div class="sechead"><h2 class="sec dsp">The __N__ members</h2></div>
-  <p class="lede">Every classification with its rationale, confidence rating and sources.
-  This table is the evidence for everything above — if a claim matters to you, check it here.
-  Rows marked <span class="jc">judgment call</span> could reasonably have been classified the
-  other way; the rationale column says what was weighed.</p>
-  <div class="controls">
-    <select id="f-agency"><option value="">All agencies</option>__OPT_AGENCY__</select>
-    <select id="f-cat"><option value="">All categories</option>__OPT_CAT__</select>
-    <input id="f-q" type="search" placeholder="Search names, roles, rationale…" aria-label="Search members">
-    <span class="count" id="f-count"></span>
-  </div>
-  <div class="scroll"><table id="members">
-    <thead><tr><th>Member</th><th>Agency</th><th>Position</th><th>Classification</th>
-    <th>Confidence</th><th>Sources</th><th>Rationale</th></tr></thead>
-    <tbody>__ROWS__</tbody>
-  </table></div>
-</div></section>
 
-<section><div class="wrap narrow">
-  <div class="sechead"><h2 class="sec dsp">The full analysis</h2></div>
-  <div class="prose">__PROSE__</div>
-</div></section>
-</main>
+def build_findings(agencies, total, counts):
+    """The headline results, so the front page carries the conclusions itself
+    rather than making people read the whole analysis to reach them."""
+    other = pct(counts.get("Other Management/Policy", 0), total)
+    transit = pct(counts.get("Transit Ops/Management", 0), total)
+    items = [
+        ("0", "community advocates",
+         f"Across {total} members, five agencies, five countries and two rounds of research "
+         "five months apart, not one seat belongs to a rider advocate or community "
+         "organisation. In Day's US sample the same category reaches 50%."),
+        (f"{other}%", "generalist managers",
+         "Finance people, lawyers, career civil servants and non-transit engineers. Higher "
+         "than any single region in Day's dataset, and the profile held steady even as the "
+         "boards themselves turned over."),
+        (f"{transit}%", "transit operations experts",
+         f"{counts.get('Transit Ops/Management', 0)} of {total} members. Three of those six "
+         "rest on judgment calls that could have gone the other way — under the stricter "
+         "reading this figure is 7%, which is why it is published with its workings."),
+        ("4 of 5", "boards changed since March",
+         "Santiago replaced its entire board; Medellín, São Paulo and Buenos Aires each "
+         "replaced or lost members. The aggregate composition barely moved, which suggests "
+         "structure rather than appointments determines who governs transit."),
+    ]
+    return "".join(
+        f'<div class="card"><span class="cardnum dsp">{html.escape(n)}</span>'
+        f'<span class="cardlab">{html.escape(lab)}</span>'
+        f'<p>{html.escape(body)}</p></div>'
+        for n, lab, body in items
+    )
 
-<footer><div class="wrap">
-  <p><strong>Source data and code:</strong>
-  <a href="https://github.com/sbahamon/latam-transit-analysis" rel="noopener">github.com/sbahamon/latam-transit-analysis</a>.
-  The five JSON files in <code>data/</code> are the source of truth; this page is generated
-  from them by <code>build_site.py</code>.</p>
-  <p>Framework and the sixteen comparison agencies: Richard Day,
-  <a href="https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies" rel="noopener">A City That Works</a>.
-  Research by Claude, edited by Steffany Bahamon. MIT licensed.</p>
-</div></footer>
-<script>__JS__</script>
-</body></html>
-"""
+
+def render(body, title, desc, current):
+    page = (SHELL
+            .replace("__CSS__", CSS)
+            .replace("__JS__", JS)
+            .replace("__NAV__", NAV)
+            .replace("__BODY__", body)
+            .replace("__TITLE__", title)
+            .replace("__DESC__", desc)
+            .replace("__FAVICON__", FAVICON))
+    for key in ("INDEX", "MEMBERS", "ANALYSIS"):
+        page = page.replace(f"__C_{key}__", ' aria-current="page"' if key == current else "")
+    return page
 
 
 def main():
@@ -724,13 +902,11 @@ def main():
     day = load_day()
     total, counts = build_composite(agencies)
     # Deliberate: 42 across the 2026-08-27 rosters (Medellin carries 2 vacant seats).
-    # Update when data/ changes, so a silent roster edit can never slip through unnoticed.
+    # Update when data/ changes, so a silent roster edit cannot slip through unnoticed.
     if total != 42:
         raise SystemExit(f"expected 42 members, found {total} — update this check if data/ changed")
 
-    md = ANALYSIS.read_text(encoding="utf-8")
-    prose = markdown_to_html(md)
-
+    prose = markdown_to_html(ANALYSIS.read_text(encoding="utf-8"))
     opt_agency = "".join(
         f'<option value="{html.escape(d["city"])}">{html.escape(d["city"])}</option>'
         for d in sorted(agencies, key=lambda x: x["city"])
@@ -740,32 +916,54 @@ def main():
         for c in CATEGORIES
     )
 
-    page = (PAGE
-            .replace("__CSS__", CSS)
-            .replace("__JS__", JS)
-            .replace("__PROV__", PROVENANCE)
-            .replace("__HERO__", build_hero(agencies))
-            .replace("__CHART__", build_chart(agencies, day))
-            .replace("__LEGEND__", build_legend())
-            .replace("__ROWS__", build_table(agencies))
-            .replace("__OPT_AGENCY__", opt_agency)
-            .replace("__OPT_CAT__", opt_cat)
-            .replace("__PROSE__", prose)
-            .replace("__N__", str(total)))
+    pages = {
+        "index.html": (
+            render(INDEX_BODY
+                   .replace("__PROV__", PROVENANCE)
+                   .replace("__HERO__", build_hero(agencies))
+                   .replace("__CHART__", build_chart(agencies, day))
+                   .replace("__CAPTION__", CAPTION)
+                   .replace("__FINDINGS__", build_findings(agencies, total, counts))
+                   .replace("__LEGEND__", build_legend()),
+                   "Who Runs Latin America's Metros",
+                   "Board composition for five major Latin American metro agencies, "
+                   "classified with Richard Day's framework, sourced and confidence-rated.",
+                   "INDEX")),
+        "members.html": (
+            render(MEMBERS_BODY
+                   .replace("__STRIP__", STRIP)
+                   .replace("__ROWS__", build_table(agencies))
+                   .replace("__OPT_AGENCY__", opt_agency)
+                   .replace("__OPT_CAT__", opt_cat),
+                   f"The {total} Members · Who Runs Latin America's Metros",
+                   f"All {total} board members with classification, rationale, confidence "
+                   "rating and sources.",
+                   "MEMBERS")),
+        "analysis.html": (
+            render(ANALYSIS_BODY
+                   .replace("__STRIP__", STRIP)
+                   .replace("__PROSE__", prose),
+                   "Full Analysis · Who Runs Latin America's Metros",
+                   "The complete write-up, including corrections to the March 2026 version "
+                   "and the seven classification judgment calls.",
+                   "ANALYSIS")),
+    }
 
-    leaks = verify_no_markdown_leaked(page)
-    if leaks:
-        raise SystemExit("markdown leaked into the page: " + "; ".join(leaks))
-    left = re.findall(r"__[A-Z_]+__", page)
-    if left:
-        raise SystemExit("unfilled placeholders: " + ", ".join(sorted(set(left))))
+    for name, page in pages.items():
+        page = page.replace("__N__", str(total))
+        leaks = verify_no_markdown_leaked(page)
+        if leaks:
+            raise SystemExit(f"{name}: markdown leaked — " + "; ".join(leaks))
+        left = re.findall(r"__[A-Z_]+__", page)
+        if left:
+            raise SystemExit(f"{name}: unfilled placeholders — " + ", ".join(sorted(set(left))))
+        (ROOT / name).write_text(page, encoding="utf-8")
+        print(f"wrote {name:16s} {len(page):>8,} bytes")
 
-    OUT.write_text(page, encoding="utf-8")
-    print(f"wrote {OUT.name}  {len(page):,} bytes")
-    print(f"  {total} members, {len(agencies)} LatAm agencies + "
+    print(f"\n  {total} members, {len(agencies)} LatAm agencies + "
           f"{sum(len(r['agencies']) for r in day['regions'])} from Day")
     for c in CATEGORIES:
-        print(f"  {c:26s} {counts.get(c,0):2d}  {counts.get(c,0)/total*100:4.1f}%")
+        print(f"  {c:26s} {counts.get(c,0):2d}  {pct(counts.get(c,0), total):3d}%")
 
 
 if __name__ == "__main__":

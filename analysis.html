@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Full Analysis · Who Runs Latin America's Metros</title>
+<meta name="description" content="The complete write-up, including corrections to the March 2026 version and the seven classification judgment calls.">
+<meta property="og:title" content="Full Analysis · Who Runs Latin America's Metros">
+<meta property="og:description" content="The complete write-up, including corrections to the March 2026 version and the seven classification judgment calls.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2016%2016%27%3E%3Crect%20width%3D%2716%27%20height%3D%2716%27%20rx%3D%272%27%20fill%3D%27%23fcfcfb%27/%3E%3Crect%20x%3D%272%27%20y%3D%273%27%20width%3D%2712%27%20height%3D%272.4%27%20rx%3D%27.6%27%20fill%3D%27%23488fe6%27/%3E%3Crect%20x%3D%272%27%20y%3D%276.8%27%20width%3D%2712%27%20height%3D%272.4%27%20rx%3D%27.6%27%20fill%3D%27%23ca6a10%27/%3E%3Crect%20x%3D%272%27%20y%3D%2710.6%27%20width%3D%278%27%20height%3D%272.4%27%20rx%3D%27.6%27%20fill%3D%27%23733b97%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#e8e9e6; --panel:#fcfcfb; --ink:#12161a; --ink2:#4f5a64; --ink3:#7c8792;
+  --rule:#cdd2d6; --rule2:#e2e5e6;
+  --s0:#488fe6; --s1:#ca6a10; --s2:#94362a; --s3:#68c294; --s4:#733b97;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --paper:#0e0e0d; --panel:#1a1a19; --ink:#e9eaea; --ink2:#a3aab0; --ink3:#767d83;
+    --rule:#2d2f31; --rule2:#232525;
+    --s0:#2489fa; --s1:#ce6d16; --s2:#a63629; --s3:#3d996d; --s4:#8b49b5;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:Newsreader,Georgia,'Times New Roman',serif;
+  font-size:19px; line-height:1.62; font-optical-sizing:auto;
+}
+.wrap{max-width:1180px; margin:0 auto; padding:0 28px}
+.narrow{max-width:720px}
+
+/* ---- signage type ---------------------------------------------------- */
+.dsp{
+  font-family:Archivo,'Helvetica Neue',Arial,sans-serif;
+  font-variation-settings:'wdth' 112;
+  font-weight:800; letter-spacing:-.018em; line-height:1.02;
+  text-transform:none;
+}
+.mono{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.eyebrow{
+  font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:500;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--ink3);
+}
+
+/* ---- masthead -------------------------------------------------------- */
+header.mast{border-bottom:2px solid var(--ink); background:var(--panel)}
+.mast .wrap{padding-top:44px; padding-bottom:34px}
+h1.title{margin:14px 0 0; font-size:clamp(38px,6.6vw,76px)}
+.standfirst{
+  margin:20px 0 0; max-width:60ch; font-size:21px; color:var(--ink2);
+}
+.byline{margin-top:26px; display:flex; flex-wrap:wrap; gap:8px 22px; align-items:baseline}
+
+/* ---- provenance ------------------------------------------------------ */
+.prov{
+  background:var(--panel); border:2px solid var(--ink); border-radius:3px;
+  padding:22px 24px; margin:34px 0 0;
+}
+.prov h2{
+  margin:0 0 10px; font-size:13px; letter-spacing:.14em; text-transform:uppercase;
+  font-family:'JetBrains Mono',monospace; font-weight:700;
+}
+.prov p{margin:0 0 10px; font-size:17px; line-height:1.55; color:var(--ink2)}
+.prov p:last-child{margin-bottom:0}
+.prov strong{color:var(--ink)}
+
+/* ---- sections -------------------------------------------------------- */
+main{padding:0 0 80px}
+section{padding:64px 0 8px; border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0}
+.sechead{display:flex; align-items:baseline; gap:16px; margin-bottom:8px}
+h2.sec{margin:0; font-size:clamp(25px,3.4vw,38px)}
+.lede{max-width:62ch; color:var(--ink2); margin:10px 0 30px}
+
+/* ---- hero unit chart ------------------------------------------------- */
+.hero{background:var(--panel); border:1px solid var(--rule); border-radius:3px; padding:26px 26px 20px}
+.hrow{display:grid; grid-template-columns:150px 1fr 34px; align-items:center; gap:16px; padding:9px 0}
+.hrow+.hrow{border-top:1px solid var(--rule2)}
+.hname{font-family:Archivo,sans-serif; font-variation-settings:'wdth' 108; font-weight:700; font-size:15px; line-height:1.2}
+.hname em{display:block; font-style:normal; font-weight:400; font-size:11.5px; color:var(--ink3); letter-spacing:.04em; text-transform:uppercase}
+.dots{display:flex; flex-wrap:wrap; gap:4px}
+.dot{width:17px; height:17px; border-radius:3px; display:block}
+.hn{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--ink3); text-align:right}
+.herofoot{margin-top:18px; padding-top:16px; border-top:2px solid var(--ink); display:flex; flex-wrap:wrap; gap:12px 28px; align-items:baseline}
+.zero{font-family:Archivo,sans-serif; font-variation-settings:'wdth' 118; font-weight:800; font-size:44px; line-height:.9}
+.zerolab{max-width:44ch; font-size:16px; color:var(--ink2)}
+
+/* ---- stacked bar chart ---------------------------------------------- */
+.chartbox{background:var(--panel); border:1px solid var(--rule); border-radius:3px; padding:26px 26px 22px}
+.legend{display:flex; flex-wrap:wrap; gap:10px 22px; margin:0 0 22px; padding-bottom:18px; border-bottom:1px solid var(--rule2)}
+.key{display:inline-flex; align-items:center; gap:8px; font-size:13.5px; color:var(--ink2); font-family:Archivo,sans-serif; font-variation-settings:'wdth' 100}
+.sw{width:13px; height:13px; border-radius:3px; display:inline-block; flex:none}
+.region{margin:0 0 26px}
+.region h4{
+  margin:0 0 12px; font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--ink);
+  display:flex; align-items:baseline; gap:12px;
+}
+.region h4::after{content:""; flex:1; height:1px; background:var(--rule)}
+.rcount{font-weight:400; letter-spacing:.08em; color:var(--ink3); text-transform:none; order:3}
+.region.new h4{color:var(--s0)}
+.row{display:grid; grid-template-columns:172px 1fr; align-items:center; gap:16px; padding:5px 0}
+.rowlab{font-family:Archivo,sans-serif; font-variation-settings:'wdth' 104; font-size:14px; font-weight:500; line-height:1.15; text-align:right; color:var(--ink2)}
+.row.latam .rowlab{font-weight:800; color:var(--ink)}
+.rowlab .sub{display:block; font-size:10.5px; color:var(--ink3); text-transform:uppercase; letter-spacing:.05em}
+/* 2px gaps in the surface colour separate segments - never a border. */
+.track{display:flex; gap:2px; height:22px; align-items:stretch}
+.seg{
+  display:flex; align-items:center; justify-content:center; min-width:2px;
+  font-family:'JetBrains Mono',monospace; font-size:10.5px; font-style:normal;
+  color:#fff; letter-spacing:-.01em; cursor:default;
+  transition:filter .12s ease;
+}
+.seg.end{border-radius:0 4px 4px 0}
+.seg:hover{filter:brightness(1.14)}
+.s0{background:var(--s0)} .s1{background:var(--s1)} .s2{background:var(--s2)}
+.s3{background:var(--s3)} .s4{background:var(--s4)}
+.seg.s3{color:#10231a}
+.chartnote{margin:6px 0 0; font-size:13.5px; color:var(--ink3); line-height:1.5}
+.chartnote a{color:var(--ink2)}
+
+/* ---- tooltip --------------------------------------------------------- */
+#tip{
+  position:fixed; z-index:60; pointer-events:none; opacity:0; transition:opacity .1s;
+  background:var(--ink); color:var(--paper); padding:7px 10px; border-radius:4px;
+  font-family:'JetBrains Mono',monospace; font-size:11.5px; line-height:1.45; max-width:240px;
+}
+#tip b{display:block; font-size:12.5px}
+
+/* ---- member table ---------------------------------------------------- */
+.controls{display:flex; flex-wrap:wrap; gap:12px; margin:0 0 18px; align-items:center}
+.controls select,.controls input{
+  font-family:Archivo,sans-serif; font-size:14px; padding:8px 11px; color:var(--ink);
+  background:var(--panel); border:1px solid var(--rule); border-radius:3px;
+}
+.controls input{min-width:210px}
+.count{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ink3); margin-left:auto}
+.scroll{overflow-x:auto; -webkit-overflow-scrolling:touch}
+table{border-collapse:collapse; width:100%; font-size:15px; background:var(--panel)}
+#members{min-width:1080px}
+th,td{text-align:left; padding:10px 13px; border-bottom:1px solid var(--rule2); vertical-align:top}
+thead th{
+  position:sticky; top:0; background:var(--panel); z-index:2;
+  font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--ink3);
+  border-bottom:2px solid var(--ink); white-space:nowrap;
+}
+#members thead th{cursor:pointer; user-select:none}
+#members thead th:hover{color:var(--ink)}
+#members thead th[aria-sort]::after{content:" ▲"; font-size:9px}
+#members thead th[aria-sort=descending]::after{content:" ▼"}
+.tname{font-family:Archivo,sans-serif; font-weight:600; font-size:14.5px; white-space:nowrap}
+.tpos{width:190px; font-size:13.5px; color:var(--ink2)}
+.trat details{display:block} .trat summary{display:none}
+.trat{width:430px; font-size:13.5px; line-height:1.5; color:var(--ink2)}
+#members td:nth-child(2){white-space:nowrap; font-size:14px}
+.tcat{white-space:nowrap; font-size:13.5px}
+.tcat .sw{margin-right:7px; vertical-align:-1px}
+.tsrc a{
+  display:inline-block; min-width:19px; text-align:center; margin-right:3px;
+  font-family:'JetBrains Mono',monospace; font-size:11px; padding:1px 4px;
+  border:1px solid var(--rule); border-radius:3px; color:var(--ink2); text-decoration:none;
+}
+.tsrc a:hover{border-color:var(--ink); color:var(--ink)}
+.jc{display:inline-block; margin-left:7px; padding:1px 6px; border-radius:99px; font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.06em; text-transform:uppercase; border:1px solid var(--s1); color:var(--s1); white-space:nowrap; vertical-align:1px}
+.jcnote{display:block; margin-top:7px; padding-top:7px; border-top:1px dashed var(--rule); color:var(--ink3); font-size:12.5px; line-height:1.5}
+.lede .jc{margin-left:2px}
+.conf{font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; padding:2px 7px; border-radius:99px; border:1px solid var(--rule); color:var(--ink2); white-space:nowrap}
+.chigh{border-color:var(--ink2); color:var(--ink)}
+.clow{border-color:var(--s2); color:var(--s2)}
+
+/* ---- headline result cards on the front page ------------------------ */
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(248px,1fr)); gap:2px; background:var(--rule); border:1px solid var(--rule); border-radius:3px; overflow:hidden}
+.card{background:var(--panel); padding:24px 22px 22px}
+.cardnum{display:block; font-size:44px; line-height:.95; letter-spacing:-.03em; color:var(--s0)}
+.cardlab{display:block; margin:8px 0 12px; font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink3)}
+.card p{margin:0; font-size:15.5px; line-height:1.55; color:var(--ink2)}
+
+/* ---- site nav & cross-page provenance strip ------------------------- */
+nav.site{border-bottom:1px solid var(--rule); background:var(--panel); position:sticky; top:0; z-index:40}
+nav.site .wrap{display:flex; gap:4px; align-items:center; padding-top:0; padding-bottom:0; flex-wrap:wrap}
+nav.site a{
+  display:block; padding:14px 14px; text-decoration:none; color:var(--ink2);
+  font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.11em;
+  text-transform:uppercase; border-bottom:2px solid transparent; margin-bottom:-1px;
+}
+nav.site a:hover{color:var(--ink)}
+nav.site a[aria-current]{color:var(--ink); border-bottom-color:var(--ink)}
+nav.site .home{font-family:Archivo,sans-serif; font-variation-settings:'wdth' 112; font-weight:800; font-size:14px; letter-spacing:-.01em; text-transform:none; padding-right:20px}
+.strip{background:var(--panel); border-bottom:1px solid var(--rule)}
+.strip .wrap{padding-top:14px; padding-bottom:14px}
+.strip p{margin:0; font-size:14.5px; color:var(--ink2); line-height:1.5; max-width:75ch}
+.strip strong{color:var(--ink)}
+.pagehead{padding:44px 0 0}
+.pagehead h1{margin:8px 0 0; font-size:clamp(30px,5vw,52px)}
+.pagehead .lede{margin-top:14px}
+
+/* ---- responsive tables: stack into labelled cards, never scroll sideways ---- */
+@media (max-width:760px){
+  .scroll{overflow-x:visible}
+  table.stack, #members{min-width:0; width:100%; background:transparent}
+  table.stack thead, #members thead{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+  table.stack tr, #members tbody tr{
+    display:block; background:var(--panel); border:1px solid var(--rule);
+    border-radius:4px; padding:4px 2px; margin:0 0 12px;
+  }
+  table.stack td, #members tbody td{
+    display:block; border:0; border-bottom:1px solid var(--rule2);
+    padding:9px 13px; width:auto; max-width:none; font-size:15px;
+  }
+  table.stack tr td:last-child, #members tbody tr td:last-child{border-bottom:0}
+  table.stack td::before, #members tbody td::before{
+    content:attr(data-label); display:block; margin-bottom:4px;
+    font-family:'JetBrains Mono',monospace; font-size:9.5px;
+    letter-spacing:.09em; text-transform:uppercase; color:var(--ink3);
+  }
+  table.stack td:empty{display:none}
+  .tname{font-size:16px}
+  .trat,.tpos{width:auto}
+  .controls{position:sticky; top:47px; z-index:30; background:var(--paper); padding:10px 0; margin:0 0 14px}
+  .controls select,.controls input{flex:1 1 100%}
+  .trat summary{
+    display:block; cursor:pointer; color:var(--s0); font-size:13px;
+    font-family:'JetBrains Mono',monospace; letter-spacing:.03em; padding:2px 0;
+  }
+  .trat details[open] summary{margin-bottom:7px}
+  .tsrc a{margin:0 5px 5px 0}
+  .controls{position:static; padding:0}
+  nav.site a{padding:12px 10px; font-size:10px}
+  nav.site .home{padding-right:10px; font-size:13px}
+}
+
+/* ---- prose ----------------------------------------------------------- */
+.prose h1{display:none}
+.prose h2{margin:56px 0 4px; font-family:Archivo,sans-serif; font-variation-settings:'wdth' 112; font-weight:800; font-size:clamp(24px,3.2vw,34px); letter-spacing:-.015em; line-height:1.1}
+.prose h3{margin:38px 0 2px; font-family:Archivo,sans-serif; font-variation-settings:'wdth' 104; font-weight:700; font-size:20px; letter-spacing:-.005em}
+.prose .secnum{
+  display:inline-block; min-width:1.9em; margin-right:.5em; color:var(--s0);
+  font-family:'JetBrains Mono',monospace; font-size:.55em; font-weight:700;
+  vertical-align:.35em; letter-spacing:0;
+}
+.prose p{margin:14px 0}
+.prose ul,.prose ol{margin:14px 0; padding-left:1.25em}
+.prose li{margin:7px 0}
+.prose hr{border:0; border-top:1px solid var(--rule); margin:44px 0}
+.prose table{font-size:14.5px; margin:20px 0}
+.prose code{font-family:'JetBrains Mono',monospace; font-size:.85em; background:var(--rule2); padding:1px 5px; border-radius:3px}
+.prose a{color:var(--ink); text-decoration-color:var(--s0); text-underline-offset:3px}
+.prose strong{font-weight:700}
+.prose>p:first-of-type{font-size:17px; color:var(--ink2)}
+
+footer{border-top:2px solid var(--ink); background:var(--panel); padding:40px 0; font-size:15px; color:var(--ink2)}
+footer a{color:var(--ink)}
+a{color:var(--ink)}
+
+@media (max-width:760px){
+  body{font-size:17px}
+  .wrap{padding:0 18px}
+  .hrow{grid-template-columns:1fr; gap:6px}
+  .hn{display:none}
+  .row{grid-template-columns:1fr; gap:4px; padding:8px 0}
+  .rowlab{text-align:left}
+  .rowlab .sub{display:inline; margin-left:8px}
+  .hero,.chartbox{padding:18px 16px}
+  .count{margin-left:0}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+</style>
+</head><body>
+<div id="tip" role="status" aria-live="polite"></div>
+<nav class="site"><div class="wrap">
+  <a class="home" href="index.html">Who runs Latin America's metros</a>
+  <a href="index.html">The findings</a>
+  <a href="members.html">The members</a>
+  <a href="analysis.html" aria-current="page">Full analysis</a>
+</div></nav>
+
+<div class="strip"><div class="wrap"><p>
+<strong>AI-assisted research.</strong> These rosters and classifications were researched
+and written by Claude (Anthropic's AI), verified 27 August 2026, and are Claude's judgment
+applied to Richard Day's categories — not an official designation by any agency. Seven
+classification calls were adjudicated by Steffany Bahamon and are flagged individually.
+<a href="index.html#how-this-was-made">Read the full statement</a>.
+</p></div></div>
+<main><div class="wrap narrow">
+  <div class="pagehead">
+    <p class="eyebrow">The argument</p>
+    <h1 class="dsp">Full analysis</h1>
+    <p class="lede">The complete write-up, including the corrections made to the March 2026
+    version and the seven classification calls that could have gone either way.</p>
+  </div>
+  <div class="prose"><h1 id="latin-american-transit-board-composition-an-addendum-to-day-s-analysis">Latin American Transit Board Composition: An Addendum to Day's Analysis</h1>
+<p><em>An extension of Richard Day's <a href="https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies" rel="noopener">"Put real experts in charge of transit"</a> (A City That Works, March 2026)</em></p>
+<p><em>Board rosters verified 27 August 2026. An earlier version of this analysis, based on March 2026 rosters, is archived in <code>data_2026_03/</code>; see §6 for what changed and why.</em></p>
+<hr>
+<h2 id="1-introduction"><span class="secnum">1</span>Introduction</h2>
+<p>Richard Day's analysis of transit board composition across 16 agencies in Asia, Europe, and the United States reveals a striking pattern: the best-performing transit systems tend to be governed by boards dominated by transit operations experts and professional managers, while the worst-performing systems are governed by elected officials and community advocates with no transit background.</p>
+<p>Day's data shows:</p>
+<ul><li><strong>Asian boards</strong> are 88–100% transit experts + professional management (Tokyo Metro: 57% transit ops, Seoul: 40%, MTR Hong Kong: 22%)</li><li><strong>European boards</strong> are mixed, with significant labor representation (BVG Berlin: 50% labor, RATP Paris: 33% labor) alongside transit and management professionals</li><li><strong>US boards</strong> are dominated by elected officials and community advocates (LA Metro: 86% elected officials; CTA Chicago: 50% community advocates + 50% other management/policy with zero transit expertise)</li></ul>
+<p><strong>The gap in Day's analysis</strong>: No Latin American agencies are included. This matters because LatAm cities operate some of the world's largest and most complex metro systems — Santiago, Mexico City, and São Paulo each carry over a million daily riders — and their governance models reflect a distinct political tradition of state-owned enterprise management that doesn't map neatly onto the Asian, European, or American frameworks.</p>
+<p><strong>Methodology</strong>: We identified every current member of the board of five major LatAm metro agencies — 42 people across 5 boards — and classified each using Day's five-category framework. Rosters were first researched in March 2026 and fully re-researched on 27 August 2026 against agency filings, official gazettes, and regulatory disclosures. Sources and a confidence rating are recorded per member in <code>data/</code>. Seven classifications required a judgment call; all seven are documented in §6.</p>
+<hr>
+<h2 id="2-agency-profiles"><span class="secnum">2</span>Agency Profiles</h2>
+<h3 id="metro-de-santiago-santiago-chile-7-members">Metro de Santiago — Santiago, Chile — 7 members</h3>
+<p><strong>Governance model</strong>: State-owned corporation (Empresa de Transporte de Pasajeros Metro S.A.) with a 7-member board (Directorio) appointed by the national government through the shareholders' meeting (Junta de Accionistas). The Chilean state, represented by the Treasury (Fisco de Chile) and CORFO, holds 100% of shares. Metro's bylaws historically provide for two-year board terms with indefinite reelection, but multiple April/May 2026 news reports describe the board seated on April 27, 2026 as serving for 'the next four years' (coinciding with President Kast's four-year presidential term); this discrepancy could not be resolved with the sources available (see notes).</p>
+<div class="scroll"><table class="stack"><thead><tr><th>Member</th><th>Position</th><th>Classification</th><th>Confidence</th></tr></thead><tbody><tr><td data-label="Member">Patricio Rey Sommer</td><td data-label="Position">President (Presidente del Directorio)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Nicole Keller Flaten</td><td data-label="Position">Vice President (Vicepresidenta del Directorio)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Patricio Pérez Gómez</td><td data-label="Position">Director</td><td data-label="Classification">Transit Ops/Management</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Rodrigo Troncoso Olchevskaia</td><td data-label="Position">Director</td><td data-label="Classification">Transit Ops/Management <em>(judgment call)</em></td><td data-label="Confidence">Medium</td></tr><tr><td data-label="Member">María Cecilia Guzmán Ossa</td><td data-label="Position">Director</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">Medium</td></tr><tr><td data-label="Member">Cristina Torres Delgado</td><td data-label="Position">Director</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">Medium</td></tr><tr><td data-label="Member">Jorge Hermann Anguita</td><td data-label="Position">Director</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr></tbody></table></div>
+<div class="scroll"><table class="stack"><thead><tr><th>Category</th><th>Count</th><th>%</th></tr></thead><tbody><tr><td data-label="Category">Transit Ops/Management</td><td data-label="Count">2</td><td data-label="%">29%</td></tr><tr><td data-label="Category">Other Management/Policy</td><td data-label="Count">5</td><td data-label="%">71%</td></tr><tr><td data-label="Category">Labor Representative</td><td data-label="Count">0</td><td data-label="%">0%</td></tr><tr><td data-label="Category">Community Advocate</td><td data-label="Count">0</td><td data-label="%">0%</td></tr><tr><td data-label="Category">Elected Official</td><td data-label="Count">0</td><td data-label="%">0%</td></tr></tbody></table></div>
+<p><strong>Closest comparison in Day's data</strong>: MTR (Hong Kong) (22% / 72% / 0% / 0% / 6% across 18 seats), against Santiago's 29% / 71% / 0% / 0% / 0%.</p>
+<p><strong>Change since March 2026</strong>: 0 of the 7 people recorded in March remain; the board was 29% / 71% / 0% / 0% / 0% then and is 29% / 71% / 0% / 0% / 0% now.</p>
+<p><strong>Notes</strong>: The entire board was replaced at an ordinary shareholders' meeting on 27 April 2026, following the change of national government the month before; none of the seven people recorded in March remains. The current roster was verified against both Metro's own governance page and the company's filing with the CMF, Chile's securities regulator, which agree on the same seven names and an appointment date of 27 April 2026. Two details are unsettled: press reports describe a four-year term where summaries of the company bylaws describe two years with indefinite re-election; and two outlets described Rodrigo Troncoso as an architect, where Metro's own page and his university profile identify him as a commercial engineer with a doctorate in economics, which is what this record uses.</p>
+<h3 id="metro-de-medell-n-medell-n-colombia-7-members-of-9-seats-2-vacant">Metro de Medellín — Medellín, Colombia — 7 members (of 9 seats; 2 vacant)</h3>
+<p><strong>Governance model</strong>: Mixed-ownership company (sociedad de economía mixta) structurally organized as a 9-member board: 4 ex-officio seats from subnational government (Mayor of Medellín, Director of Planning of Medellín, Governor of Antioquia, Director of Planning of Antioquia) and 5 seats whose appointment power rests with the national government (2 ministry representatives — Transport and Finance — plus 3 independents named by the President). As of the verification date, only 7 of the 9 principal seats are filled; the 2 independent presidential-appointee seats are vacant (see notes). Whichever national administration holds the presidency controls appointment of the 5 national seats, giving the national government a structural majority when all seats are filled.</p>
+<div class="scroll"><table class="stack"><thead><tr><th>Member</th><th>Position</th><th>Classification</th><th>Confidence</th></tr></thead><tbody><tr><td data-label="Member">Andrés Julián Rendón Cardona</td><td data-label="Position">Governor of Antioquia</td><td data-label="Classification">Elected Official</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Federico Gutiérrez Zuluaga</td><td data-label="Position">Mayor of the District of Medellín (ex officio board member)</td><td data-label="Classification">Elected Official</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Luis Fernando Agudelo Henao</td><td data-label="Position">Director of the Administrative Department of Planning, Department of Antioquia</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Luz Ángela González Gómez</td><td data-label="Position">Director of the Administrative Department of Planning, District of Medellín</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Sebastián Hinestroza Arango</td><td data-label="Position">Independent Member (Presidential Appointee)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Liliana Yanneth Bohórquez Avendaño</td><td data-label="Position">Representative of the Ministry of Transport</td><td data-label="Classification">Transit Ops/Management <em>(judgment call)</em></td><td data-label="Confidence">Medium</td></tr><tr><td data-label="Member">Luis Alexander López Ruíz</td><td data-label="Position">Representative of the Ministry of Finance</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">Medium</td></tr></tbody></table></div>
+<div class="scroll"><table class="stack"><thead><tr><th>Category</th><th>Count</th><th>%</th></tr></thead><tbody><tr><td data-label="Category">Transit Ops/Management</td><td data-label="Count">1</td><td data-label="%">14%</td></tr><tr><td data-label="Category">Other Management/Policy</td><td data-label="Count">4</td><td data-label="%">57%</td></tr><tr><td data-label="Category">Labor Representative</td><td data-label="Count">0</td><td data-label="%">0%</td></tr><tr><td data-label="Category">Community Advocate</td><td data-label="Count">0</td><td data-label="%">0%</td></tr><tr><td data-label="Category">Elected Official</td><td data-label="Count">2</td><td data-label="%">29%</td></tr></tbody></table></div>
+<p><strong>Closest comparison in Day's data</strong>: Metro de Madrid (20% / 50% / 0% / 0% / 30% across 10 seats), against Medellín's 14% / 57% / 0% / 0% / 29%.</p>
+<p><strong>Change since March 2026</strong>: 4 of the 9 people recorded in March remain; the board was 0% / 78% / 0% / 0% / 22% then and is 14% / 57% / 0% / 0% / 29% now.</p>
+<p><strong>Notes</strong>: The board is structurally nine seats. Two of the three independent presidential-appointee seats are listed as vacant on Metro's own roster, so seven are filled — the board has not shrunk. Three seats changed hands since March: the Antioquia planning director (by governor's decree of 16 July 2026), the Medellín planning director, and the Ministry of Transport representative. Colombia's presidential transition on 7 August 2026 makes further turnover plausible, but is not confirmed as the cause of any of these changes, and the cause and timing of the two vacancies could not be established. Metro's website is internally inconsistent — a departed member's biography page still resolves while the roster marks that seat vacant — so it should not be treated as authoritative for current membership.</p>
+<h3 id="stc-metro-mexico-city-mexico-11-members">STC Metro — Mexico City, Mexico — 11 members</h3>
+<p><strong>Governance model</strong>: Decentralized public body (organismo público descentralizado) governed by a Consejo de Administración (Board of Directors) composed of government officials and institutional representatives, chaired by the Secretary of Mobility. Per Article 7 of the Estatuto Orgánico (reconstructed from the July 2018 text, which is the most recent version whose full Article 7 text could be retrieved — see notes on statute currency), the statutory voting seats are: from CDMX centralized administration — Secretary of Mobility (President), Secretary of Government, Secretary of Finance (now Secretaría de Administración y Finanzas, which absorbed the Oficial Mayor seat when that post was eliminated in 2019), Secretary of Works and Services; from CDMX parastatal entities — the Director General of Servicio de Transportes Eléctricos (STE) and the head of 'Sistema de Movilidad 1' (the 2016-2019 legal name of RTP/Red de Transporte de Pasajeros, now reverted to RTP but apparently not relabeled in Article 7's text — the seat is held by RTP's current Director General); from the federal government — a representative of SICT (formerly SCT) and a representative of Banobras; and one representative designated by the State of Mexico. Article 7 (2018 text) also references one public commissioner ('comisario público', voice but no vote) and, per a 2001 agreement, two citizen comptrollers ('contralores ciudadanos') — see notes; these are non-voting oversight roles, not counted among the board members below. The Director General of STC is NOT listed as an Article 7 Council seat; available evidence indicates the Director General is the administrator/executive appointed by the Jefa de Gobierno who implements Council resolutions and reports to the Council (commonly functioning as its non-voting secretary in this type of CDMX decentralized body), rather than a voting member — he is nonetheless included below because he is the agency's chief executive and because prior analysis specifically asked that his classification be documented. The union (SNTSTC) has no Article 7 seat; its participation in Council sessions stems from an administrative agreement announced by the STC Director General in 2013-2015 under instruction from then-Head of Government Miguel Ángel Mancera, granting the union attendance at Council sessions and two seats on the Comité de Incidentes Relevantes — not a statutory board seat. A separate Consejo Consultivo (advisory council) of outside experts, academics, and civil-society representatives exists alongside the Consejo de Administración (referenced in modifications from 2018 and again in 2024) but is a distinct body. There are no independent/community-appointed voting members on the Consejo de Administración itself.</p>
+<div class="scroll"><table class="stack"><thead><tr><th>Member</th><th>Position</th><th>Classification</th><th>Confidence</th></tr></thead><tbody><tr><td data-label="Member">Héctor Ulises García Nieto</td><td data-label="Position">President of Consejo de Administración / Secretary of Mobility (SEMOVI)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Adrián Rubalcava Suárez</td><td data-label="Position">Director General of STC Metro (administrator/executive who reports to and implements resolutions of the Consejo de Administración — see notes: not confirmed as a formal Article 7 voting Council seat, but included here as the agency's chief executive)</td><td data-label="Classification">Elected Official <em>(judgment call)</em></td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">César Cravioto Romero</td><td data-label="Position">Board Member / Secretary of Government (Secretario de Gobierno)</td><td data-label="Classification">Elected Official <em>(judgment call)</em></td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Juan Pablo de Botton Falcón</td><td data-label="Position">Board Member / Secretary of Administration and Finance (Secretario de Administración y Finanzas) — this cabinet post absorbed the former Oficial Mayor seat referenced in Article 7 when that office was eliminated in CDMX in 2019 and merged into this secretariat</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Raúl Basulto Luviano</td><td data-label="Position">Board Member / Secretary of Works and Services (Secretario de Obras y Servicios)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Martín López Delgado</td><td data-label="Position">Board Member / Director General of Servicio de Transportes Eléctricos (STE)</td><td data-label="Classification">Transit Ops/Management</td><td data-label="Confidence">Medium</td></tr><tr><td data-label="Member">Daniel Arcos Rodríguez</td><td data-label="Position">Board Member / Director General of RTP (Red de Transporte de Pasajeros) — holds the parastatal seat Article 7 labels 'Sistema de Movilidad 1' (RTP's 2016-2019 legal name; see notes for the naming history)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">Low</td></tr><tr><td data-label="Member">Fernando Espino Arévalo</td><td data-label="Position">Union Participant / President of the National Executive Committee, SNTSTC — NOT a formal Article 7 Council seat; participation in Consejo de Administración sessions stems from a 2013-2015 negotiated administrative agreement, not a statutory board membership (see notes)</td><td data-label="Classification">Labor Representative</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Federal Representative (SICT)</td><td data-label="Position">Board Member / Representative of the Secretaría de Infraestructura, Comunicaciones y Transportes (formerly SCT)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">Low</td></tr><tr><td data-label="Member">Federal Representative (Banobras)</td><td data-label="Position">Board Member / Representative of Banco Nacional de Obras y Servicios Públicos</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">Low</td></tr><tr><td data-label="Member">State of Mexico Representative</td><td data-label="Position">Board Member / Representative designated by the State of Mexico Government</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">Low</td></tr></tbody></table></div>
+<div class="scroll"><table class="stack"><thead><tr><th>Category</th><th>Count</th><th>%</th></tr></thead><tbody><tr><td data-label="Category">Transit Ops/Management</td><td data-label="Count">1</td><td data-label="%">9%</td></tr><tr><td data-label="Category">Other Management/Policy</td><td data-label="Count">7</td><td data-label="%">64%</td></tr><tr><td data-label="Category">Labor Representative</td><td data-label="Count">1</td><td data-label="%">9%</td></tr><tr><td data-label="Category">Community Advocate</td><td data-label="Count">0</td><td data-label="%">0%</td></tr><tr><td data-label="Category">Elected Official</td><td data-label="Count">2</td><td data-label="%">18%</td></tr></tbody></table></div>
+<p><strong>Closest comparison in Day's data</strong>: Metra (Chicago) (9% / 55% / 9% / 9% / 18% across 11 seats), against Mexico City's 9% / 64% / 9% / 0% / 18%.</p>
+<p><strong>Change since March 2026</strong>: 9 of the 11 people recorded in March remain; the board was 9% / 64% / 9% / 0% / 18% then and is 9% / 64% / 9% / 0% / 18% now.</p>
+<p><strong>Notes</strong>: STC Metro's council is defined by Article 7 of its Estatuto Orgánico. The current full text could not be retrieved — the agency's own website was unreachable throughout this research — so the seat list is reconstructed from the 2018 version plus corroborating sources and is rated medium confidence. Three seats are institutional, and the individuals holding them are not publicly identified: the federal transport ministry, the development bank Banobras, and the State of Mexico. The director general is not an Article 7 voting seat but the appointed administrator who reports to the council. The union seat is not statutory either; it derives from a negotiated agreement of 2013–2015 and may be participation in sessions rather than a vote. The statute also provides for a public commissioner and two citizen comptrollers without votes, who are not counted here.</p>
+<h3 id="metr-de-s-o-paulo-s-o-paulo-brazil-11-members">Metrô de São Paulo — São Paulo, Brazil — 11 members</h3>
+<p><strong>Governance model</strong>: State-owned mixed-capital company (sociedade de economia mista) controlled by the São Paulo state government. Per the company's 2025 Integrated Report, the Conselho de Administração (Board of Directors) has 7–11 members elected by the General Assembly for unified two-year terms with reelection permitted (a Moody's credit report instead cites a 3–11 range, which this file treats as a likely paraphrase of the bylaws rather than the authoritative figure). The board must include the CEO (Diretor-Presidente), an employee representative, minority-shareholder representatives, and independent members. As of this update the board is at its statutory maximum of 11 seats. The Diretoria Executiva (Executive Board) has up to 6 directors appointed by the Conselho de Administração.</p>
+<div class="scroll"><table class="stack"><thead><tr><th>Member</th><th>Position</th><th>Classification</th><th>Confidence</th></tr></thead><tbody><tr><td data-label="Member">Milton Frasson</td><td data-label="Position">Presidente do Conselho de Administração (Board Chair)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Antonio Julio Castiglioni Neto</td><td data-label="Position">Diretor-Presidente e Conselheiro (CEO and Board Member)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Daniel Rodrigues Aldigueri</td><td data-label="Position">Conselheiro de Administração (Board Member)</td><td data-label="Classification">Transit Ops/Management <em>(judgment call)</em></td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Fabiano Martins de Oliveira</td><td data-label="Position">Conselheiro de Administração (Board Member)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Mauro Antônio Gumiero Voltarelli</td><td data-label="Position">Conselheiro de Administração (Board Member)</td><td data-label="Classification">Transit Ops/Management <em>(judgment call)</em></td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Wagner Fajardo Pereira</td><td data-label="Position">Conselheiro Representante dos Empregados (Employee Representative Board Member)</td><td data-label="Classification">Labor Representative</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Walkyria Aparecida Augusto</td><td data-label="Position">Conselheira Independente e Coordenadora do Comitê de Auditoria Estatutário (Independent Board Member and Statutory Audit Committee Coordinator)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Alessandra de Almeida Figueiredo</td><td data-label="Position">Conselheira de Administração (Board Member)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">André da Silva Curcio</td><td data-label="Position">Conselheiro de Administração (Board Member)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Eugênia Cristina Cleto Marolla</td><td data-label="Position">Conselheira de Administração (Board Member)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Fabiano Maia Pereira</td><td data-label="Position">Conselheiro de Administração (Board Member)</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">Medium</td></tr></tbody></table></div>
+<div class="scroll"><table class="stack"><thead><tr><th>Category</th><th>Count</th><th>%</th></tr></thead><tbody><tr><td data-label="Category">Transit Ops/Management</td><td data-label="Count">2</td><td data-label="%">18%</td></tr><tr><td data-label="Category">Other Management/Policy</td><td data-label="Count">8</td><td data-label="%">73%</td></tr><tr><td data-label="Category">Labor Representative</td><td data-label="Count">1</td><td data-label="%">9%</td></tr><tr><td data-label="Category">Community Advocate</td><td data-label="Count">0</td><td data-label="%">0%</td></tr><tr><td data-label="Category">Elected Official</td><td data-label="Count">0</td><td data-label="%">0%</td></tr></tbody></table></div>
+<p><strong>Closest comparison in Day's data</strong>: LTA (Singapore) (12% / 76% / 6% / 6% / 0% across 17 seats), against São Paulo's 18% / 73% / 9% / 0% / 0%.</p>
+<p><strong>Change since March 2026</strong>: 4 of the 9 people recorded in March remain; the board was 0% / 89% / 11% / 0% / 0% then and is 18% / 73% / 9% / 0% / 0% now.</p>
+<p><strong>Notes</strong>: The March version of this record was drawn from a mirror site serving a 2023 roster and wrongly listed three former directors. This version uses the company's official Relatório Integrado 2025, its Comunicado ao Mercado of 11 May 2026, and its governance portal, which was reachable this time after returning a server error during the March research. The board grew from nine members to eleven — its statutory maximum — at an extraordinary general assembly on 28 April 2026, with three members leaving and five joining. The exact dates and stated reasons for those three departures were not found.</p>
+<h3 id="sbasau-buenos-aires-argentina-6-members">SBASAU — Buenos Aires, Argentina — 6 members</h3>
+<p><strong>Governance model</strong>: City-owned corporation. SBASE was transformed from a Sociedad del Estado into a Sociedad Anónima Unipersonal (SBASAU) via Decreto 20/2026 (published Boletín Oficial CABA, January 2026), implementing the conversion mandate of national DNU 70/2023 (Art. 48) for all state-participation companies. Ownership remains 100% GCBA; the change is a legal-form conversion, not a privatization, and Subte operations remain concessioned to Emova. Per the SBASE/SBASAU Estatuto, Título IV 'Dirección y Administración,' Artículo Noveno, the Directorio is composed of a Presidente, a Vicepresidente, and cuatro (4) Directores Titulares — six seats total — all designated by the Asamblea (GCBA, as sole shareholder) for three-year terms. A separate Comisión Fiscalizadora (statutory auditors — currently Mariano Edmundo Barroso, Jorge Iwanczuk, and Francisco José Olivero Majdalani per the official GCBA governance page) performs audit functions and is NOT part of the Directorio; it is excluded from this member list per the agency's own organizational chart.</p>
+<div class="scroll"><table class="stack"><thead><tr><th>Member</th><th>Position</th><th>Classification</th><th>Confidence</th></tr></thead><tbody><tr><td data-label="Member">Javier Ignacio Ibáñez</td><td data-label="Position">Presidente</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Mauro Gastón Alabuenas</td><td data-label="Position">Vicepresidente</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Mario Sebastián Sabugo</td><td data-label="Position">Director</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">Medium</td></tr><tr><td data-label="Member">Juan Sebastián De Stéfano</td><td data-label="Position">Director</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">High</td></tr><tr><td data-label="Member">Guillermo Seefeld</td><td data-label="Position">Director</td><td data-label="Classification">Other Management/Policy</td><td data-label="Confidence">Medium</td></tr><tr><td data-label="Member">Víctor José Colombano</td><td data-label="Position">Director Titular</td><td data-label="Classification">Other Management/Policy <em>(judgment call)</em></td><td data-label="Confidence">Medium</td></tr></tbody></table></div>
+<div class="scroll"><table class="stack"><thead><tr><th>Category</th><th>Count</th><th>%</th></tr></thead><tbody><tr><td data-label="Category">Transit Ops/Management</td><td data-label="Count">0</td><td data-label="%">0%</td></tr><tr><td data-label="Category">Other Management/Policy</td><td data-label="Count">6</td><td data-label="%">100%</td></tr><tr><td data-label="Category">Labor Representative</td><td data-label="Count">0</td><td data-label="%">0%</td></tr><tr><td data-label="Category">Community Advocate</td><td data-label="Count">0</td><td data-label="%">0%</td></tr><tr><td data-label="Category">Elected Official</td><td data-label="Count">0</td><td data-label="%">0%</td></tr></tbody></table></div>
+<p><strong>Closest comparison in Day's data</strong>: SMRT (Singapore) (15% / 85% / 0% / 0% / 0% across 13 seats), against Buenos Aires's 0% / 100% / 0% / 0% / 0%.</p>
+<p><strong>Change since March 2026</strong>: 4 of the 7 people recorded in March remain; the board was 43% / 57% / 0% / 0% / 0% then and is 0% / 100% / 0% / 0% / 0% now.</p>
+<p><strong>Notes</strong>: SBASE was converted into a sociedad anónima, SBASAU, by decree in January 2026. The board has six seats. Two members are new since March: Mario Sebastián Sabugo, and Víctor José Colombano, designated at an ordinary general assembly on 15 January 2026 and confirmed here through his own conflict-of-interest filing. Three people recorded in March — Eduardo José Moreno, Bernarda Balestra and Jorge Kogan — are no longer on the board; Kogan's membership had only ever been inferred from a resolution signature and is now resolved as not current. Statutory auditors (the Comisión Fiscalizadora) and executive titles such as director general are excluded, since neither is a board seat.</p>
+<hr>
+<h2 id="3-comparative-analysis"><span class="secnum">3</span>Comparative Analysis</h2>
+<h3 id="where-latam-falls-on-day-s-spectrum">Where LatAm Falls on Day's Spectrum</h3>
+<p>Across all 42 board members in the five agencies:</p>
+<div class="scroll"><table class="stack"><thead><tr><th>Category</th><th>Count</th><th>%</th></tr></thead><tbody><tr><td data-label="Category">Transit Ops/Management</td><td data-label="Count">6</td><td data-label="%">14%</td></tr><tr><td data-label="Category">Other Management/Policy</td><td data-label="Count">30</td><td data-label="%">71%</td></tr><tr><td data-label="Category">Labor Representative</td><td data-label="Count">2</td><td data-label="%">5%</td></tr><tr><td data-label="Category">Community Advocate</td><td data-label="Count">0</td><td data-label="%">0%</td></tr><tr><td data-label="Category">Elected Official</td><td data-label="Count">4</td><td data-label="%">10%</td></tr></tbody></table></div>
+<ol start="1"><li><strong>The management/policy monoculture</strong>: 71% of LatAm board members are professional managers and policy experts without transit operations backgrounds. This reflects a governance philosophy where transit agencies are seen as state-owned enterprises to be managed by generalist technocrats, not as specialized operations requiring domain expertise.</li></ol>
+<ol start="2"><li><strong>Transit expertise is thin and unevenly spread</strong>: 6 of 42 members (14%) have transit operations backgrounds. Four of the five boards have at least one; Buenos Aires has none. Three of the six rest on judgment calls documented in §6, so this figure should be read as an upper bound.</li></ol>
+<ol start="3"><li><strong>Labor representation is minimal</strong>: 2 of 42 members (5%), and both sit in agencies where a labor seat is legally mandated or negotiated (São Paulo by Brazilian corporate law, CDMX by union agreement). This is far below European levels (RATP 33%, BVG 50%).</li></ol>
+<ol start="4"><li><strong>Community advocates are completely absent</strong>: Zero community advocates across all five agencies, in both the March and August rosters. This is the starkest difference from the US model, where community advocates comprise significant portions of boards (CTA 50%, MTA New York 20%).</li></ol>
+<ol start="5"><li><strong>Elected officials are present but concentrated</strong>: At 10%, elected official representation is far below US levels (LA Metro 86%, Pace 92%) but above Asian levels. They appear in only two agencies — Medellín, where the Mayor and Governor sit ex officio, and Mexico City, where two career politicians hold appointed seats.</li></ol>
+<h3 id="latam-vs-day-s-three-regions">LatAm vs. Day's Three Regions</h3>
+<div class="scroll"><table class="stack"><thead><tr><th>Region</th><th>Transit Ops</th><th>Other Mgmt</th><th>Labor</th><th>Community</th><th>Elected</th></tr></thead><tbody><tr><td data-label="Region"><strong>Asia</strong> (5 agencies)</td><td data-label="Transit Ops">12–57%</td><td data-label="Other Mgmt">43–85%</td><td data-label="Labor">0–6%</td><td data-label="Community">0–7%</td><td data-label="Elected">0–6%</td></tr><tr><td data-label="Region"><strong>Europe</strong> (4 agencies)</td><td data-label="Transit Ops">13–27%</td><td data-label="Other Mgmt">19–56%</td><td data-label="Labor">0–50%</td><td data-label="Community">0–13%</td><td data-label="Elected">6–30%</td></tr><tr><td data-label="Region"><strong>US</strong> (7 agencies)</td><td data-label="Transit Ops">0–21%</td><td data-label="Other Mgmt">0–70%</td><td data-label="Labor">0–15%</td><td data-label="Community">0–50%</td><td data-label="Elected">0–92%</td></tr><tr><td data-label="Region"><strong>LatAm</strong> (5 agencies)</td><td data-label="Transit Ops">0–29%</td><td data-label="Other Mgmt">57–100%</td><td data-label="Labor">0–9%</td><td data-label="Community">0–0%</td><td data-label="Elected">0–29%</td></tr></tbody></table></div>
+<p>LatAm's spread on transit expertise runs from Buenos Aires (0%) to Santiago (29%) — a narrower range than Asia's (12–57%), and comparable to the US (0–21%). What distinguishes the region is not variance but the floor under generalist management: every LatAm board is at least 57% other management/policy, and one is 100%.</p>
+<h3 id="agency-to-agency-comparisons">Agency-to-Agency Comparisons</h3>
+<div class="scroll"><table class="stack"><thead><tr><th>LatAm Agency</th><th>Closest in Day's data</th><th>Shared profile</th></tr></thead><tbody><tr><td data-label="LatAm Agency">Santiago</td><td data-label="Closest in Day&#x27;s data">MTR (Hong Kong)</td><td data-label="Shared profile">29% / 71% / 0% / 0% / 0% vs 22% / 72% / 0% / 0% / 6%</td></tr><tr><td data-label="LatAm Agency">Medellín</td><td data-label="Closest in Day&#x27;s data">Metro de Madrid</td><td data-label="Shared profile">14% / 57% / 0% / 0% / 29% vs 20% / 50% / 0% / 0% / 30%</td></tr><tr><td data-label="LatAm Agency">Mexico City</td><td data-label="Closest in Day&#x27;s data">Metra (Chicago)</td><td data-label="Shared profile">9% / 64% / 9% / 0% / 18% vs 9% / 55% / 9% / 9% / 18%</td></tr><tr><td data-label="LatAm Agency">São Paulo</td><td data-label="Closest in Day&#x27;s data">LTA (Singapore)</td><td data-label="Shared profile">18% / 73% / 9% / 0% / 0% vs 12% / 76% / 6% / 6% / 0%</td></tr><tr><td data-label="LatAm Agency">Buenos Aires</td><td data-label="Closest in Day&#x27;s data">SMRT (Singapore)</td><td data-label="Shared profile">0% / 100% / 0% / 0% / 0% vs 15% / 85% / 0% / 0% / 0%</td></tr></tbody></table></div>
+<hr>
+<h2 id="4-notable-findings"><span class="secnum">4</span>Notable Findings</h2>
+<h3 id="the-boards-changed-the-profile-did-not">The Boards Changed; the Profile Did Not</h3>
+<p>Between March and August 2026 these five boards turned over heavily. Santiago replaced its entire board following a change of national government; Buenos Aires, Medellín and São Paulo each replaced or lost multiple members:</p>
+<div class="scroll"><table class="stack"><thead><tr><th>Agency</th><th>March members retained</th><th>March board size</th></tr></thead><tbody><tr><td data-label="Agency">Santiago</td><td data-label="March members retained">0</td><td data-label="March board size">7</td></tr><tr><td data-label="Agency">Medellín</td><td data-label="March members retained">4</td><td data-label="March board size">9</td></tr><tr><td data-label="Agency">Mexico City</td><td data-label="March members retained">9</td><td data-label="March board size">11</td></tr><tr><td data-label="Agency">São Paulo</td><td data-label="March members retained">4</td><td data-label="March board size">9</td></tr><tr><td data-label="Agency">Buenos Aires</td><td data-label="March members retained">4</td><td data-label="March board size">7</td></tr></tbody></table></div>
+<p>Yet the aggregate profile barely moved. The March snapshot recorded 14% transit ops / 72% other management / 5% labor / 0% community / 9% elected. The August rosters, with substantially different people in the seats, produce 14% / 71% / 5% / 0% / 10%. Board composition in these agencies appears to be a property of the institutions rather than of the individuals who happen to occupy them — which is the strongest argument in this analysis that governance structure, not appointment luck, determines who ends up on a transit board.</p>
+<h3 id="cdmx-governance-as-the-story">CDMX: Governance as the Story</h3>
+<p>STC Metro's Consejo de Administración is not a board in the conventional sense — it is a committee of sitting government officials. Of its 11 seats, three are unnamed institutional placeholders (federal transport ministry, Banobras, State of Mexico) whose individual occupants are not publicly identified. The union seat, held by Fernando Espino Arévalo, is not established by the agency's statute at all; it derives from a negotiated agreement and may be session participation rather than a voting seat. Espino has led the union since the 1980s and simultaneously served six terms as a federal or local deputy between 1991 and 2015.</p>
+<h3 id="the-complete-absence-of-community-voice">The Complete Absence of Community Voice</h3>
+<p>Across 42 board members, five agencies, five countries, and two separate rounds of research five months apart, not one seat is held by a rider advocate, a community organization representative, or a demographic-group delegate. This is the most robust finding in the analysis — it survived a full re-research and independent verification of every roster. In Day's US sample the same category reaches 50% (CTA Chicago) and 20% (MTA New York).</p>
+<h3 id="medell-n-celebrated-system-political-board">Medellín: Celebrated System, Political Board</h3>
+<p>Metro de Medellín is the most internationally celebrated system in the sample, and its board is 29% elected officials — the Mayor of Medellín and the Governor of Antioquia, both ex officio — with 14% transit operations expertise resting on a single judgment call. Two of its nine seats sit vacant. In the March snapshot the board had no transit expertise at all; the difference is one new Ministry of Transport appointee whose classification is genuinely arguable (see §6).</p>
+<h3 id="buenos-aires-a-board-of-generalists">Buenos Aires: A Board of Generalists</h3>
+<p>SBASE — now SBASAU following its January 2026 conversion to a sociedad anónima — is the only board in the sample with no transit operations expertise whatsoever. All 6 directors classify as other management/policy. The March snapshot recorded this agency as having the <em>highest</em> transit expertise in the sample at 43%; that figure was wrong, and the correction is documented in §6.</p>
+<h3 id="corporate-restructuring">Corporate Restructuring</h3>
+<p>Three of the five agencies operate as corporations with formal boards rather than as government departments: Metro S.A. (Chile) files with the securities regulator, Metrô de São Paulo publishes investor-relations disclosures, and SBASE was converted to a sociedad anónima in January 2026. This corporate form is what makes their board composition legible at all — CDMX, which is not structured this way, is correspondingly the hardest to document.</p>
+<hr>
+<h2 id="5-implications-for-nita"><span class="secnum">5</span>Implications for NITA</h2>
+<p>Chicago's Northern Illinois Transit Authority (NITA) will replace the RTA in 2026, with new board appointments pending. Day's data shows that Chicago's current transit boards carry little transit operations expertise, leaning instead on generalist managers, elected officials, community advocates, and labor: CTA is 50% community advocates + 50% other management, RTA is 21% transit ops + 50% other management + 14% labor + 14% elected, and Metra is 9% transit + 55% other management + 9% community + 9% labor + 18% elected.</p>
+<p>The LatAm data suggests five things for NITA:</p>
+<ol start="1"><li><strong>Generalist management is the global default, not a Chicago failing.</strong> At 71%, LatAm boards are more management-heavy than any region in Day's dataset. If NITA's goal is simply fewer politicians, that is achievable; if the goal is more transit expertise, appointing generalist professionals will not deliver it.</li></ol>
+<ol start="2"><li><strong>Expertise requires an explicit mandate.</strong> No LatAm agency has a statutory requirement for transit-qualified directors, and none reliably has them. Where transit expertise appears it is incidental to the appointee rather than required by the seat.</li></ol>
+<ol start="3"><li><strong>Ex officio seats import politics automatically.</strong> Medellín's two elected seats and Mexico City's cabinet-secretary seats exist because the statute ties board membership to another office. NITA should decide deliberately whether it wants that channel.</li></ol>
+<ol start="4"><li><strong>Board composition is institutionally sticky.</strong> These five boards replaced most of their members in five months and produced nearly the same composition. Structure, not appointments, is the lever.</li></ol>
+<ol start="5"><li><strong>Community voice doesn't have to mean zero expertise — but zero community voice is a real choice.</strong> LatAm sits at the opposite extreme from the US: no community representation anywhere. Neither extreme looks optimal. TfL London (13% transit / 56% other / 6% labor / 13% community / 13% elected) is the one board in Day's dataset that combines all four constituencies, and is the closest thing to a middle path on offer.</li></ol>
+<hr>
+<h2 id="6-methodology-limitations"><span class="secnum">6</span>Methodology &amp; Limitations</h2>
+<h3 id="how-this-was-researched">How this was researched</h3>
+<p>Rosters were first assembled in March 2026 and fully re-researched on 27 August 2026. Every member record in <code>data/</code> carries source URLs and a confidence rating. Primary sources were preferred throughout: securities filings (CMF Chile), investor-relations disclosures and integrated reports (Metrô de São Paulo), official gazettes (Boletín Oficial de la Ciudad de Buenos Aires, Gaceta Oficial de la Ciudad de México), and governor's decrees (Antioquia).</p>
+<h3 id="corrections-to-the-march-2026-version">Corrections to the March 2026 version</h3>
+<p>The March analysis contained errors serious enough to change its headline findings. They are recorded here rather than quietly removed.</p>
+<ol start="1"><li><strong>Buenos Aires — a misattributed biography.</strong> Guillermo Seefeld was described as a former Secretary of Traffic and Transportation of Buenos Aires and former national Undersecretary of Land Transport, and classified as transit expertise on that basis. Those roles belong to <strong>Gustavo Álvarez</strong>, a different SBASE director. The source cited in support of the claim describes Seefeld only as a PRO party figure and the brother of an actor. This single error was responsible for the claim that Buenos Aires had the highest transit expertise in the sample (43%) and was "on par with Seoul Metro." It did not.</li></ol>
+<ol start="2"><li><strong>São Paulo — three people who were not on the board.</strong> The March research could not reach Metrô's governance portal (HTTP 503) and fell back on a mirror site that was serving a 2023 roster. Cleyton Ricardo Batista, Luís Felipe Vidal Arellano and João Jorge Fadel Filho were listed as directors; none was on the board in March 2026. The official Integrated Report naming the correct members had been published four days before the research date.</li></ol>
+<ol start="3"><li><strong>Mexico City — a misassigned seat.</strong> Rosario Castro Escorcia (Metrobús) was listed as holding the statutory seat reserved for the director of "Sistema de Movilidad 1." That is the former legal name of RTP, a different agency; the seat belongs to RTP's director.</li></ol>
+<ol start="4"><li><strong>Day's own figures.</strong> Comparisons to Day's 16 agencies were originally read off his published chart image. They are now computed from the member-level list he published alongside his article. Three claims about his data were wrong: RTA Chicago's composition was misstated twice, Seoul Metro's 7% community-advocate share was described as elected officials, and the regional range table contained errors in the Asia, Europe and US rows.</li></ol>
+<ol start="5"><li><strong>An unconfirmed member.</strong> Jorge Kogan was included in March as a "probable" board member inferred from a resolution signature. He is not on the current board.</li></ol>
+<h3 id="judgment-calls">Judgment calls</h3>
+<p>Seven classifications could reasonably have gone the other way. Each is recorded here and flagged in the member data, because the aggregate transit-expertise figure depends on them: classified as shown, transit operations expertise is 14%; under the stricter reading of all seven, it falls to 7%.</p>
+<ul><li><strong>Rodrigo Troncoso Olchevskaia</strong> (Santiago) — classified <em>Transit Ops/Management</em>. Judgment call. An economist rather than an engineer, but his entire research output is transit economics — bus-industry cost and efficiency, fare policy, urban transport modelling. Treated as equivalent to the transit-academic carve-out in the classification rules.</li><li><strong>Liliana Yanneth Bohórquez Avendaño</strong> (Medellín) — classified <em>Transit Ops/Management</em>. Judgment call. A civil engineer with ~25 years across Bogotá's mobility secretariat, the national road-safety agency and the Ministry of Transport, who also sits on the board of Metrolínea, Bucaramanga's BRT operator. The case against counting her is that traffic engineering and road safety are not transit operations; the case for is a quarter-century inside transport bodies plus a seat at a transit operator. Counted as transit expertise.</li><li><strong>Adrián Rubalcava Suárez</strong> (Mexico City) — classified <em>Elected Official</em>. Judgment call. He sits as an appointed director general, not as an officeholder, which would argue for Other Management/Policy. He is counted as an elected official because he was mayor of Cuajimalpa until 2024 and is a career politician, and because this matches how Day treated the same situation — his own data counts former mayors and appointed cabinet officials sitting on US and European boards as elected officials.</li><li><strong>César Cravioto Romero</strong> (Mexico City) — classified <em>Elected Official</em>. Judgment call. A former Morena senator and party faction coordinator now sitting as an appointed cabinet secretary. Counted as an elected official on the same basis as Rubalcava, and consistent with Day's treatment of Berlin's appointed transport senator on the BVG board.</li><li><strong>Daniel Rodrigues Aldigueri</strong> (São Paulo) — classified <em>Transit Ops/Management</em>. Judgment call. Holds a doctorate in Transportation and a master's in Transportation Engineering, but has spent his career in ports and civil aviation rather than urban transit. Counted as transit expertise on the strength of the transport training and infrastructure record; a stricter reading of 'worked in transit' would place him in Other Management/Policy.</li><li><strong>Mauro Antônio Gumiero Voltarelli</strong> (São Paulo) — classified <em>Transit Ops/Management</em>. Judgment call. Director of Administration, Finance and Infrastructure at SPTrans, São Paulo's bus authority, and briefly its acting president in 2025. SPTrans's own org chart puts his directorate apart from both Operations and Transport Planning, which argues for a back-office reading; holding a directorship and the acting presidency of a transit operator argues the other way. Counted as transit expertise.</li><li><strong>Víctor José Colombano</strong> (Buenos Aires) — classified <em>Other Management/Policy</em>. Judgment call, decided the other way. At appointment he declared an employee post of unspecified seniority at ADIF, the national rail infrastructure agency, and an unpaid administrative secretaryship at a rail trade association. His documented career is party political organising and public housing administration, and the conflict-of-interest filing itself describes the trade-association role as administrative support with no fixed hours. Not counted as transit expertise. Separately: his 'congresal nacional' title is a party congress delegate, not an elected seat, so Elected Official does not apply.</li></ul>
+<h3 id="structural-limitations">Structural limitations</h3>
+<ul><li><strong>The comparison is not date-matched.</strong> The five LatAm boards are current as of 27 August 2026. Day's 16 agencies are as of March 2026 and have not been re-verified here; some have likely changed.</li><li><strong>Board composition is volatile.</strong> Four of these five boards changed membership within five months. Any snapshot goes stale quickly, and agency websites lag reality — Metro de Medellín's own board page listed a member weeks after the decree replacing him.</li><li><strong>Three CDMX seats are institutional, not individual.</strong> The federal transport ministry, Banobras and State of Mexico representatives could not be identified by name and are counted as institutional seats.</li><li><strong>Not every claim is equally sourced.</strong> Records carry High, Medium or Low confidence. Low-confidence records should be treated as leads rather than findings.</li><li><strong>Category boundaries are contestable.</strong> Day's five categories were designed for his sample; applying them to state-owned enterprises in a different legal tradition requires judgment at the margins, as §6's seven calls illustrate.</li></ul></div>
+</div></main>
+
+<footer><div class="wrap">
+  <p><strong>Source data and code:</strong>
+  <a href="https://github.com/sbahamon/latam-transit-analysis" rel="noopener">github.com/sbahamon/latam-transit-analysis</a>.
+  The five JSON files in <code>data/</code> are the source of truth; these pages are
+  generated from them by <code>build_site.py</code>. The March 2026 rosters this
+  supersedes are archived in <code>data_2026_03/</code>.</p>
+  <p>Framework and the sixteen comparison agencies: Richard Day,
+  <a href="https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies" rel="noopener">A City That Works</a>.
+  Research by Claude, edited by Steffany Bahamon. MIT licensed.</p>
+</div></footer>
+<script>
+(function(){
+  var tip=document.getElementById('tip');
+  function show(e,t){tip.innerHTML=t;tip.style.opacity=1;move(e);}
+  function move(e){
+    var r=tip.getBoundingClientRect(), x=e.clientX+14, y=e.clientY+16;
+    if(x+r.width>innerWidth-8) x=e.clientX-r.width-14;
+    if(y+r.height>innerHeight-8) y=e.clientY-r.height-16;
+    tip.style.left=x+'px'; tip.style.top=y+'px';
+  }
+  document.querySelectorAll('.seg').forEach(function(s){
+    s.addEventListener('mouseenter',function(e){
+      var n=s.dataset.n?' of '+s.dataset.n+' seats':'';
+      show(e,'<b>'+s.dataset.agency+'</b>'+s.dataset.cat+' — '+s.dataset.pct+'%'+n);
+    });
+    s.addEventListener('mousemove',move);
+    s.addEventListener('mouseleave',function(){tip.style.opacity=0;});
+  });
+  document.querySelectorAll('.dot').forEach(function(d){
+    d.addEventListener('mouseenter',function(e){show(e,d.getAttribute('title'));});
+    d.addEventListener('mousemove',move);
+    d.addEventListener('mouseleave',function(){tip.style.opacity=0;});
+  });
+
+  if(matchMedia('(max-width:760px)').matches){
+    document.querySelectorAll('.trat details[open]').forEach(function(d){d.removeAttribute('open');});
+  }
+
+  var tbl=document.getElementById('members'); if(!tbl) return;
+  var body=tbl.tBodies[0], rows=[].slice.call(body.rows);
+  var fa=document.getElementById('f-agency'), fc=document.getElementById('f-cat'),
+      fq=document.getElementById('f-q'), out=document.getElementById('f-count');
+  function apply(){
+    var a=fa.value, c=fc.value, q=(fq.value||'').toLowerCase().trim(), n=0;
+    rows.forEach(function(r){
+      var ok=(!a||r.dataset.agency===a)&&(!c||r.dataset.cat===c)&&
+             (!q||r.textContent.toLowerCase().indexOf(q)>-1);
+      r.hidden=!ok; if(ok)n++;
+    });
+    out.textContent=n+' of '+rows.length+' members';
+  }
+  [fa,fc].forEach(function(el){el.addEventListener('change',apply);});
+  fq.addEventListener('input',apply);
+  [].slice.call(tbl.tHead.rows[0].cells).forEach(function(th,i){
+    th.addEventListener('click',function(){
+      var desc=th.getAttribute('aria-sort')==='ascending';
+      [].slice.call(tbl.tHead.rows[0].cells).forEach(function(o){o.removeAttribute('aria-sort');});
+      th.setAttribute('aria-sort',desc?'descending':'ascending');
+      rows.sort(function(x,y){
+        var p=x.cells[i].textContent.trim(), q2=y.cells[i].textContent.trim();
+        return (desc?-1:1)*p.localeCompare(q2,'es');
+      });
+      rows.forEach(function(r){body.appendChild(r);});
+    });
+  });
+  apply();
+})();
+</script>
+</body></html>
