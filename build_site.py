@@ -17,6 +17,8 @@ import collections
 
 ROOT = pathlib.Path(__file__).parent
 DATA = ROOT / "data"
+# Chicago comparison cohort, researched here, kept out of the LatAm composite.
+COMPARISON = ROOT / "data_chicago"
 ANALYSIS = ROOT / "latam_transit_board_analysis.md"
 OUT = ROOT / "index.html"
 
@@ -214,10 +216,10 @@ def pct(k, n):
                                                      rounding=decimal.ROUND_HALF_UP))
 
 
-def load_agencies():
-    """The five LatAm agencies, as researched. data/ is the source of truth."""
+def _load_dir(directory):
+    """Shared by both cohorts: read one JSON per agency, count, compute shares."""
     out = []
-    for path in sorted(DATA.glob("*.json")):
+    for path in sorted(directory.glob("*.json")):
         d = json.load(open(path, encoding="utf-8"))
         counts = collections.Counter(m["classification"] for m in d["members"])
         unknown = set(counts) - set(CATEGORIES)
@@ -231,11 +233,44 @@ def load_agencies():
     return out
 
 
+def load_agencies():
+    """The five LatAm agencies. data/ is the source of truth."""
+    return _load_dir(DATA)
+
+
+def load_comparison():
+    """The Chicago cohort researched here (NITA). Deliberately NOT part of the
+    LatAm composite - it is the comparator, not the subject."""
+    return _load_dir(COMPARISON)
+
+
+def alt_counts(d):
+    """Day's stated rules and his applied classifications diverge. Where a member
+    classifies differently under his applied practice, the record carries
+    day_alt_classification; this recomputes the board under that reading so both
+    can be published rather than one being asserted over the other."""
+    counts = collections.Counter(
+        m.get("day_alt_classification") or m["classification"] for m in d["members"]
+    )
+    n = len(d["members"])
+    return counts, [pct(counts.get(c, 0), n) for c in CATEGORIES]
+
+
+def has_alt(d):
+    return any(m.get("day_alt_classification") for m in d["members"])
+
+
+def count_judgment_calls(*groups):
+    """Derived, never hardcoded. The provenance statement names this number, and
+    a stale count there is a false claim about what Steffany reviewed."""
+    return sum(1 for g in groups for d in g for m in d["members"] if m.get("judgment_call"))
+
+
 def load_day():
     return json.load(open(ROOT / "day_chart_reference.json", encoding="utf-8"))
 
 
-def bar(pct, label, sub="", is_latam=False, n=None):
+def bar(pct, label, sub="", is_own=False, n=None):
     """One stacked row. 2px surface gaps between segments (never a border);
     the free end of the last segment gets the 4px round."""
     segs = [(i, p) for i, p in enumerate(pct) if p > 0]
@@ -250,7 +285,7 @@ def bar(pct, label, sub="", is_latam=False, n=None):
             f' data-cat="{html.escape(CATEGORIES[i])}" data-pct="{p}"'
             f' data-agency="{html.escape(label)}"{f" data-n={n}" if n else ""}>{text}</i>'
         )
-    cls = "row latam" if is_latam else "row"
+    cls = "row own" if is_own else "row"
     subhtml = f'<span class="sub">{html.escape(sub)}</span>' if sub else ""
     return (
         f'<div class="{cls}"><div class="rowlab">{html.escape(label)}{subhtml}</div>'
@@ -258,19 +293,36 @@ def bar(pct, label, sub="", is_latam=False, n=None):
     )
 
 
-def build_chart(agencies, day):
+def build_chart(agencies, day, comparison):
+    """Every row carries the date it was verified. Day's sixteen are March 2026
+    and were not re-verified here; the rows researched for this site are August."""
     parts = []
     for region in day["regions"]:
         parts.append(f'<div class="region"><h4>{html.escape(region["region"])}'
-                     f'<span class="rcount">{len(region["agencies"])} agencies · Day</span></h4>')
+                     f'<span class="rcount">{len(region["agencies"])} agencies · '
+                     f'Day · Mar 2026</span></h4>')
         for a in region["agencies"]:
             parts.append(bar(a["pct"], a["name"], n=a.get("n")))
         parts.append("</div>")
-    parts.append('<div class="region new"><h4>Latin America'
-                 '<span class="rcount">5 agencies · this research</span></h4>')
+    parts.append(f'<div class="region new"><h4>Latin America'
+                 f'<span class="rcount">{len(agencies)} agencies · this research · '
+                 f'Aug 2026</span></h4>')
     for d in agencies:
-        parts.append(bar(d["pct"], d["city"], sub=d["country"], is_latam=True,
+        parts.append(bar(d["pct"], d["city"], sub=d["country"], is_own=True,
                          n=len(d["members"])))
+    parts.append("</div>")
+    parts.append(f'<div class="region new"><h4>Chicago'
+                 f'<span class="rcount">{len(comparison)} agency · this research · '
+                 f'Aug 2026</span></h4>')
+    for d in comparison:
+        parts.append(bar(d["pct"], d["agency_short"], sub=d["country"], is_own=True,
+                         n=len(d["members"])))
+        # Both readings are published rather than one being asserted. The second
+        # row is the same twenty people under Day's applied practice.
+        if has_alt(d):
+            _, apct = alt_counts(d)
+            parts.append(bar(apct, d["agency_short"], sub="under Day's applied practice",
+                             is_own=True, n=len(d["members"])))
     parts.append("</div>")
     return "".join(parts)
 
@@ -322,15 +374,26 @@ def build_table(agencies):
             jc = ('<a class="jc" href="analysis.html#judgment-calls" '
                   'title="This classification could reasonably have gone the other way. '
                   'Read what was weighed.">judgment call</a>') if m.get("judgment_call") else ""
+            alt = ""
+            if m.get("day_alt_classification"):
+                basis = m.get("day_alt_basis", "")
+                alt = ('<span class="altcat">Under Day\'s applied practice: <b>'
+                       + html.escape(SHORT[m["day_alt_classification"]]) + "</b>"
+                       + (" — " + html.escape(basis) if basis else "") + "</span>")
             note = ('<span class="jcnote">' + html.escape(m["classification_note"]) + "</span>"
                     if m.get("classification_note") else "")
+            # Announced is not the same as seated. Where a seat is still pending a
+            # confirmation vote, the row says so rather than implying it is filled.
+            cstat = ('<span class="cstat">' + html.escape(m["confirmation_status"]) + "</span>"
+                     if m.get("confirmation_status") else "")
             rows.append(
                 f'<tr data-agency="{html.escape(d["city"])}"'
                 f' data-cat="{html.escape(m["classification"])}"'
                 f' data-conf="{html.escape(conf)}">'
                 f'<td class="tname" data-label="Member">{html.escape(m["name"])}</td>'
                 f'<td data-label="Agency">{html.escape(d["city"])}</td>'
-                f'<td class="tpos" data-label="Position">{html.escape(m.get("position",""))}</td>'
+                f'<td class="tpos" data-label="Position">{html.escape(m.get("position",""))}'
+                f'{cstat}</td>'
                 f'<td class="tcat" data-label="Classification"><i class="sw s{cat_i}"></i>'
                 f'{html.escape(SHORT[m["classification"]])}{jc}</td>'
                 f'<td data-label="Confidence"><span class="conf c{html.escape(conf.lower())}">'
@@ -338,7 +401,7 @@ def build_table(agencies):
                 f'<td class="tsrc" data-label="Sources">{srcs or "—"}</td>'
                 f'<td class="trat" data-label="Rationale"><details open>'
                 f'<summary>Why this classification</summary>'
-                f'{html.escape(m.get("rationale",""))}{note}</details></td></tr>'
+                f'{html.escape(m.get("rationale",""))}{note}{alt}</details></td></tr>'
             )
     return "".join(rows)
 
@@ -446,7 +509,12 @@ h2.sec{margin:0; font-size:clamp(25px,3.4vw,38px)}
 .region.new h4{color:var(--s0)}
 .row{display:grid; grid-template-columns:172px 1fr; align-items:center; gap:16px; padding:5px 0}
 .rowlab{font-family:Archivo,sans-serif; font-variation-settings:'wdth' 104; font-size:14px; font-weight:500; line-height:1.15; text-align:right; color:var(--ink2)}
-.row.latam .rowlab{font-weight:800; color:var(--ink)}
+.altcat{display:block; margin-top:7px; padding-top:7px; border-top:1px dotted var(--rule);
+  font-size:12px; line-height:1.5; color:var(--ink2)}
+.cstat{display:block; margin-top:5px; font-size:11.5px; line-height:1.45; color:var(--ink3)}
+.mgh{margin:38px 0 6px}
+.mgroup[hidden]{display:none}
+.row.own .rowlab{font-weight:800; color:var(--ink)}
 .rowlab .sub{display:block; font-size:10.5px; color:var(--ink3); text-transform:uppercase; letter-spacing:.05em}
 /* 2px gaps in the surface colour separate segments - never a border. */
 .track{display:flex; gap:2px; height:22px; align-items:stretch}
@@ -640,31 +708,44 @@ JS = """
     document.querySelectorAll('.trat details[open]').forEach(function(d){d.removeAttribute('open');});
   }
 
-  var tbl=document.getElementById('members'); if(!tbl) return;
-  var body=tbl.tBodies[0], rows=[].slice.call(body.rows);
+  // Two tables (Latin America, NITA) kept deliberately separate so no total is
+  // ever computed across both. The filters span them; the counts do not merge.
+  var tbls=[].slice.call(document.querySelectorAll('table.mtable'));
+  if(!tbls.length) return;
+  var groups=tbls.map(function(t){
+    return {tbl:t, body:t.tBodies[0], rows:[].slice.call(t.tBodies[0].rows),
+            box:t.closest('.mgroup')};
+  });
+  var all=groups.reduce(function(a,g){return a.concat(g.rows);},[]);
   var fa=document.getElementById('f-agency'), fc=document.getElementById('f-cat'),
       fq=document.getElementById('f-q'), out=document.getElementById('f-count');
   function apply(){
     var a=fa.value, c=fc.value, q=(fq.value||'').toLowerCase().trim(), n=0;
-    rows.forEach(function(r){
-      var ok=(!a||r.dataset.agency===a)&&(!c||r.dataset.cat===c)&&
-             (!q||r.textContent.toLowerCase().indexOf(q)>-1);
-      r.hidden=!ok; if(ok)n++;
+    groups.forEach(function(g){
+      var shown=0;
+      g.rows.forEach(function(r){
+        var ok=(!a||r.dataset.agency===a)&&(!c||r.dataset.cat===c)&&
+               (!q||r.textContent.toLowerCase().indexOf(q)>-1);
+        r.hidden=!ok; if(ok){shown++; n++;}
+      });
+      if(g.box) g.box.hidden = shown===0;
     });
-    out.textContent=n+' of '+rows.length+' members';
+    out.textContent=n+' of '+all.length+' members';
   }
   [fa,fc].forEach(function(el){el.addEventListener('change',apply);});
   fq.addEventListener('input',apply);
-  [].slice.call(tbl.tHead.rows[0].cells).forEach(function(th,i){
-    th.addEventListener('click',function(){
-      var desc=th.getAttribute('aria-sort')==='ascending';
-      [].slice.call(tbl.tHead.rows[0].cells).forEach(function(o){o.removeAttribute('aria-sort');});
-      th.setAttribute('aria-sort',desc?'descending':'ascending');
-      rows.sort(function(x,y){
-        var p=x.cells[i].textContent.trim(), q2=y.cells[i].textContent.trim();
-        return (desc?-1:1)*p.localeCompare(q2,'es');
+  groups.forEach(function(g){
+    [].slice.call(g.tbl.tHead.rows[0].cells).forEach(function(th,i){
+      th.addEventListener('click',function(){
+        var desc=th.getAttribute('aria-sort')==='ascending';
+        [].slice.call(g.tbl.tHead.rows[0].cells).forEach(function(o){o.removeAttribute('aria-sort');});
+        th.setAttribute('aria-sort',desc?'descending':'ascending');
+        g.rows.sort(function(x,y){
+          var p=x.cells[i].textContent.trim(), q2=y.cells[i].textContent.trim();
+          return (desc?-1:1)*p.localeCompare(q2,'es');
+        });
+        g.rows.forEach(function(r){g.body.appendChild(r);});
       });
-      rows.forEach(function(r){body.appendChild(r);});
     });
   });
   apply();
@@ -681,13 +762,21 @@ applied to Richard Day's five categories — not an official designation by any 
 re-verified and fully re-researched on 27 August 2026</strong>. That second pass found
 real errors in the first, including two biographies attributed to the wrong people. They
 are documented in the methodology section below rather than quietly removed.</p>
-<p><strong>Steffany Bahamon adjudicated the seven classification calls that could
+<p>The <strong>NITA board</strong> was researched separately on 27 August 2026 from the
+appointing authorities' own announcements. Richard Day
+<a href="https://citythatworks.substack.com/p/lets-grade-some-nita-appointments" rel="noopener">graded
+these appointments</a> on the same day, but he <strong>did not classify them into his five
+categories</strong> — so the NITA classifications here are Claude's, not his. Five of the
+twenty seats are the Governor's appointees and were <strong>still awaiting Illinois Senate
+confirmation</strong> when this was published; that status is recorded on each member's row.</p>
+<p><strong>Steffany Bahamon adjudicated the __JC__ classification calls that could
 reasonably have gone either way</strong>, and each is flagged on this page. Beyond those,
 this has <strong>not been verified line by line</strong>. Every member record carries a
 confidence rating and its source links, so any individual claim can be checked. Treat
 medium- and low-confidence rows as leads, not findings.</p>
-<p>Board composition changes fast — four of these five boards replaced members within five
-months. These rosters are current as of 27 August 2026 and will go stale.</p>"""
+<p>Board composition changes fast — four of the five Latin American boards replaced members
+within five months, and the entire Chicago regional system was reorganised in the same
+period. These rosters are current as of 27 August 2026 and will go stale.</p>"""
 
 NAV = """<nav class="site"><div class="wrap">
   <a class="home" href="index.html">Who runs Latin America's metros</a>
@@ -701,8 +790,10 @@ NAV = """<nav class="site"><div class="wrap">
 STRIP = """<div class="strip"><div class="wrap"><p>
 <strong>AI-assisted research.</strong> These rosters and classifications were researched
 and written by Claude (Anthropic's AI), verified 27 August 2026, and are Claude's judgment
-applied to Richard Day's categories — not an official designation by any agency. Seven
-classification calls were adjudicated by Steffany Bahamon and are flagged individually.
+applied to Richard Day's categories — not an official designation by any agency. Day
+published the categories and graded the NITA appointments, but did not classify them; those
+calls are Claude's. __JC__ classification calls were adjudicated by Steffany Bahamon and are
+flagged individually.
 <a href="index.html#how-this-was-made">Read the full statement</a>.
 </p></div></div>"""
 
@@ -727,10 +818,14 @@ __BODY__
   <p><strong>Source data and code:</strong>
   <a href="https://github.com/sbahamon/latam-transit-analysis" rel="noopener">github.com/sbahamon/latam-transit-analysis</a>.
   The five JSON files in <code>data/</code> are the source of truth; these pages are
-  generated from them by <code>build_site.py</code>. The March 2026 rosters this
-  supersedes are archived in <code>data_2026_03/</code>.</p>
+  generated from them by <code>build_site.py</code>; <code>data_chicago/</code> holds the
+  NITA board. The March 2026 rosters this supersedes are archived in
+  <code>data_2026_03/</code>.</p>
   <p>Framework and the sixteen comparison agencies: Richard Day,
-  <a href="https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies" rel="noopener">A City That Works</a>.
+  <a href="https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies" rel="noopener">“Put real experts in charge of transit”</a>
+  and
+  <a href="https://citythatworks.substack.com/p/lets-grade-some-nita-appointments" rel="noopener">“Let's grade some NITA appointments”</a>,
+  A City That Works.
   Research by Claude, edited by Steffany Bahamon. MIT licensed.</p>
 </div></footer>
 <script>__JS__</script>
@@ -739,12 +834,14 @@ __BODY__
 
 INDEX_BODY = """
 <header class="mast"><div class="wrap">
-  <p class="eyebrow">Addendum · A City That Works · March 2026</p>
+  <p class="eyebrow">Addendum · A City That Works</p>
   <h1 class="title dsp">Who runs Latin&nbsp;America's metros</h1>
   <p class="standfirst">Richard Day found that the world's best transit systems are run by
   boards of transit experts, and the worst by boards of politicians. He measured sixteen
   agencies across Asia, Europe and the United States. He measured none in Latin America.
-  This is that missing column: <strong>__N__ board members, five agencies, five countries.</strong></p>
+  This is that missing column: <strong>__N__ board members, five agencies, five countries.</strong>
+  Alongside them sits the board that prompted the question in Chicago: <strong>all __NITA_N__
+  members of the new NITA</strong>, classified the same way and verified the same day.</p>
   <div class="byline">
     <span class="eyebrow">Research by Claude (AI)</span>
     <span class="eyebrow">Edited by Steffany Bahamon</span>
@@ -763,9 +860,10 @@ INDEX_BODY = """
     <div class="legend" style="margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--rule2);border-bottom:0">__LEGEND__</div>
     <div class="herofoot">
       <span class="zero dsp">0</span>
-      <span class="zerolab">community advocates among all __N__ members. Not one seat, in any
-      of the five agencies, in either the March or the August roster. In Day's US sample the
-      same category runs as high as 50%.</span>
+      <span class="zerolab">community advocates among all __N__ <strong>Latin American</strong>
+      board members. Not one seat, in any of the five agencies, in either the March or the
+      August roster. In Day's US sample the same category runs as high as 50%, and Chicago's
+      new NITA board has one — so this is a Latin American pattern, not a universal one.</span>
     </div>
   </div>
 </div></section>
@@ -773,7 +871,9 @@ INDEX_BODY = """
 <section><div class="wrap">
   <div class="sechead"><h2 class="sec dsp">A fourth region on Day's chart</h2></div>
   <p class="lede">The five Latin American agencies placed alongside Day's sixteen, same
-  five categories, same measure. Hover any segment for the exact figure.</p>
+  five categories, same measure — plus Chicago's new NITA board, the comparison that
+  prompted the question. Hover any segment for the exact figure. Note the dates: the rows
+  researched here are August 2026, Day's are March.</p>
   <div class="chartbox">
     <div class="legend">__LEGEND__</div>
     __CHART__
@@ -796,7 +896,7 @@ __STRIP__
 <main><div class="wrap">
   <div class="pagehead">
     <p class="eyebrow">The evidence</p>
-    <h1 class="dsp">The __N__ members</h1>
+    <h1 class="dsp">The __N__ members, and NITA&#8217;s __NITA_N__</h1>
     <p class="lede">Every classification with its rationale, confidence rating and sources.
     If a claim on this site matters to you, check it here. Rows marked
     <span class="jc">judgment call</span> could reasonably have been classified the other
@@ -808,11 +908,28 @@ __STRIP__
     <input id="f-q" type="search" placeholder="Search names, roles, rationale…" aria-label="Search members">
     <span class="count" id="f-count"></span>
   </div>
-  <div class="scroll"><table id="members" class="stack">
-    <thead><tr><th>Member</th><th>Agency</th><th>Position</th><th>Classification</th>
-    <th>Confidence</th><th>Sources</th><th>Rationale</th></tr></thead>
-    <tbody>__ROWS__</tbody>
-  </table></div>
+  <div class="mgroup">
+    <h2 class="sec dsp mgh">Latin America · __N__ members</h2>
+    <p class="lede">The five agencies this study is about. Rosters verified 27 August 2026.</p>
+    <div class="scroll"><table id="members" class="stack mtable">
+      <thead><tr><th>Member</th><th>Agency</th><th>Position</th><th>Classification</th>
+      <th>Confidence</th><th>Sources</th><th>Rationale</th></tr></thead>
+      <tbody>__ROWS__</tbody>
+    </table></div>
+  </div>
+  <div class="mgroup">
+    <h2 class="sec dsp mgh">Chicago · NITA · __NITA_N__ members</h2>
+    <p class="lede">The comparison board, verified the same day. Richard Day graded these
+    appointments but did not classify them, so these classifications are Claude's rather than
+    his. The Governor's five appointees were still awaiting Illinois Senate confirmation;
+    each row says where it stands. These members are counted separately and are
+    <strong>not</strong> part of the __N__-member Latin American totals anywhere on this site.</p>
+    <div class="scroll"><table id="members-nita" class="stack mtable">
+      <thead><tr><th>Member</th><th>Agency</th><th>Position</th><th>Classification</th>
+      <th>Confidence</th><th>Sources</th><th>Rationale</th></tr></thead>
+      <tbody>__NITA_ROWS__</tbody>
+    </table></div>
+  </div>
 </div></main>
 """
 
@@ -838,18 +955,27 @@ FAVICON = ("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%
            "width%3D%278%27%20height%3D%272.4%27%20rx%3D%27.6%27%20fill%3D%27%23733b97%27/%3E%3C/svg%3E")
 
 
-CAPTION = """<p class="chartnote"><strong>The two halves of this chart are five months apart.</strong>
-    The sixteen Asian, European and US rows are Richard Day's work, as of March 2026,
-    computed from the
+CAPTION = """<p class="chartnote"><strong>Every row carries its own date, and they are not
+    all the same date.</strong> The sixteen Asian, European and US rows are Richard Day's
+    work, <strong>as of March 2026</strong>, computed from the
     <a href="https://docs.google.com/spreadsheets/d/12KmU7QuP1y_RL8nuinrsIOYETISfXiLqXqi0EtSa_1Y/edit?gid=0" rel="noopener">member-level list he published</a>
     alongside
     <a href="https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies" rel="noopener">“Put real experts in charge of transit”</a>
     (A City That Works, March 2026) — 222 board members — rather than read off his chart
-    image. His agencies have not been re-verified here and some have likely changed since.
-    The five Latin American rows are computed from the member records and are current as of
-    <strong>27 August 2026</strong>. Two of Day's rows sum to 99% or 101% from rounding; one
-    figure differs from his published chart, where LTA Singapore's other-management share is
-    76% in his data (13 of 17 seats) but labelled 77%. Chart rebuilt, not reproduced.</p>"""
+    image. They have not been re-verified here.</p>
+    <p class="chartnote"><strong>His four Chicago rows describe a system that has since been
+    reorganised.</strong> The RTA is being wound up and replaced by NITA, and the CTA, Metra
+    and Pace boards were re-appointed in July and August 2026. Those four rows are kept here
+    as Day published them, as the pre-reform baseline — not as a description of who governs
+    Chicago transit today. New CTA, Metra and Pace rows are deliberately <em>not</em>
+    published: more service-board appointments were still outstanding at the time of writing,
+    and a board that cannot be confirmed to its full seat list does not get a row on this
+    site.</p>
+    <p class="chartnote">The five Latin American rows and the NITA row are computed from the
+    member records on this site and are current as of <strong>27 August 2026</strong>. Two of
+    Day's rows sum to 99% or 101% from rounding; one figure differs from his published chart,
+    where LTA Singapore's other-management share is 76% in his data (13 of 17 seats) but
+    labelled 77%. Chart rebuilt, not reproduced.</p>"""
 
 
 def build_findings(agencies, total, counts):
@@ -858,10 +984,11 @@ def build_findings(agencies, total, counts):
     other = pct(counts.get("Other Management/Policy", 0), total)
     transit = pct(counts.get("Transit Ops/Management", 0), total)
     items = [
-        ("0", "community advocates",
-         f"Across {total} members, five agencies, five countries and two rounds of research "
-         "five months apart, not one seat belongs to a rider advocate or community "
-         "organisation. In Day's US sample the same category reaches 50%."),
+        ("0", "community advocates in Latin America",
+         f"Across {total} Latin American members, five agencies, five countries and two rounds "
+         "of research five months apart, not one seat belongs to a rider advocate or community "
+         "organisation. In Day's US sample the same category reaches 50%. Chicago's new NITA "
+         "board, counted separately below, has one."),
         (f"{other}%", "generalist managers",
          "Finance people, lawyers, career civil servants and non-transit engineers. Higher "
          "than any single region in Day's dataset, and the profile held steady even as the "
@@ -870,7 +997,13 @@ def build_findings(agencies, total, counts):
          f"{counts.get('Transit Ops/Management', 0)} of {total} members. Three of those six "
          "rest on judgment calls that could have gone the other way — under the stricter "
          "reading this figure is 7%, which is why it is published with its workings."),
-        ("4 of 5", "boards changed since March",
+        ("2 of 20", "NITA directors with transit operations experience",
+         "Chicago's new regional board replaced the RTA in 2026. Under the classification "
+         "rules used throughout this site, two of its twenty directors have transit "
+         "operations experience, and only one of those is unambiguous. Under Richard Day's "
+         "looser applied practice the figure is five. Both readings are published, because "
+         "the difference is the whole argument."),
+        ("4 of 5", "Latin American boards changed since March",
          "Santiago replaced its entire board; Medellín, São Paulo and Buenos Aires each "
          "replaced or lost members. The aggregate composition barely moved, which suggests "
          "structure rather than appointments determines who governs transit."),
@@ -899,17 +1032,26 @@ def render(body, title, desc, current):
 
 def main():
     agencies = load_agencies()
+    comparison = load_comparison()
     day = load_day()
     total, counts = build_composite(agencies)
     # Deliberate: 42 across the 2026-08-27 rosters (Medellin carries 2 vacant seats).
     # Update when data/ changes, so a silent roster edit cannot slip through unnoticed.
     if total != 42:
         raise SystemExit(f"expected 42 members, found {total} — update this check if data/ changed")
+    # Same guard for the Chicago cohort: NITA is a 20-seat board, 5 each from the
+    # Governor, Cook County, Chicago and the collar counties. Update if data_chicago/ changes.
+    nita_total = sum(len(d["members"]) for d in comparison)
+    if nita_total != 20:
+        raise SystemExit(f"expected 20 NITA members, found {nita_total} — update this "
+                         "check if data_chicago/ changed")
+    # Derived, so the provenance line can never claim a number Steffany did not review.
+    jc = count_judgment_calls(agencies, comparison)
 
     prose = markdown_to_html(ANALYSIS.read_text(encoding="utf-8"))
     opt_agency = "".join(
         f'<option value="{html.escape(d["city"])}">{html.escape(d["city"])}</option>'
-        for d in sorted(agencies, key=lambda x: x["city"])
+        for d in sorted(agencies + comparison, key=lambda x: x["city"])
     )
     opt_cat = "".join(
         f'<option value="{html.escape(c)}">{html.escape(SHORT[c])}</option>'
@@ -921,7 +1063,7 @@ def main():
             render(INDEX_BODY
                    .replace("__PROV__", PROVENANCE)
                    .replace("__HERO__", build_hero(agencies))
-                   .replace("__CHART__", build_chart(agencies, day))
+                   .replace("__CHART__", build_chart(agencies, day, comparison))
                    .replace("__CAPTION__", CAPTION)
                    .replace("__FINDINGS__", build_findings(agencies, total, counts))
                    .replace("__LEGEND__", build_legend()),
@@ -933,11 +1075,12 @@ def main():
             render(MEMBERS_BODY
                    .replace("__STRIP__", STRIP)
                    .replace("__ROWS__", build_table(agencies))
+                   .replace("__NITA_ROWS__", build_table(comparison))
                    .replace("__OPT_AGENCY__", opt_agency)
                    .replace("__OPT_CAT__", opt_cat),
                    f"The {total} Members · Who Runs Latin America's Metros",
-                   f"All {total} board members with classification, rationale, confidence "
-                   "rating and sources.",
+                   f"All {total} Latin American board members plus the {nita_total} NITA "
+                   "appointees, with classification, rationale, confidence and sources.",
                    "MEMBERS")),
         "analysis.html": (
             render(ANALYSIS_BODY
@@ -945,12 +1088,14 @@ def main():
                    .replace("__PROSE__", prose),
                    "Full Analysis · Who Runs Latin America's Metros",
                    "The complete write-up, including corrections to the March 2026 version "
-                   "and the seven classification judgment calls.",
+                   f"and the {jc} classification judgment calls.",
                    "ANALYSIS")),
     }
 
     for name, page in pages.items():
-        page = page.replace("__N__", str(total))
+        page = (page.replace("__NITA_N__", str(nita_total))
+                    .replace("__N__", str(total))
+                    .replace("__JC__", str(jc)))
         leaks = verify_no_markdown_leaked(page)
         if leaks:
             raise SystemExit(f"{name}: markdown leaked — " + "; ".join(leaks))
@@ -961,9 +1106,15 @@ def main():
         print(f"wrote {name:16s} {len(page):>8,} bytes")
 
     print(f"\n  {total} members, {len(agencies)} LatAm agencies + "
-          f"{sum(len(r['agencies']) for r in day['regions'])} from Day")
+          f"{sum(len(r['agencies']) for r in day['regions'])} from Day"
+          f" + {nita_total} NITA ({len(comparison)} agency, this research)")
     for c in CATEGORIES:
         print(f"  {c:26s} {counts.get(c,0):2d}  {pct(counts.get(c,0), total):3d}%")
+    print(f"\n  NITA, kept out of the composite above:")
+    for d in comparison:
+        for i, c in enumerate(CATEGORIES):
+            print(f"  {c:26s} {d['counts'].get(c,0):2d}  {d['pct'][i]:3d}%")
+    print(f"\n  {jc} judgment calls across both cohorts")
 
 
 if __name__ == "__main__":

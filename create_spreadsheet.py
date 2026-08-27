@@ -4,6 +4,9 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
+# The Chicago comparison cohort (NITA). Kept in its own sheet so the LatAm
+# summary percentages can never absorb it.
+COMPARISON_DIR = os.path.join(os.path.dirname(__file__), "data_chicago")
 OUTPUT = os.path.join(os.path.dirname(__file__), "latam_transit_boards.xlsx")
 
 CATEGORIES = [
@@ -39,11 +42,11 @@ THIN_BORDER = Border(
     bottom=Side(style="thin", color="D9D9D9"),
 )
 
-def load_agencies():
+def load_agencies(directory=DATA_DIR):
     agencies = []
-    for fname in sorted(os.listdir(DATA_DIR)):
+    for fname in sorted(os.listdir(directory)):
         if fname.endswith(".json"):
-            with open(os.path.join(DATA_DIR, fname)) as f:
+            with open(os.path.join(directory, fname)) as f:
                 agencies.append(json.load(f))
     return agencies
 
@@ -59,16 +62,16 @@ def style_data_cell(cell, wrap=False):
     cell.border = THIN_BORDER
     cell.alignment = Alignment(vertical="top", wrap_text=wrap)
 
-def create_board_members_sheet(wb, agencies):
-    ws = wb.active
-    ws.title = "Board Members"
+def create_board_members_sheet(wb, agencies, title="Board Members", ws=None):
+    ws = wb.active if ws is None else ws
+    ws.title = title
 
     headers = [
         "Agency", "City", "Country", "Member Name", "Position",
         "Appointment Method", "Professional Background", "Education",
         "Day Classification", "Judgment Call?", "Why This Call",
         "Classification Rationale", "Source URL(s)",
-        "Confidence Level", "Date Verified"
+        "Confidence Level", "Date Verified", "Confirmation Status"
     ]
     for col, h in enumerate(headers, 1):
         ws.cell(row=1, column=col, value=h)
@@ -86,7 +89,8 @@ def create_board_members_sheet(wb, agencies):
                 "Yes" if m.get("judgment_call") else "",
                 m.get("classification_note", ""),
                 m.get("rationale", ""),
-                sources, m.get("confidence", ""), agency.get("date_verified", "")
+                sources, m.get("confidence", ""), agency.get("date_verified", ""),
+                m.get("confirmation_status", "")
             ]
             for col, val in enumerate(values, 1):
                 cell = ws.cell(row=row, column=col, value=val)
@@ -100,7 +104,7 @@ def create_board_members_sheet(wb, agencies):
 
             row += 1
 
-    col_widths = [35, 14, 12, 28, 32, 30, 50, 35, 24, 50, 60, 14, 14]
+    col_widths = [35, 14, 12, 28, 32, 30, 50, 35, 24, 12, 50, 60, 40, 14, 14, 40]
     for i, w in enumerate(col_widths, 1):
         ws.column_dimensions[get_column_letter(i)].width = w
 
@@ -163,12 +167,18 @@ def create_agency_summary_sheet(wb, agencies):
 
 def main():
     agencies = load_agencies()
+    comparison = load_agencies(COMPARISON_DIR)
     wb = Workbook()
     create_board_members_sheet(wb, agencies)
+    # Deliberately a separate sheet, not extra rows on "Board Members": the
+    # Agency Summary percentages describe Latin America and must stay that way.
+    create_board_members_sheet(wb, comparison, title="NITA Board",
+                               ws=wb.create_sheet("NITA Board"))
     create_agency_summary_sheet(wb, agencies)
     wb.save(OUTPUT)
     print(f"Created {OUTPUT}")
     print(f"  {sum(len(a['members']) for a in agencies)} board members across {len(agencies)} agencies")
+    print(f"  {sum(len(a['members']) for a in comparison)} NITA members on a separate sheet")
 
 if __name__ == "__main__":
     main()

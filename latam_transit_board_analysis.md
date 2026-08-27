@@ -4,6 +4,8 @@
 
 *Board rosters verified 27 August 2026. An earlier version of this analysis, based on March 2026 rosters, is archived in `data_2026_03/`; see §6 for what changed and why.*
 
+*This version adds the 20-member board of Chicago's new Northern Illinois Transit Authority (§2.6), verified the same day. NITA is a comparison agency and is **not** counted in the 42-member Latin American totals.*
+
 ---
 
 ## 1. Introduction
@@ -170,6 +172,47 @@ Day's data shows:
 
 **Notes**: SBASE was converted into a sociedad anónima, SBASAU, by decree in January 2026. The board has six seats. Two members are new since March: Mario Sebastián Sabugo, and Víctor José Colombano, designated at an ordinary general assembly on 15 January 2026 and confirmed here through his own conflict-of-interest filing. Three people recorded in March — Eduardo José Moreno, Bernarda Balestra and Jorge Kogan — are no longer on the board; Kogan's membership had only ever been inferred from a resolution signature and is now resolved as not current. Statutory auditors (the Comisión Fiscalizadora) and executive titles such as director general are excluded, since neither is a board seat.
 
+### NITA --- Chicago, United States --- 20 members
+
+**Governance model**: Regional authority created by the Northern Illinois Transit Authority Act, replacing the Regional Transportation Authority and holding financial, budgetary and planning oversight of the CTA, Metra and Pace. Twenty seats, five each from the Governor of Illinois (with the advice and consent of the Illinois Senate), the Cook County Board President, the Mayor of Chicago, and the five collar counties (one each from DuPage, Kane, Lake, McHenry and Will). No separately appointed chair --- the board elects its own at its first meeting in September 2026. Seventeen of the twenty directors also hold a seat on the CTA, Metra or Pace board, a deliberate cross-appointment intended to force coordination. There is no designated labour seat, no rider or community seat, and no statutory requirement that any director hold transit qualifications.
+
+| Member | Appointed by | Classification | Confidence |
+|--------|--------------|----------------|------------|
+| Romayne Brown | Cook County | Transit Ops/Management | High |
+| Luis Montgomery | Cook County | Transit Ops/Management *(judgment call)* | Medium |
+| Dee Atkins | Chicago | Community Advocate *(judgment call)* | Medium |
+| Brian Dahl | Kane County | Labor Representative *(judgment call)* | Medium |
+| Rory Hoskins | Cook County | Elected Official | Medium |
+| John Noak | Will County | Elected Official | High |
+| Brian Sager | McHenry County | Elected Official | Medium |
+| David Pileski | DuPage County | Elected Official | High |
+| Oswaldo Alvarez | Chicago | Other Management/Policy *(judgment call)* | High |
+| Lester Barclay | Chicago | Other Management/Policy *(judgment call)* | High |
+| Nedra Sims Fears | Governor | Other Management/Policy *(judgment call)* | Medium |
+| Gary Gordon | Lake County | Other Management/Policy | High |
+| Natasha Jenkins | Chicago | Other Management/Policy *(judgment call)* | High |
+| Tom Kotarac | Cook County | Other Management/Policy | High |
+| Dennis Mondero | Chicago | Other Management/Policy *(judgment call)* | High |
+| Rosa Ortiz | Governor | Other Management/Policy | High |
+| Bashir Qaasim | Governor | Other Management/Policy | Medium |
+| Nirali Shah | Governor | Other Management/Policy *(judgment call)* | Medium |
+| Vanessa Uribe | Governor | Other Management/Policy | Medium |
+| Diane Williams | Cook County | Other Management/Policy *(judgment call)* | High |
+
+Two readings of Day's categories give materially different answers for this board, so both are published (see §6):
+
+| Category | Written rules | Day's applied practice |
+|----------|---------------|------------------------|
+| Transit Ops/Management | 2 (10%) | 5 (25%) |
+| Other Management/Policy | 12 (60%) | 5 (25%) |
+| Labor Representative | 1 (5%) | 1 (5%) |
+| Community Advocate | 1 (5%) | 5 (25%) |
+| Elected Official | 4 (20%) | 4 (20%) |
+
+**Closest comparison in the data**: under the written rules, two boards tie exactly for closest to NITA's 10% / 60% / 5% / 5% / 20% --- Metra (9% / 55% / 9% / 9% / 18%), one of the three service boards NITA now oversees, and STC Metro in Mexico City (9% / 64% / 9% / 0% / 18%). Under Day's applied practice nothing in the dataset is close: the nearest rows, RATP Paris and TfL London, are both far off, and NITA's 25% / 25% / 5% / 25% / 20% under that reading is the most evenly spread board in the study.
+
+**Notes**: All 20 seats are filled, but announced is not the same as seated. The Governor's five appointees still required Illinois Senate confirmation on the verification date, and the Senate had no session day between the 21 August announcement and 27 August. Chicago's five were confirmed by the City Council on 15 July 2026 and Cook County's five by the County Board on 16 July 2026; for three collar-county appointees no confirmation vote could be found. Most seats take effect on 1 September 2026. One appointee's employer could not be established from any source that also names him as the appointee, and is recorded as unknown rather than guessed.
+
 ---
 
 ## 3. Comparative Analysis
@@ -257,29 +300,84 @@ Three of the five agencies operate as corporations with formal boards rather tha
 
 ---
 
-## 5. Implications for NITA
+## 5. NITA: The Board That Prompted the Question
 
-Chicago's Northern Illinois Transit Authority (NITA) will replace the RTA in 2026, with new board appointments pending. Day's data shows that Chicago's current transit boards carry little transit operations expertise, leaning instead on generalist managers, elected officials, community advocates, and labor: CTA is 50% community advocates + 50% other management, RTA is 21% transit ops + 50% other management + 14% labor + 14% elected, and Metra is 9% transit + 55% other management + 9% community + 9% labor + 18% elected.
+When the first version of this analysis was written, NITA's board did not exist and this section was a set of predictions. The appointments have now been made --- all twenty seats, by four sets of appointing authorities, between June and August 2026 --- so the predictions can be checked.
 
-The LatAm data suggests five things for NITA:
+### What the reform actually changed
 
-1. **Generalist management is the global default, not a Chicago failing.** At 71%, LatAm boards are more management-heavy than any region in Day's dataset. If NITA's goal is simply fewer politicians, that is achievable; if the goal is more transit expertise, appointing generalist professionals will not deliver it.
+Day's March 2026 data covers the four boards NITA replaces or oversees: the RTA (14 seats), CTA (6), Metra (11) and Pace (13). Across those 44 pre-reform seats his classifications give (his RTA roster is one director short of the 15 then serving --- see §6 --- so these are his counts, not a recount):
 
-2. **Expertise requires an explicit mandate.** No LatAm agency has a statutory requirement for transit-qualified directors, and none reliably has them. Where transit expertise appears it is incidental to the appointee rather than required by the seat.
+| Category | Pre-reform Chicago (44 seats) | NITA, written rules | NITA, Day's practice |
+|----------|------------------------------|---------------------|----------------------|
+| Transit Ops/Management | 4 (9%) | 2 (10%) | 5 (25%) |
+| Other Management/Policy | 17 (39%) | 12 (60%) | 5 (25%) |
+| Labor Representative | 3 (7%) | 1 (5%) | 1 (5%) |
+| Community Advocate | 4 (9%) | 1 (5%) | 5 (25%) |
+| Elected Official | 16 (36%) | 4 (20%) | 4 (20%) |
 
-3. **Ex officio seats import politics automatically.** Medellín's two elected seats and Mexico City's cabinet-secretary seats exist because the statute ties board membership to another office. NITA should decide deliberately whether it wants that channel.
+The unambiguous change is political. Elected officials fall from 36% of pre-reform Chicagoland transit seats to 20% of NITA's --- and the four who remain are all suburban or collar-county mayors, none from the City of Chicago. That matches Day's own read that there will be "fewer local politicians with control over a regional system."
 
-4. **Board composition is institutionally sticky.** These five boards replaced most of their members in five months and produced nearly the same composition. Structure, not appointments, is the lever.
+Whether transit expertise rose depends on which reading of his categories is used, which is why both are published. Under the written rules it barely moved: 9% before, 10% after. Under his applied practice it rose sharply, from 9% to 25%. Day states that transit-operations experience "more than doubled (from 8% to 18%)" across these boards --- a claim that sits between the two readings, and closer to his own practice, which is what one would expect. His 8% could not be reproduced from his own published data, which gives 9% (4 of 44 seats) --- see §6.
 
-5. **Community voice doesn't have to mean zero expertise --- but zero community voice is a real choice.** LatAm sits at the opposite extreme from the US: no community representation anywhere. Neither extreme looks optimal. TfL London (13% transit / 56% other / 6% labor / 13% community / 13% elected) is the one board in Day's dataset that combines all four constituencies, and is the closest thing to a middle path on offer.
+### The five predictions, tested
 
----
+1. **"Generalist management is the global default, not a Chicago failing."** Confirmed. Under the written rules NITA is 60% other management/policy, inside the Latin American band of 57--100% and above every board in Day's dataset except SMRT Singapore, LTA Singapore, MTR Hong Kong and WMATA. The prediction was that appointing generalist professionals would not deliver transit expertise, and that is what happened: twelve of the twenty are lawyers, financial officers, procurement and technology managers, planners and nonprofit executives.
+
+2. **"Expertise requires an explicit mandate."** Confirmed. The NITA Act carries no requirement that any director hold transit qualifications, and under the written rules two of twenty directors have direct transit operations experience: Romayne Brown, who spent 31 years at the CTA and finished as Vice President of Rail Operations overseeing a $1.3bn budget, and Luis Montgomery, a civil engineer working in transportation infrastructure. Only Brown's case is unambiguous under either reading. Every transit-qualified appointee got there by accident of biography rather than by a seat that demanded it. Where a seat *does* carry a mandate it works exactly as written: the Pace seat reserved for sitting or former mayors duly produced a mayor.
+
+3. **"Ex officio seats import politics automatically."** Confirmed, with an important amendment. NITA has no ex officio seats at all --- and still seated four sitting or former mayors, because collar-county boards chose to appoint their own. Removing the statutory channel did not remove the politics; it moved it from the statute to the appointer's discretion. Three of the four came from the collar counties, which Day graded lowest.
+
+4. **"Board composition is institutionally sticky."** This is the prediction that needs revising, and the revision strengthens the underlying claim. In Latin America, five boards replaced most of their members in five months and produced almost identical composition --- people changed, structure didn't, composition didn't. In Chicago the structure itself changed, and composition moved: elected officials nearly halved. Taken together the two cases say the same thing from opposite directions. Structure, not appointments, is the lever. The Latin American boards show what happens when you pull only the appointment lever; NITA shows what happens when you pull the structural one.
+
+5. **"Community voice doesn't have to mean zero expertise --- but zero community voice is a real choice."** NITA sits between the two extremes, and where exactly depends on the reading: 5% community advocates under the written rules --- a single seat --- against 25% under Day's. Either way it is not the Latin American answer of zero. It is worth noting that NITA achieved this without a designated community seat, just as it has no designated labour seat and yet seated a building-trades council president.
+
+### The finding that was not predicted
+
+Under the written rules, two boards tie exactly for the closest match to NITA's 10% / 60% / 5% / 5% / 20% anywhere in the 22 agencies studied. One is **Metra** (9% / 55% / 9% / 9% / 18%) --- a board NITA was created to supervise. The other is **STC Metro in Mexico City** (9% / 64% / 9% / 0% / 18%).
+
+Neither is flattering. Resembling Metra means the new regional authority looks like the service board it is meant to hold to account, which is an odd result for a reform whose premise was that the old arrangement was not working. And Mexico City's Consejo de Administración is not a board in the conventional sense but a committee of sitting government officials --- the agency in this study whose governance was hardest to document and whose seats are partly unnamed institutional placeholders.
+
+The Mexico City resemblance is in the numbers, not the mechanism. NITA's directors are independently appointed individuals, not cabinet secretaries sitting by virtue of another office, and its appointments are documented in public council records to a standard Mexico City's are not. But the profile a reformed Chicago produced --- a large board of credentialled generalists with a thin layer of transit expertise and a fifth of the seats held by politicians --- is the profile the region's least legible governance model produces too.
+
+If NITA's purpose was to look less like the RTA, it succeeded: the politicians are down by nearly half. If it was to look like Tokyo, Seoul or Hong Kong, it did not. Those boards run 22--57% transit operations experience. NITA reaches 25% only on the most generous reading of who counts, and 10% on the reading used throughout this site.
 
 ## 6. Methodology & Limitations
 
 ### How this was researched
 
 Rosters were first assembled in March 2026 and fully re-researched on 27 August 2026. Every member record in `data/` carries source URLs and a confidence rating. Primary sources were preferred throughout: securities filings (CMF Chile), investor-relations disclosures and integrated reports (Metrô de São Paulo), official gazettes (Boletín Oficial de la Ciudad de Buenos Aires, Gaceta Oficial de la Ciudad de México), and governor's decrees (Antioquia).
+
+The NITA board was researched separately on 27 August 2026 and is recorded in `data_chicago/`. Each of the twenty was verified against the appointing authority's own announcement --- the Governor's newsroom release, the City of Chicago's appointment and City Council confirmation releases, Cook County coverage and the county board's committee record, and the individual collar-county releases --- rather than from secondary summaries. Richard Day's own one-line biographies of these appointees were deliberately **not** used as a source for anyone's record: they are compressed, and they misspell at least one name.
+
+### Calibration against Day's own classifications
+
+Adding a board classified by this project to a chart of boards classified by Day raises an obvious question: are the two doing the same thing? This is now testable. Nine of the twenty NITA appointees sat on the RTA, CTA, Metra or Pace boards in March 2026 and therefore appear in Day's published member-level spreadsheet **with his own category attached**. Each was classified here from primary sources first, and compared with his afterwards.
+
+Matching was done on name plus board context, and two of the nine --- Rosa Ortiz and Gary Gordon --- have common enough names that the match was initially held as probable rather than certain. Both were then pinned by details established independently: the Governor's release states Ortiz has sat on the CTA board since 2021, which is the board Day lists her under, and Gordon is Lake County's Metra representative and the Shedd Aquarium's chief financial officer, both of which appear in Day's row for him.
+
+**Six of the nine agree** --- Ortiz, Kotarac, Brown, Noak, Gordon and Sager. The three disagreements all run the same way:
+
+| Person | Classified here | Day's own category |
+|--------|-----------------|--------------------|
+| Natasha Jenkins | Other Management/Policy | Transit Ops/Management |
+| Dennis Mondero | Other Management/Policy | Transit Ops/Management |
+| Lester Barclay | Other Management/Policy | Community Advocate |
+
+The pattern is that **Day's stated rules and his applied classifications diverge**. His written definition of transit expertise requires significant direct experience managing transit operations or capital projects; in practice he counts senior employment at a transit agency, including legal and administrative roles --- Jenkins was a senior attorney at the CTA, Mondero its chief administrative officer. The same divergence appears in his labour category: his definition requires an explicitly designated union seat, but he classifies a LIUNA apprenticeship director and a Chicago Federation of Labor official on the RTA board --- which has no such seat --- as Labor Representatives.
+
+Neither reading is wrong; they are different readings of the same framework. Rather than assert one, both are published throughout: the headline figures use the written rules, consistent with how all 42 Latin American members were classified, and Day's applied practice is given alongside. Seven of the twenty NITA members classify differently under the two readings; three of those seven are Day's own published calls and four are this analysis's reading of how he would classify comparable people. The choice matters: NITA is 10% transit operations expertise under the written rules and 25% under Day's practice.
+
+One category was decided the other way. Brian Dahl is classified as a Labor Representative under **both** readings, following Day's practice rather than the written rule, on the grounds that a building-trades council president is a labour representative whatever the seat is called.
+
+### One check on Day's figures, and one gap
+
+Every figure in `day_chart_reference.json` was re-checked against his spreadsheet during this work. All four Chicago agencies match exactly --- 44 members, and every count in every category.
+
+Two things did not reconcile:
+
+- **His "8%" is not reproducible.** Day writes that transit-operations experience across these boards rose "from 8% to 18%". His own data gives 9% before the reform (4 of 44 seats counting the RTA), or 3% (1 of 30) excluding it. Neither is 8%, and the denominator he used is not stated. His 18% is treated here as external corroboration of the direction of travel, not as a figure to match.
+- **His RTA roster is missing a director.** Day lists 14 RTA directors. The RTA is a 16-member board --- five appointed by the Mayor of Chicago, four by the suburban members of the Cook County Board, one by the Cook County Board President, five by the collar counties, plus a chairman elected by the others --- and 15 of those seats were filled. Oswaldo Alvarez was approved as an RTA director by the full Chicago City Council on 16 October 2025, by 47 votes to nil, five months before Day's article, and was still serving in July 2026. He is not among Day's 14. Checked against the RTA's own current roster, all 14 of Day's names are still serving and Alvarez is the only addition, so this is the same roster with one person left out rather than a deliberately narrower list. The practical effect is small --- his RTA transit-operations share is computed over 14 seats where 15 were filled --- and `day_chart_reference.json` continues to reproduce his published figures rather than correcting them.
 
 ### Corrections to the March 2026 version
 
@@ -297,7 +395,11 @@ The March analysis contained errors serious enough to change its headline findin
 
 ### Judgment calls
 
-Seven classifications could reasonably have gone the other way. Each is recorded here and flagged in the member data, because the aggregate transit-expertise figure depends on them: classified as shown, transit operations expertise is 14%; under the stricter reading of all seven, it falls to 7%.
+Seventeen classifications could reasonably have gone the other way --- seven across the five Latin American boards, and ten on NITA. Each is recorded here and flagged in the member data, because the aggregate transit-expertise figures depend on them. For Latin America: classified as shown, transit operations expertise is 14%; under the stricter reading of all seven, it falls to 7%. For NITA: 10% as classified, 25% under Day's applied practice.
+
+Every one of the seventeen was adjudicated by Steffany Bahamon.
+
+**The five Latin American boards:**
 
 - **Rodrigo Troncoso Olchevskaia** (Santiago) --- classified *Transit Ops/Management*. Judgment call. An economist rather than an engineer, but his entire research output is transit economics — bus-industry cost and efficiency, fare policy, urban transport modelling. Treated as equivalent to the transit-academic carve-out in the classification rules.
 - **Liliana Yanneth Bohórquez Avendaño** (Medellín) --- classified *Transit Ops/Management*. Judgment call. A civil engineer with ~25 years across Bogotá's mobility secretariat, the national road-safety agency and the Ministry of Transport, who also sits on the board of Metrolínea, Bucaramanga's BRT operator. The case against counting her is that traffic engineering and road safety are not transit operations; the case for is a quarter-century inside transport bodies plus a seat at a transit operator. Counted as transit expertise.
@@ -307,9 +409,24 @@ Seven classifications could reasonably have gone the other way. Each is recorded
 - **Mauro Antônio Gumiero Voltarelli** (São Paulo) --- classified *Transit Ops/Management*. Judgment call. Director of Administration, Finance and Infrastructure at SPTrans, São Paulo's bus authority, and briefly its acting president in 2025. SPTrans's own org chart puts his directorate apart from both Operations and Transport Planning, which argues for a back-office reading; holding a directorship and the acting presidency of a transit operator argues the other way. Counted as transit expertise.
 - **Víctor José Colombano** (Buenos Aires) --- classified *Other Management/Policy*. Judgment call, decided the other way. At appointment he declared an employee post of unspecified seniority at ADIF, the national rail infrastructure agency, and an unpaid administrative secretaryship at a rail trade association. His documented career is party political organising and public housing administration, and the conflict-of-interest filing itself describes the trade-association role as administrative support with no fixed hours. Not counted as transit expertise. Separately: his 'congresal nacional' title is a party congress delegate, not an elected seat, so Elected Official does not apply.
 
+**NITA:**
+
+- **Natasha Jenkins** --- classified *Other Management/Policy*. Day classifies her *Transit Ops/Management*. A practising labour and employment attorney whose CTA role was in-house legal work; her Teamsters Local 700 role was as general counsel, not a designated labour seat.
+- **Dennis Mondero** --- classified *Other Management/Policy*. Day classifies him *Transit Ops/Management*. Senior Vice President and Chief Administrative Officer at the CTA: senior, but administrative rather than operational. The same tension as the Voltarelli call on the São Paulo board, decided the other way here because the written rules govern the headline figures.
+- **Lester Barclay** --- classified *Other Management/Policy*. Day classifies him *Community Advocate*. Chairman of the Chicago Transit Board since 2021, but three decades of legal practice is his primary background. Note that his pre-2021 chairmanship was of the CTA *Citizens Advisory Board*, a separate advisory body, not the governing board.
+- **Brian Dahl** --- classified *Labor Representative* under both readings. The written rule requires an explicitly designated union seat and NITA has none, which would place him in Other Management/Policy; Day's practice classifies union officials on their background instead, and that reading was adopted. He is also a former Kane County Board member, but he resigned in 2018, which is not "recently retired".
+- **Nedra Sims Fears** --- classified *Other Management/Policy*. She leads a neighbourhood community organisation, which would support Community Advocate, but her career is community development *finance* and the rules warn specifically against reading a finance executive in community development as an advocate.
+- **Diane Williams** --- classified *Other Management/Policy*. Three readings compete: 18 years as CEO of a large nonprofit (management), a community-serving mission (Community Advocate), and 16 years as an elected Village of Flossmoor trustee ending in 2021 (Elected Official). Counted on her executive record. Her identity required resolving --- press coverage described the Safer Foundation chief executive and a Flossmoor trustee, and it took the Southland Development Authority's own biography to confirm these are one person.
+- **Oswaldo Alvarez** --- classified *Other Management/Policy*. He heads an organisation representing a demographic group, which is inside the Community Advocate definition, but his record is policy strategy and large-programme administration, most clearly Illinois' $47m statewide census operation.
+- **Nirali Shah** --- classified *Other Management/Policy*. She held procurement, contract administration and compliance positions at the CTA, and Day counts transit-agency employment as transit expertise. Her roles are not described as executive and their seniority could not be established.
+- **Luis Montgomery** --- classified *Transit Ops/Management*, decided the other way from the strict reading. A civil engineer leading national transportation market development at an infrastructure consultancy. The rules exclude general civil engineers unless they have worked in transit, and no employment at a transit operator is established --- infrastructure consulting is not running transit. Counted as transit expertise on the engineering background and the transport-sector career. His employer is recorded as unknown: a plausible match was found, but no source names the appointee and the firm together, and that is exactly the pattern that produced this site's worst published error.
+- **Dee Atkins** --- classified *Community Advocate*. The two comparable calls on this board, Nedra Sims Fears and Oswaldo Alvarez, were decided the other way. She is counted as an advocate because, unlike them, no separate profession sits beneath the community work. She is the board's only community advocate under the headline reading, so this single call carries a headline figure.
+
 ### Structural limitations
 
-- **The comparison is not date-matched.** The five LatAm boards are current as of 27 August 2026. Day's 16 agencies are as of March 2026 and have not been re-verified here; some have likely changed.
+- **Every row carries its own date, and they are not all the same.** The five Latin American boards and NITA are current as of 27 August 2026. Day's 16 agencies are as of March 2026 and have not been re-verified here.
+- **Day's four Chicago rows describe a system that has since been reorganised.** They are kept as he published them, as the pre-reform baseline, not as a description of who governs Chicago transit today: the RTA is being wound up, and the CTA, Metra and Pace boards were re-appointed in July and August 2026. New rows for those three service boards are deliberately **not** published. More service-board appointments were still outstanding at the time of writing, and a board that cannot be confirmed to its full seat list does not get a row here --- the same call made earlier for TransMilenio and Empresa Metro de Bogotá, whose national-ministry seats could not be confirmed after Colombia's August 2026 government transition.
+- **Announced is not the same as seated.** Five of NITA's twenty directors --- the Governor's appointees --- still required Illinois Senate confirmation on the verification date, and three collar-county appointments had no confirmation vote on record. Each member's row states where that stands. Most seats take effect on 1 September 2026.
 - **Board composition is volatile.** Four of these five boards changed membership within five months. Any snapshot goes stale quickly, and agency websites lag reality --- Metro de Medellín's own board page listed a member weeks after the decree replacing him.
 - **Three CDMX seats are institutional, not individual.** The federal transport ministry, Banobras and State of Mexico representatives could not be identified by name and are counted as institutional seats.
 - **Not every claim is equally sourced.** Records carry High, Medium or Low confidence. Low-confidence records should be treated as leads rather than findings.

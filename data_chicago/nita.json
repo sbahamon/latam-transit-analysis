@@ -1,0 +1,427 @@
+{
+ "agency": "Northern Illinois Transit Authority (NITA)",
+ "agency_short": "NITA",
+ "city": "Chicago",
+ "country": "United States",
+ "governance_model": "Regional transit authority created by the Northern Illinois Transit Authority Act, replacing the Regional Transportation Authority and holding financial, budgetary and planning oversight of the CTA, Metra and Pace. The board has 20 seats, five each appointed by the Governor of Illinois (with the advice and consent of the Illinois Senate), the Cook County Board President (with the consent of the Cook County Board), the Mayor of Chicago (with the consent of the City Council), and the chairs or executives of the five collar counties (DuPage, Kane, Lake, McHenry and Will), one each. There is no separately appointed chair: the board elects its own at its first meeting in September 2026. There is no designated labour seat, no rider or community seat, and no statutory requirement that any director hold transit qualifications. Seventeen of the twenty directors also hold a seat on the CTA, Metra or Pace board, a deliberate cross-appointment intended to improve coordination.",
+ "board_size": 20,
+ "date_verified": "2026-08-27",
+ "notes": "All 20 seats are filled. Rosters were taken from the appointing authorities' own announcements rather than from secondary coverage. Announced is not the same as seated: the Governor's five appointees still required Illinois Senate confirmation on the verification date, and the Senate had no session day between the 21 August announcement and 27 August. Chicago's five were confirmed by the City Council on 15 July 2026 and Cook County's five by the County Board on 16 July 2026; for three collar-county appointees no confirmation vote could be found. Most seats take effect on 1 September 2026. Richard Day graded these appointments in 'Let's grade some NITA appointments' (A City That Works, 27 August 2026) but did not classify them into his five categories, so the classifications here are Claude's. Nine of the twenty appear in Day's own member-level spreadsheet from March 2026, because they sat on the RTA, CTA, Metra or Pace boards; where he classified a person, his category is recorded on that member's record.",
+ "members": [
+  {
+   "name": "Bashir Qaasim",
+   "position": "Director (also Metra board)",
+   "appointment_method": "Governor of Illinois (JB Pritzker)",
+   "background": "Vice President at The Whole Group, advising large organisations through technology transformation, with a focus on integrating fragmented technology systems. Previously held senior roles at Aforza and Accenture. Serves on the NAMI Chicago board.",
+   "education": "Bachelor's degree, School of Computing and Digital Media, DePaul University.",
+   "classification": "Other Management/Policy",
+   "rationale": "A technology and organisational-transformation executive with no transit background. Complementary management skill, which is what this category is for.",
+   "sources": [
+    "https://gov-pritzker-newsroom.prezly.com/gov-pritzker-announces-appointments-to-northern-illinois-transit-authority-nita",
+    "https://chi.streetsblog.org/2026/08/24/after-pritzker-named-his-nita-board-picks-the-agencys-leadership-is-largely-decided-will-they-use-their-power-for-good",
+    "https://capitolnewsillinois.com/news/transportation-overhaul-taking-shape-with-toll-increase-new-board-appointees/",
+    "https://www.wsiu.org/state-of-illinois/2026-08-21/transportation-overhaul-taking-shape-with-toll-increase-new-board-appointees",
+    "https://capitolfax.com/2026/08/21/pritzker-announces-northern-illinois-transit-authority-board-appointments/",
+    "https://www.ilga.gov/Uploads/Schedules/Senate/2026%20104th%20GA%20Veto%20Calendar.pdf"
+   ],
+   "confidence": "Medium",
+   "confirmation_status": "Announced 21 Aug 2026; pending confirmation by the Illinois Senate, which had no session day between the announcement and 27 Aug 2026."
+  },
+  {
+   "name": "Nedra Sims Fears",
+   "position": "Director (also CTA board)",
+   "appointment_method": "Governor of Illinois (JB Pritzker)",
+   "background": "Executive Director of the Greater Chatham Initiative, leading neighbourhood investment and economic growth on Chicago's South Side. Career in mortgage banking and community development finance with Fannie Mae, the City of Chicago and the Community Investment Corporation. Previously served on the board of the Metropolitan Planning Council.",
+   "education": "MBA, Northwestern University; BA in interior architecture, Cornell University; Loeb Fellow, Harvard Graduate School of Design.",
+   "classification": "Other Management/Policy",
+   "rationale": "Classified on primary background, which is community development finance rather than advocacy. The classification rules explicitly warn against reading a finance executive who works in community development as a community advocate.",
+   "sources": [
+    "https://gov-pritzker-newsroom.prezly.com/gov-pritzker-announces-appointments-to-northern-illinois-transit-authority-nita",
+    "https://chi.streetsblog.org/2026/08/24/after-pritzker-named-his-nita-board-picks-the-agencys-leadership-is-largely-decided-will-they-use-their-power-for-good",
+    "http://gci2016.org/about-us/",
+    "https://capitolnewsillinois.com/news/transportation-overhaul-taking-shape-with-toll-increase-new-board-appointees/",
+    "https://www.wsiu.org/state-of-illinois/2026-08-21/transportation-overhaul-taking-shape-with-toll-increase-new-board-appointees",
+    "https://www.ilga.gov/Uploads/Schedules/Senate/2026%20104th%20GA%20Veto%20Calendar.pdf"
+   ],
+   "confidence": "Medium",
+   "confirmation_status": "Announced 21 Aug 2026; pending confirmation by the Illinois Senate, which had no session day between the announcement and 27 Aug 2026.",
+   "judgment_call": true,
+   "classification_note": "She currently leads a neighbourhood community organisation, and Day classifies nonprofit and community-organisation heads as Community Advocate. Counted here on her finance career instead. Adjudicated by Steffany Bahamon.",
+   "day_alt_classification": "Community Advocate",
+   "day_alt_basis": "Inferred from Day's treatment of comparable members; he did not classify her."
+  },
+  {
+   "name": "Nirali Shah",
+   "position": "Director",
+   "appointment_method": "Governor of Illinois (JB Pritzker)",
+   "background": "Senior Director of Procurement and Culture, Impact, and Opportunity at the Obama Foundation, where she oversaw procurement for parts of the construction of the Obama Presidential Center. Previously Director of Procurement at McDermott Will & Schulte, and before that held procurement, contract administration and compliance positions at the CTA.",
+   "education": "JD, Marquette University Law School; BA in psychology and speech communications, University of Illinois Urbana-Champaign.",
+   "classification": "Other Management/Policy",
+   "rationale": "Procurement and contract administration are back-office functions. Her CTA roles are not described as executive, and their seniority could not be established.",
+   "sources": [
+    "https://gov-pritzker-newsroom.prezly.com/gov-pritzker-announces-appointments-to-northern-illinois-transit-authority-nita",
+    "https://chi.streetsblog.org/2026/08/24/after-pritzker-named-his-nita-board-picks-the-agencys-leadership-is-largely-decided-will-they-use-their-power-for-good",
+    "https://capitolnewsillinois.com/news/transportation-overhaul-taking-shape-with-toll-increase-new-board-appointees/",
+    "https://www.ilga.gov/Uploads/Schedules/Senate/2026%20104th%20GA%20Veto%20Calendar.pdf"
+   ],
+   "confidence": "Medium",
+   "confirmation_status": "Announced 21 Aug 2026; pending confirmation by the Illinois Senate, which had no session day between the announcement and 27 Aug 2026.",
+   "judgment_call": true,
+   "classification_note": "She worked inside a transit agency, and Day counts senior transit-agency employment as transit expertise even in non-operational roles. Her CTA positions are not described as senior, so she is counted as management here. Adjudicated by Steffany Bahamon.",
+   "day_alt_classification": "Transit Ops/Management",
+   "day_alt_basis": "Inferred from Day's treatment of comparable members; he did not classify her."
+  },
+  {
+   "name": "Rosa Ortiz",
+   "position": "Director (also Pace board)",
+   "appointment_method": "Governor of Illinois (JB Pritzker)",
+   "background": "Urban planner, and principal and founder of 3e.Studio. Previously Managing Deputy Commissioner at the City of Chicago Department of Housing, Senior Program Director at Enterprise Community Partners, and Senior Planner at the Chicago Metropolitan Agency for Planning. Certified planner (AICP) and LEED accredited. Has served on the CTA board since 2021.",
+   "education": "MA in urban planning and policy and BA in architecture, University of Illinois Chicago.",
+   "classification": "Other Management/Policy",
+   "rationale": "An urban planner whose practice is housing rather than transit. The rules count urban planners as transit expertise only where the focus is transit. Day classified her the same way in his own data.",
+   "sources": [
+    "https://gov-pritzker-newsroom.prezly.com/gov-pritzker-announces-appointments-to-northern-illinois-transit-authority-nita",
+    "https://www.3eglobalstudio.com/about",
+    "https://www.hispanichousingdevelopment.com/team/rosa-y-ortiz/",
+    "https://chi.streetsblog.org/2026/08/24/after-pritzker-named-his-nita-board-picks-the-agencys-leadership-is-largely-decided-will-they-use-their-power-for-good",
+    "https://capitolnewsillinois.com/news/transportation-overhaul-taking-shape-with-toll-increase-new-board-appointees/",
+    "https://www.ilga.gov/Uploads/Schedules/Senate/2026%20104th%20GA%20Veto%20Calendar.pdf"
+   ],
+   "confidence": "High",
+   "confirmation_status": "Announced 21 Aug 2026; pending confirmation by the Illinois Senate, which had no session day between the announcement and 27 Aug 2026.",
+   "day_own_classification": "Other Management/Policy",
+   "day_own_agency": "CTA"
+  },
+  {
+   "name": "Vanessa Uribe",
+   "position": "Director",
+   "appointment_method": "Governor of Illinois (JB Pritzker)",
+   "background": "Associate Vice President for People and Operations at The Chicago Community Trust. Previously Chief Deputy in the Illinois Secretary of State's executive office, and Chief of Staff and Deputy Director of the Office of Economic Equity and Empowerment at the Illinois Department of Commerce and Economic Opportunity. Earlier economic development and policy roles with Cook County and UnidosUS.",
+   "education": "MPA, University of Illinois Chicago; graduate of the University of Chicago Civic Leadership Academy.",
+   "classification": "Other Management/Policy",
+   "rationale": "A career in operations, human resources and public administration. Her government posts were appointed rather than elected, so Elected Official does not apply.",
+   "sources": [
+    "https://gov-pritzker-newsroom.prezly.com/gov-pritzker-announces-appointments-to-northern-illinois-transit-authority-nita",
+    "https://www.cct.org/our-community/profile/vanessa-uribe/",
+    "https://effectivegov.uchicago.edu/people/vanessa-uribe",
+    "https://chi.streetsblog.org/2026/08/24/after-pritzker-named-his-nita-board-picks-the-agencys-leadership-is-largely-decided-will-they-use-their-power-for-good",
+    "https://capitolnewsillinois.com/news/transportation-overhaul-taking-shape-with-toll-increase-new-board-appointees/",
+    "https://www.ilga.gov/Uploads/Schedules/Senate/2026%20104th%20GA%20Veto%20Calendar.pdf"
+   ],
+   "confidence": "Medium",
+   "confirmation_status": "Announced 21 Aug 2026; pending confirmation by the Illinois Senate, which had no session day between the announcement and 27 Aug 2026."
+  },
+  {
+   "name": "Tom Kotarac",
+   "position": "Director (also CTA board)",
+   "appointment_method": "Cook County Board President (Toni Preckwinkle)",
+   "background": "Senior Vice President of the Civic Committee of the Commercial Club of Chicago, leading its transportation work, and a sitting RTA board member. Previously Deputy Executive Director of the Chicago Metropolitan Agency for Planning. Spent more than 12 years in the Illinois congressional delegation, as senior policy advisor and projects director for Senator Dick Durbin and senior legislative assistant to Representative Luis Gutierrez. Day describes him as a driving force behind the NITA reforms.",
+   "education": "University of Illinois; his employer's biography names no degree or field.",
+   "classification": "Other Management/Policy",
+   "rationale": "Transportation policy and regional planning rather than transit operations or capital delivery. Day classified him the same way in his own data.",
+   "sources": [
+    "https://www.masstransitmag.com/management/news/55389315/il-cook-county-board-president-toni-preckwinkle-proposes-new-transit-board-members",
+    "https://www.masstransitmag.com/management/news/55391612/il-toni-preckwinkle-backs-red-line-extension-connections-wins-approval-for-transit-picks",
+    "https://www.hfchronicle.com/2026/07/19/preckwinkle-appoints-leaders-to-nita-and-transit-service-boards/",
+    "https://civiccommittee.org/tom-kotarac/",
+    "https://www.lwvcookcounty.org/cook-county-board-observer-reports/new-cfo-and-transit-agencies-appointments-approved"
+   ],
+   "confidence": "High",
+   "confirmation_status": "Confirmed by the Cook County Board, 16 July 2026; seat effective 1 Sept 2026.",
+   "day_own_classification": "Other Management/Policy",
+   "day_own_agency": "RTA Chicago"
+  },
+  {
+   "name": "Diane Williams",
+   "position": "Director (also Metra board)",
+   "appointment_method": "Cook County Board President (Toni Preckwinkle)",
+   "background": "President and CEO of the Safer Foundation from 1996 for 18 years, and President Emeritus since 2014; the foundation is one of the largest US nonprofit providers of employment placement and job-readiness training for people with criminal records. Serves on the boards of the Southland Development Authority and the Chicago Metropolitan Agency for Planning. Has consulted for the US Departments of Labor, Justice, Health and Human Services, and Housing and Urban Development. Separately, she was an elected Trustee of the Village of Flossmoor for 16 years, through spring 2021.",
+   "education": "MBA, Kellogg School of Management, Northwestern University; undergraduate degree in education, Chicago State University.",
+   "classification": "Other Management/Policy",
+   "rationale": "An executive career running a large nonprofit. The Elected Official category covers current or recently-retired officeholders without other qualifying experience; her village trusteeship ended five years ago and sat alongside that executive career.",
+   "sources": [
+    "https://www.masstransitmag.com/management/news/55389315/il-cook-county-board-president-toni-preckwinkle-proposes-new-transit-board-members",
+    "https://www.masstransitmag.com/management/news/55391612/il-toni-preckwinkle-backs-red-line-extension-connections-wins-approval-for-transit-picks",
+    "https://www.hfchronicle.com/2026/07/19/preckwinkle-appoints-leaders-to-nita-and-transit-service-boards/",
+    "https://counciloncj.org/team/diane-williams/",
+    "https://southlanddevelopment.org/our-people",
+    "https://www.lwvcookcounty.org/cook-county-board-observer-reports/new-cfo-and-transit-agencies-appointments-approved",
+    "https://static1.squarespace.com/static/5c991a3f3dab3e000178c991/t/5e1ce3a7618a501203ddf26a/1578951592459/SDA+Board+Key+Staff+Bios.pdf",
+    "https://www.hfchronicle.com/2021/03/01/trustee-diane-williams-reflects-years-flossmoor-service-collaboration/"
+   ],
+   "confidence": "High",
+   "confirmation_status": "Confirmed by the Cook County Board, 16 July 2026; seat effective 1 Sept 2026.",
+   "judgment_call": true,
+   "classification_note": "Two readings compete. Sixteen years as an elected trustee could support Elected Official, and running a community-serving nonprofit could support Community Advocate. Counted on her executive record. Adjudicated by Steffany Bahamon.",
+   "day_alt_classification": "Community Advocate",
+   "day_alt_basis": "Inferred from Day's treatment of comparable members; he did not classify her."
+  },
+  {
+   "name": "Romayne Brown",
+   "position": "Director (also Metra board)",
+   "appointment_method": "Cook County Board President (Toni Preckwinkle)",
+   "background": "A professional transit manager with more than 31 years at the CTA. She started as a rail conductor in 1978 and finished her CTA career in 2010 as Vice President of Rail Operations, a post in which she oversaw a $1.3bn budget and rail service to 550,000 customers a day, having held roles including Director of Rail Operations, General Manager of Rail Operations and Administrative Manager of the Red Line. Appointed to the Metra board in 2013, its Vice Chair 2016-2020 and its Chair 2020-2024.",
+   "education": "Chicago Transit Authority Transit Management Program at Harold Washington College (1999); classes at South Suburban College. No academic degree is listed in her official biography.",
+   "classification": "Transit Ops/Management",
+   "rationale": "Three decades of direct rail operations management at a major transit agency, rising from rail conductor to Vice President of Rail Operations with a $1.3bn budget. The clearest transit-operations credential on the board, and the only one that is unambiguous under either reading of Day's categories. Day classified her the same way in his own data.",
+   "sources": [
+    "https://www.masstransitmag.com/management/news/55389315/il-cook-county-board-president-toni-preckwinkle-proposes-new-transit-board-members",
+    "https://www.masstransitmag.com/management/news/55391612/il-toni-preckwinkle-backs-red-line-extension-connections-wins-approval-for-transit-picks",
+    "https://www.hfchronicle.com/2026/07/19/preckwinkle-appoints-leaders-to-nita-and-transit-service-boards/",
+    "https://metra.com/leadership/romayne-c-brown",
+    "https://www.cookcountyil.gov/news/president-preckwinkle-nominates-romayne-brown-metra-board-directors",
+    "https://www.lwvcookcounty.org/cook-county-board-observer-reports/new-cfo-and-transit-agencies-appointments-approved"
+   ],
+   "confidence": "High",
+   "confirmation_status": "Confirmed by the Cook County Board, 16 July 2026; seat effective 1 Sept 2026.",
+   "day_own_classification": "Transit Ops/Management",
+   "day_own_agency": "Metra"
+  },
+  {
+   "name": "Luis Montgomery",
+   "position": "Director (also Pace board)",
+   "appointment_method": "Cook County Board President (Toni Preckwinkle)",
+   "background": "A civil engineer who leads national transportation market development for an infrastructure consultancy, and described by the county board observer record as a long-time user of public transport. The consultancy is not named in any source that also names him as the appointee, and his employer, education and residence could not be established.",
+   "education": "unknown",
+   "classification": "Transit Ops/Management",
+   "rationale": "A civil engineer whose practice is transportation infrastructure, leading national transportation market development for an infrastructure consultancy. Counted as transit expertise on the engineering background and the transport-sector career.",
+   "sources": [
+    "https://www.masstransitmag.com/management/news/55389315/il-cook-county-board-president-toni-preckwinkle-proposes-new-transit-board-members",
+    "https://www.masstransitmag.com/management/news/55391612/il-toni-preckwinkle-backs-red-line-extension-connections-wins-approval-for-transit-picks",
+    "https://www.hfchronicle.com/2026/07/19/preckwinkle-appoints-leaders-to-nita-and-transit-service-boards/",
+    "https://www.lwvcookcounty.org/cook-county-board-observer-reports/new-cfo-and-transit-agencies-appointments-approved",
+    "https://www.2imgroup.com/meet-the-team"
+   ],
+   "confidence": "Medium",
+   "confirmation_status": "Confirmed by the Cook County Board, 16 July 2026; seat effective 1 Sept 2026.",
+   "judgment_call": true,
+   "classification_note": "Decided the other way from the strict reading. The rules exclude general civil engineers unless they have worked in transit, and nothing establishes employment at a transit operator — his work is transportation infrastructure consulting rather than running transit. His employer could not be established from any source that also names him as the appointee, so it is recorded as unknown rather than guessed. Adjudicated by Steffany Bahamon."
+  },
+  {
+   "name": "Rory Hoskins",
+   "position": "Director (also Pace board)",
+   "appointment_method": "Cook County Board President (Toni Preckwinkle)",
+   "background": "Mayor of the Village of Forest Park, first elected in 2019 and the village's first Black mayor. An attorney; sources describe him variously as supporting state insurance regulation and as having a background in social services and mental health, and no current legal employer is named. Day notes he took an active part in the NITA negotiations. The Pace seat he fills is reserved for sitting or former mayors.",
+   "education": "unknown",
+   "classification": "Elected Official",
+   "rationale": "A sitting mayor. Under the rule settled on 2026-08-27, holding the seat by virtue of an appointment does not exempt a serving politician.",
+   "sources": [
+    "https://www.masstransitmag.com/management/news/55389315/il-cook-county-board-president-toni-preckwinkle-proposes-new-transit-board-members",
+    "https://www.masstransitmag.com/management/news/55391612/il-toni-preckwinkle-backs-red-line-extension-connections-wins-approval-for-transit-picks",
+    "https://www.hfchronicle.com/2026/07/19/preckwinkle-appoints-leaders-to-nita-and-transit-service-boards/",
+    "https://www.forestparkreview.com/2026/07/28/hoskins-appointed-to-nita-board/",
+    "https://www.lwvcookcounty.org/cook-county-board-observer-reports/new-cfo-and-transit-agencies-appointments-approved"
+   ],
+   "confidence": "Medium",
+   "confirmation_status": "Confirmed by the Cook County Board, 16 July 2026; seat effective 1 Sept 2026. NITA term is five years from 1 Sept 2026."
+  },
+  {
+   "name": "Oswaldo Alvarez",
+   "position": "Director (also CTA board)",
+   "appointment_method": "Mayor of Chicago (Brandon Johnson)",
+   "background": "Executive Director of the Illinois Legislative Latino Caucus Foundation, leading statewide policy strategy and coalition-building. Served as Illinois' Statewide Census Director for the 2020 Census, managing a $47m operation and coordinating more than 400 community organisations. Around 20 years across the nonprofit, government and philanthropic sectors. Approved by the Chicago City Council as an RTA director on 16 October 2025 and serving there since.",
+   "education": "MA in social policy, University of Chicago; BA in economics and political science, University of Wisconsin-Madison.",
+   "classification": "Other Management/Policy",
+   "rationale": "Policy strategy and large-programme administration, most clearly the statewide census operation. Government-affairs work rather than rider or community advocacy.",
+   "sources": [
+    "https://www.chicago.gov/city/en/depts/mayor/press_room/press_releases/2026/july/nita-board-appointments.html",
+    "https://www.chicago.gov/content/dam/city/depts/mayor/Press%20Room/Press%20Releases/2026/July/CITY%20COUNCIL%20CONFIRMS%20MAYOR%20BRANDON%20JOHNSON%E2%80%99S%20APPOINTMENTS%20TO%20THE%20NORTHERN%20ILLINOIS%20TRANSIT%20AUTHORITY%20AND%20TRANSIT%20AGENCY%20BOARDS%20OF%20DIRECTORS.pdf",
+    "https://www.rtachicago.org/about-rta/boards-and-committees/board-of-directors",
+    "https://chi.streetsblog.org/2026/07/15/johnsons-transit-board-picks-advance-after-advocates-pack-city-hall-hearing",
+    "https://chicago.councilmatic.org/legislation/a2025-0019893/"
+   ],
+   "confidence": "High",
+   "confirmation_status": "Confirmed by the Chicago City Council, 15 July 2026.",
+   "judgment_call": true,
+   "classification_note": "He heads an organisation representing a demographic group, which is inside the Community Advocate definition, and his census work was coalition-building with community organisations. Counted on his policy and administrative record. Adjudicated by Steffany Bahamon.",
+   "day_alt_classification": "Community Advocate",
+   "day_alt_basis": "Inferred from Day's treatment of comparable members; he did not classify him."
+  },
+  {
+   "name": "Natasha Jenkins",
+   "position": "Director (also Pace board)",
+   "appointment_method": "Mayor of Chicago (Brandon Johnson)",
+   "background": "A labour and employment attorney with more than a decade representing clients in transportation, aviation and government. Senior Attorney at Clark Hill; previously General Counsel of Teamsters Local 700, Senior Attorney for the CTA, labour and employment counsel for Illinois Central Management Services, and an Assistant Attorney General of Illinois. Also served at Littler Mendelson and United Airlines. The 108th President of the Cook County Bar Association. A sitting RTA director since October 2024.",
+   "education": "JD, UIC Law School (2012); BA, Hamilton College (2007).",
+   "classification": "Other Management/Policy",
+   "rationale": "A practising attorney. Her CTA role was in-house legal work, not operations or capital delivery, and her union role was as outside counsel rather than a designated labour seat.",
+   "sources": [
+    "https://www.chicago.gov/city/en/depts/mayor/press_room/press_releases/2026/july/nita-board-appointments.html",
+    "https://www.chicago.gov/content/dam/city/depts/mayor/Press%20Room/Press%20Releases/2026/July/CITY%20COUNCIL%20CONFIRMS%20MAYOR%20BRANDON%20JOHNSON%E2%80%99S%20APPOINTMENTS%20TO%20THE%20NORTHERN%20ILLINOIS%20TRANSIT%20AUTHORITY%20AND%20TRANSIT%20AGENCY%20BOARDS%20OF%20DIRECTORS.pdf",
+    "https://www.rtachicago.org/about-rta/boards-and-committees/board-of-directors",
+    "https://chi.streetsblog.org/2026/07/15/johnsons-transit-board-picks-advance-after-advocates-pack-city-hall-hearing"
+   ],
+   "confidence": "High",
+   "confirmation_status": "Confirmed by the Chicago City Council, 15 July 2026.",
+   "judgment_call": true,
+   "classification_note": "Day classifies her as Transit Ops/Management in his own data, on the strength of her CTA employment. Under this site's stated rules a senior attorney at a transit agency is management, not operations. Counted as management, with Day's own call recorded. Adjudicated by Steffany Bahamon.",
+   "day_alt_classification": "Transit Ops/Management",
+   "day_alt_basis": "Day's own published classification of this person.",
+   "day_own_classification": "Transit Ops/Management",
+   "day_own_agency": "RTA Chicago"
+  },
+  {
+   "name": "Dennis Mondero",
+   "position": "Director (also Metra board)",
+   "appointment_method": "Mayor of Chicago (Brandon Johnson)",
+   "background": "General Counsel for AKIRA, a Chicago retailer. At the CTA he served as Senior Vice President and Chief Administrative Officer, and as Deputy Chief of Staff; the dates of that tenure could not be established. Previously Executive Director of the Chinese Mutual Aid Association, which he grew from a $4m to a $15m budget, and Deputy Buildings Commissioner for the City of Chicago. Past President of the Asian American Bar Association of Greater Chicago. A sitting RTA director since October 2024.",
+   "education": "LLM in real estate, University of Illinois Chicago; JD, Indiana University Bloomington; BA in English, University of Illinois Urbana-Champaign.",
+   "classification": "Other Management/Policy",
+   "rationale": "His CTA roles were administrative and executive-staff posts rather than operations or capital delivery, which places him in management under the stated rules.",
+   "sources": [
+    "https://www.chicago.gov/city/en/depts/mayor/press_room/press_releases/2026/july/nita-board-appointments.html",
+    "https://www.chicago.gov/content/dam/city/depts/mayor/Press%20Room/Press%20Releases/2026/July/CITY%20COUNCIL%20CONFIRMS%20MAYOR%20BRANDON%20JOHNSON%E2%80%99S%20APPOINTMENTS%20TO%20THE%20NORTHERN%20ILLINOIS%20TRANSIT%20AUTHORITY%20AND%20TRANSIT%20AGENCY%20BOARDS%20OF%20DIRECTORS.pdf",
+    "https://www.rtachicago.org/about-rta/boards-and-committees/board-of-directors",
+    "https://chi.streetsblog.org/2026/07/15/johnsons-transit-board-picks-advance-after-advocates-pack-city-hall-hearing"
+   ],
+   "confidence": "High",
+   "confirmation_status": "Confirmed by the Chicago City Council, 15 July 2026.",
+   "judgment_call": true,
+   "classification_note": "Day classifies him as Transit Ops/Management in his own data. This is the same tension as the Voltarelli call on the Sao Paulo board: a senior back-office role at a transit operator. Counted as management here, with Day's own call recorded. Adjudicated by Steffany Bahamon.",
+   "day_alt_classification": "Transit Ops/Management",
+   "day_alt_basis": "Day's own published classification of this person.",
+   "day_own_classification": "Transit Ops/Management",
+   "day_own_agency": "RTA Chicago"
+  },
+  {
+   "name": "Dee Atkins",
+   "position": "Director",
+   "appointment_method": "Mayor of Chicago (Brandon Johnson)",
+   "background": "Chief of Community Engagement and Equity at Thresholds, one of Illinois' largest community-based mental health and substance use treatment providers. More than 20 years in strategic partnerships and community engagement, with senior roles at Marillac St. Vincent Family Services and Mercy Home for Boys & Girls. Participates in Chicago's Community Violence Intervention Collaborative and sits on the Community Advisory Council of West Side United.",
+   "education": "MS in journalism and integrated marketing, Roosevelt University; BA in communications, East-West University Chicago.",
+   "classification": "Community Advocate",
+   "rationale": "Her entire career is community engagement and social services, with no other profession underneath it. The only member of this board classified as a community advocate.",
+   "sources": [
+    "https://www.chicago.gov/city/en/depts/mayor/press_room/press_releases/2026/july/nita-board-appointments.html",
+    "https://www.chicago.gov/content/dam/city/depts/mayor/Press%20Room/Press%20Releases/2026/July/CITY%20COUNCIL%20CONFIRMS%20MAYOR%20BRANDON%20JOHNSON%E2%80%99S%20APPOINTMENTS%20TO%20THE%20NORTHERN%20ILLINOIS%20TRANSIT%20AUTHORITY%20AND%20TRANSIT%20AGENCY%20BOARDS%20OF%20DIRECTORS.pdf",
+    "https://chi.streetsblog.org/2026/07/15/johnsons-transit-board-picks-advance-after-advocates-pack-city-hall-hearing",
+    "https://www.thresholds.org/on-martin-luther-king-jr-day"
+   ],
+   "confidence": "Medium",
+   "confirmation_status": "Confirmed by the Chicago City Council, 15 July 2026.",
+   "judgment_call": true,
+   "classification_note": "Community Advocate rather than Other Management/Policy. She is a senior nonprofit executive, and the two comparable calls on this board — Nedra Sims Fears and Oswaldo Alvarez — were decided the other way. She is counted as an advocate because, unlike them, there is no separate profession beneath the community work: her whole career is community engagement and social services. She is the board's only community advocate under the headline reading, so this single call carries a headline figure. Adjudicated by Steffany Bahamon."
+  },
+  {
+   "name": "Lester Barclay",
+   "position": "Director (also CTA board)",
+   "appointment_method": "Mayor of Chicago (Brandon Johnson)",
+   "background": "A family law attorney and senior partner at The Barclay Law Group, with over three decades of practice. Chairman of the Chicago Transit Board since 2021; before that he chaired the CTA Citizens Advisory Board, an advisory body distinct from the governing board. Named a Henry Luce Scholar in 1986. Day notes he is one of six Johnson appointees who previously served on a transit board, and that he opposed key parts of the NITA reforms before telling the City Council he supports the NITA Act.",
+   "education": "JD, Case Western Reserve University; BA, Oberlin College.",
+   "classification": "Other Management/Policy",
+   "rationale": "Classified on primary background, which is three decades of legal practice as a law firm principal.",
+   "sources": [
+    "https://www.chicago.gov/city/en/depts/mayor/press_room/press_releases/2026/july/nita-board-appointments.html",
+    "https://www.chicago.gov/content/dam/city/depts/mayor/Press%20Room/Press%20Releases/2026/July/CITY%20COUNCIL%20CONFIRMS%20MAYOR%20BRANDON%20JOHNSON%E2%80%99S%20APPOINTMENTS%20TO%20THE%20NORTHERN%20ILLINOIS%20TRANSIT%20AUTHORITY%20AND%20TRANSIT%20AGENCY%20BOARDS%20OF%20DIRECTORS.pdf",
+    "https://chi.streetsblog.org/2026/07/15/johnsons-transit-board-picks-advance-after-advocates-pack-city-hall-hearing",
+    "https://chi.streetsblog.org/2026/08/24/after-pritzker-named-his-nita-board-picks-the-agencys-leadership-is-largely-decided-will-they-use-their-power-for-good",
+    "https://www.chicago.gov/content/dam/city/depts/mayor/Press%20Room/Press%20Releases/2021/April/LesterBarclayCTABoardChair.pdf"
+   ],
+   "confidence": "High",
+   "confirmation_status": "Confirmed by the Chicago City Council, 15 July 2026.",
+   "judgment_call": true,
+   "classification_note": "Day classifies him as Community Advocate in his own data. Under this site's stated rules his primary background is the law. Counted as management, with Day's own call recorded. Adjudicated by Steffany Bahamon.",
+   "day_alt_classification": "Community Advocate",
+   "day_alt_basis": "Day's own published classification of this person.",
+   "day_own_classification": "Community Advocate",
+   "day_own_agency": "CTA"
+  },
+  {
+   "name": "John Noak",
+   "position": "Director (also Pace board)",
+   "appointment_method": "Will County Executive (Jennifer Bertino-Tarrant)",
+   "background": "Mayor of the Village of Romeoville since 2008. A Pace director representing Will County since 2022. Sits on the CMAP Executive Board, was 2025-26 Chair of the Metropolitan Mayors Caucus, is President of the Will County Governmental League, and serves on the US Conference of Mayors' Transportation Committee. No private-sector career was found. Day notes he publicly opposed the NITA reforms.",
+   "education": "unknown",
+   "classification": "Elected Official",
+   "rationale": "A sitting mayor of 18 years. Day classified him the same way in his own data.",
+   "sources": [
+    "https://www.pacebus.com/person/john-d-noak",
+    "https://www.shawlocal.com/the-herald-news/2026/07/17/romeoville-mayor-named-to-new-regional-transit-board/",
+    "https://patch.com/illinois/romeoville/amp/34466582/mayor-noak-appointed-to-new-northern-illinois-transit-authority-nita-board",
+    "https://www.dupagecounty.gov/government/county_board/nita.php"
+   ],
+   "confidence": "High",
+   "confirmation_status": "Appointed by the Will County Executive; no county board confirmation vote was found as of 27 Aug 2026.",
+   "day_own_classification": "Elected Official",
+   "day_own_agency": "Pace"
+  },
+  {
+   "name": "Gary Gordon",
+   "position": "Director (also Metra board)",
+   "appointment_method": "Lake County Board Chair (Sandy Hart)",
+   "background": "Chief Financial and Administrative Officer of the Shedd Aquarium, and Lake County's representative on the Metra board since March 2025. Before joining the Shedd in 2018 he spent 15 years as director of finance and administrative services for Lake County, overseeing a budget of roughly $500m. Previously director of the Office of Management and Budget for the Chicago Park District, and assistant budget director and director of capital programs for the City of Chicago. No elected office.",
+   "education": "unknown",
+   "classification": "Other Management/Policy",
+   "rationale": "A career public-finance executive. His capital programs role was city-wide rather than transit. Day classified him the same way in his own data.",
+   "sources": [
+    "https://content.govdelivery.com/accounts/ILLAKE/bulletins/40d6ba7",
+    "https://www.lakecountyil.gov/m/newsflash/Home/Detail/4796",
+    "https://www.shawlocal.com/lake-county-journal/2026/06/25/gordon-appointed-to-nita-board-of-directors/",
+    "https://chicagocfo.org/gary-gordon/",
+    "https://www.shawlocal.com/lake-county-journal/2025/03/20/lake-county-appoints-gary-gordon-to-metra-board-of-directors/",
+    "https://www.masstransitmag.com/management/news/55398318/il-whos-on-first-at-metra-directors-coming-and-going-as-transit-reforms-gel"
+   ],
+   "confidence": "High",
+   "confirmation_status": "Appointed by the Lake County Board Chair, announced 10 June 2026; no county board confirmation vote was found as of 27 Aug 2026.",
+   "day_own_classification": "Other Management/Policy",
+   "day_own_agency": "Metra"
+  },
+  {
+   "name": "Brian Sager",
+   "position": "Director (also Metra board)",
+   "appointment_method": "McHenry County",
+   "background": "A sitting McHenry County Board member for District 7, elected in November 2022 with a term ending December 2026; he lost the March 2026 primary and will not return. Mayor of the City of Woodstock from 2005 to 2021, and a Woodstock councilman before that. McHenry County's RTA board representative since May 2018. Earlier a professor at McHenry County College for 18 years, later its Vice President of Academic and Student Affairs and Acting President, and Provost of Rock Valley College until 2015.",
+   "education": "Holds a doctorate; Day's data records a PhD in international development.",
+   "classification": "Elected Official",
+   "rationale": "A sitting county board member and a former mayor of 16 years. Day classified him the same way in his own data, though as a former mayor rather than a current officeholder.",
+   "sources": [
+    "https://rtachicago.org/index.php/about-us/leadership/board-directors/brian-sager-director",
+    "https://www.shawlocal.com/northwest-herald/2026/02/10/2026-election-questionnaire-brian-sager-mchenry-county-board-district-7/",
+    "https://www.mchenrycountyil.gov/departments/county-board/meet-your-county-board-members",
+    "https://pub-countyofmchenry.escribemeetings.com/filestream.ashx?DocumentId=162162",
+    "https://www.mchenrycountyblog.com/2026/04/05/with-100-of-precincts-in-mchenry-county-board-district-7-8-challengers-jeff-schwartz-and-marty-mohr-defeat-brian-sager-larry-smith/",
+    "https://www.masstransitmag.com/management/news/55398318/il-whos-on-first-at-metra-directors-coming-and-going-as-transit-reforms-gel"
+   ],
+   "confidence": "Medium",
+   "confirmation_status": "The appointing official could not be established, and no McHenry County Board confirmation vote was found as of 27 Aug 2026.",
+   "day_own_classification": "Elected Official",
+   "day_own_agency": "RTA Chicago"
+  },
+  {
+   "name": "Brian Dahl",
+   "position": "Director (also Pace board)",
+   "appointment_method": "Kane County Board",
+   "background": "President of the Fox Valley Building and Construction Trades Council, previously its Vice President, and formerly membership director and fiduciary trustee for Painters District Council 30. A former Kane County Board member for District 6: appointed in 2015, elected in 2016, and resigned in April 2018 after moving out of the district.",
+   "education": "unknown",
+   "classification": "Labor Representative",
+   "rationale": "A building-trades council president, classified on his union leadership. This follows Day, who places union officials on the RTA board in this category even though that board has no designated labour seat.",
+   "sources": [
+    "https://www.kanecountyil.gov/Documents/Press%20Releases/Kane%20County%20Names%20Brian%20Dahl%20to%20Northern%20Illinois%20Transit%20Authority%20and%20Pace%20Suburban%20Bus%20Board,%20Reappoints%20Joe%20McMahon%20to%20Metra%20Board.pdf",
+    "https://kanecountyconnects.com/article/KaneCounty-NITA-METRA-2026",
+    "https://www.shawlocal.com/2016/11/05/dahl-of-north-aurora-wins-kane-county-board-district-6-seat/al0efo3/"
+   ],
+   "confidence": "Medium",
+   "confirmation_status": "Confirmed by the Kane County Board; seat effective September 2026.",
+   "judgment_call": true,
+   "classification_note": "This site's stated rule requires an explicitly designated union seat, and NITA has none, which would place him in Other Management/Policy. Day's applied practice classifies union officials on their background instead, and that reading was adopted here for both readings. Adjudicated by Steffany Bahamon."
+  },
+  {
+   "name": "David Pileski",
+   "position": "Director (also Pace board)",
+   "appointment_method": "DuPage County Board Chair (Deborah Conroy)",
+   "background": "Mayor of the Village of Roselle, elected in 2021 and re-elected in 2025, having previously served as a village trustee from 2017 and on the zoning board of appeals. A supply chain senior manager at W.W. Grainger, responsible for purchasing operations and automation technology solutions. Was 2025-26 President of the DuPage Mayors and Managers Conference. Day notes he publicly opposed the NITA reforms.",
+   "education": "unknown",
+   "classification": "Elected Official",
+   "rationale": "A sitting mayor. His private-sector role in supply chain management is not transit experience.",
+   "sources": [
+    "https://www.dupagecounty.gov/government/county_board/nita.php",
+    "https://www.roselle.il.us/54/Mayor",
+    "https://rosellestrong.com/about",
+    "https://igpa.uillinois.edu/in-the-news/edgar-fellows-program-welcomes-13th-class",
+    "https://dmmc-cog.org/2025/06/02/roselle-mayor-david-pileski-elected-2025-2026-president-of-the-dupage-mayors-and-managers-conference/"
+   ],
+   "confidence": "High",
+   "confirmation_status": "Approved by the DuPage County Board in mid-July 2026, on the County Board Chair's selection."
+  }
+ ]
+}
