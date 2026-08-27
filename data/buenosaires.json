@@ -1,113 +1,106 @@
 {
-  "agency": "SBASE (Subterráneos de Buenos Aires S.E.) — now SBASAU (Subterráneos de Buenos Aires S.A.U.)",
-  "city": "Buenos Aires",
-  "country": "Argentina",
-  "governance_model": "City-owned state enterprise (sociedad del estado, transformed to sociedad anónima unipersonal in January 2026 via Decree 20/2026). Directorio appointed by the GCBA (Gobierno de la Ciudad Autónoma de Buenos Aires). The board consists of a president, vice president, and directors. The city government's head of government (Jefe de Gobierno) appoints all board members. SBASE/SBASAU is responsible for the development, administration, expansion, and oversight of the Buenos Aires subway (Subte) and Premetro infrastructure.",
-  "board_size": 6,
-  "date_verified": "2026-03-17",
-  "notes": "The most recent confirmed full board composition is from January 2024 (appointed under Jefe de Gobierno Jorge Macri). A 2025 board resolution (Resolution 134/2025) was signed by Ibáñez, Seefeld, Kogan, and De Stéfano — suggesting Jorge Kogan (former city Secretary of Transport, resigned Sept 2024) may have joined the board, possibly replacing a member. The company was formally transformed from Sociedad del Estado to Sociedad Anónima Unipersonal (SAU) in January 2026, though its functions and state ownership remain unchanged. There is no public-facing governance page listing current board members. No labor, community, or elected official seats exist on the board — all members are government appointees with professional/political backgrounds.",
-  "members": [
-    {
-      "name": "Javier Ignacio Ibáñez",
-      "position": "Presidente",
-      "appointment_method": "Appointed by Jefe de Gobierno Jorge Macri (January 2024)",
-      "background": "Industrial engineer with extensive public administration experience under successive PRO-party Buenos Aires city governments. Former president of INTI (Instituto Nacional de Tecnología Industrial), chief of staff (jefe de gabinete) at the city ministries of Modernization and Economic Development, general manager of Teatro Colón, and executive director of the Agencia Gubernamental de Control.",
-      "education": "Industrial Engineer, Universidad de Buenos Aires (UBA). Additional studies in organizational leadership, foreign trade, economics, and finance.",
-      "classification": "Other Management/Policy",
-      "rationale": "While Ibáñez has held numerous senior public administration roles, none involved direct transit operations or management. His career spans technology (INTI), culture (Teatro Colón), regulatory oversight, and general government management — all outside the transit sector.",
-      "sources": [
-        "https://enelsubte.com/noticias/javier-ignacio-ibanez-es-el-nuevo-presidente-de-sbase/",
-        "https://www.linkedin.com/in/javierignacioibanez/"
-      ],
-      "confidence": "High"
-    },
-    {
-      "name": "Mauro Gastón Alabuenas",
-      "position": "Vicepresidente",
-      "appointment_method": "Appointed by GCBA; previously served as director (2016-2018), vice president (2018-2023), president (2023-2024), returned to vice president (January 2024)",
-      "background": "Lawyer with long tenure at SBASE in governance roles. Before joining SBASE, served as Director General of Public Space Ordering (Dirección General de Ordenamiento del Espacio Público) under the GCBA Ministry of Environment and Public Space (2011-2016).",
-      "education": "Law degree, Universidad de Belgrano. Postgraduate studies in Commercial Bankruptcy Law (Derecho Concursal Profundizado), Universidad de Buenos Aires.",
-      "classification": "Other Management/Policy",
-      "rationale": "Alabuenas is a lawyer and public administrator. Although he has spent many years at SBASE, his roles have been in corporate governance and legal oversight rather than transit operations or engineering. His pre-SBASE career was in public space regulation, not transit.",
-      "sources": [
-        "https://enelsubte.com/noticias/mauro-alabuenas-es-el-nuevo-presidente-de-sbase/",
-        "https://www.enelsubte.com/noticias/el-presidente-de-sbase-mauro-alabuenas-en-un-dialogo-exclusivo-con-enelsubte/",
-        "https://buenosaires.gob.ar/subte/noticias/subterraneos-de-buenos-aires-tiene-nuevo-presidente"
-      ],
-      "confidence": "High"
-    },
-    {
-      "name": "Guillermo Seefeld",
-      "position": "Director",
-      "appointment_method": "Appointed by GCBA; has served on SBASE board across multiple administrations (continuity director from pre-2016, reappointed January 2024)",
-      "background": "PRO party figure and longtime transport official. Former Secretary of Traffic and Transportation of GCBA (under Mayor Jorge Telerman). Former Undersecretary of Land Transportation at the national level (during the Menem administration). Brother of actor Martín Seefeld. Has been the longest-serving member of the SBASE board, continuing across multiple city government administrations.",
-      "education": "Not publicly confirmed",
-      "classification": "Transit Ops/Management",
-      "rationale": "Seefeld held the top transit management position for Buenos Aires city (Secretary of Traffic and Transportation) and also served as national Undersecretary of Land Transportation. These roles involved direct oversight and management of transit systems, including the Subte. His decades-long career has been specifically focused on transit and transportation.",
-      "sources": [
-        "https://enelsubte.com/noticias/nuevo-directorio-en-sbase/",
-        "https://enelsubte.com/noticias/javier-ignacio-ibanez-es-el-nuevo-presidente-de-sbase/",
-        "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/830045"
-      ],
-      "confidence": "High"
-    },
-    {
-      "name": "Juan Sebastián De Stéfano",
-      "position": "Director",
-      "appointment_method": "Appointed by GCBA (joined board circa 2020, reappointed January 2024)",
-      "background": "Former Director of Legal Affairs of the AFI (Agencia Federal de Inteligencia, Argentina's intelligence agency) during the Macri national administration. His appointment to the SBASE board was controversial — he appeared in a leaked video of a meeting where judicial cases against union leaders were allegedly being coordinated (the 'Gestapo' affair), prompting opposition legislators and subway unions to demand his removal. Despite the controversy, he was retained on the board.",
-      "education": "Not publicly confirmed (legal background implied by AFI Legal Affairs role)",
-      "classification": "Other Management/Policy",
-      "rationale": "De Stéfano's background is in intelligence and legal affairs, with no known transit experience. His appointment appears politically motivated rather than based on transit or management expertise.",
-      "sources": [
-        "https://www.enelsubte.com/noticias/polemica-por-la-aparicion-de-un-director-de-sbase-en-el-video-de-la-gestapo/",
-        "https://www.enelsubte.com/noticias/escandalo-de-espionaje-oposicion-y-sindicatos-piden-que-se-remueva-a-de-stefano-del-directorio-de-sbase/",
-        "https://enelsubte.com/noticias/javier-ignacio-ibanez-es-el-nuevo-presidente-de-sbase/"
-      ],
-      "confidence": "High"
-    },
-    {
-      "name": "Eduardo José Moreno",
-      "position": "Director",
-      "appointment_method": "Appointed by GCBA (January 2024)",
-      "background": "Extensive career in public transportation in Argentina. Former Executive Director of Transportes Integrados Metropolitanos. Has held various transport-related positions with the Province of Buenos Aires and national government over several decades. Career specifically focused on the transport sector.",
-      "education": "Not publicly confirmed (CV available at argentina.gob.ar suggests professional transport background)",
-      "classification": "Transit Ops/Management",
-      "rationale": "Moreno has decades of direct experience in the Argentine transport sector, including as Executive Director of Transportes Integrados Metropolitanos (integrated metropolitan transport). This represents significant, direct transit management experience.",
-      "sources": [
-        "https://enelsubte.com/noticias/javier-ignacio-ibanez-es-el-nuevo-presidente-de-sbase/",
-        "https://www.argentina.gob.ar/sites/default/files/morenoeduardocv.pdf"
-      ],
-      "confidence": "Medium"
-    },
-    {
-      "name": "Bernarda Balestra",
-      "position": "Directora",
-      "appointment_method": "Appointed by GCBA (on board since at least January 2024)",
-      "background": "Limited public information available. Listed as a director of SBASE in official appointment announcements. No detailed professional background was found in public sources.",
-      "education": "Not publicly confirmed",
-      "classification": "Other Management/Policy",
-      "rationale": "Classified as Other Management/Policy by default given the absence of any public information linking her to transit operations, labor representation, community advocacy, or elected office. Government-appointed board members without transit backgrounds typically fall in this category.",
-      "sources": [
-        "https://enelsubte.com/noticias/javier-ignacio-ibanez-es-el-nuevo-presidente-de-sbase/"
-      ],
-      "confidence": "Low"
-    },
-    {
-      "name": "Jorge Kogan",
-      "position": "Director (probable — appeared as signatory on Resolution 134/2025)",
-      "appointment_method": "Likely appointed by GCBA after resigning as Secretary of Transport of Buenos Aires city (September 2024)",
-      "background": "Engineer with deep transit and transport experience spanning decades. Former Secretary of Transport of Argentina (1999-2001, under President de la Rúa). Former Secretary of Transport of Buenos Aires city (2024, under Jorge Macri, resigned after 10 months). Director of the reform and concession of Railways and Subways of Buenos Aires (1990-1995). Former Vice President of Mercer Management Consulting (1995-1999). Has advised governments of Mexico, Poland, and South Africa on railway restructuring. Former board member of Aerolíneas Argentinas.",
-      "education": "Engineering degree, Universidad de Buenos Aires (UBA)",
-      "classification": "Transit Ops/Management",
-      "rationale": "Kogan has one of the most extensive transit-specific careers of any board member. He directed the concession of Buenos Aires railways and subways, served as national Secretary of Transport, and has international railway consulting experience. This is deep, direct transit operations and management expertise.",
-      "sources": [
-        "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/830045",
-        "https://www.ambito.com/portada-principal/jorge-kogan-deja-su-cargo-n3119250",
-        "https://www.iprofesional.com/politica/414509-renuncio-secretario-transporte-ciudad-buenos-aires-jorege-kogan-tras-10-meses-en-cargo",
-        "https://www.republicanosunidos.com.ar/pages/referentes/jorge-kogan.html"
-      ],
-      "confidence": "Medium"
-    }
-  ]
+ "agency": "SBASAU (Subterráneos de Buenos Aires S.A.U.) — formerly SBASE (Subterráneos de Buenos Aires S.E.)",
+ "city": "Buenos Aires",
+ "country": "Argentina",
+ "governance_model": "City-owned corporation. SBASE was transformed from a Sociedad del Estado into a Sociedad Anónima Unipersonal (SBASAU) via Decreto 20/2026 (published Boletín Oficial CABA, January 2026), implementing the conversion mandate of national DNU 70/2023 (Art. 48) for all state-participation companies. Ownership remains 100% GCBA; the change is a legal-form conversion, not a privatization, and Subte operations remain concessioned to Emova. Per the SBASE/SBASAU Estatuto, Título IV 'Dirección y Administración,' Artículo Noveno, the Directorio is composed of a Presidente, a Vicepresidente, and cuatro (4) Directores Titulares — six seats total — all designated by the Asamblea (GCBA, as sole shareholder) for three-year terms. A separate Comisión Fiscalizadora (statutory auditors — currently Mariano Edmundo Barroso, Jorge Iwanczuk, and Francisco José Olivero Majdalani per the official GCBA governance page) performs audit functions and is NOT part of the Directorio; it is excluded from this member list per the agency's own organizational chart.",
+ "board_size": 6,
+ "date_verified": "2026-08-27",
+ "notes": "CHANGES SINCE MARCH 2026 SNAPSHOT: (1) SBASE completed its formal conversion to SBASAU under Decreto 20/2026 (Jan 2026); governance/ownership substance is unchanged. (2) Víctor José Colombano was confirmed as a new Director Titular, designated via Acta de Asamblea General Ordinaria dated 15 January 2026, effective 17 January 2026 — verified directly from the primary-source PDF text (GCABA Oficina de Integridad Pública dictamen IF-2026-33966889-GCABA-OFIP, extracted via pdftotext) which names him with D.N.I. 18.069.067. That DNI independently matches a 2004 Boletín Oficial CABA record ('Colombano, Víctor,' resignation as Director General de Emergencia Habitacional) and a CUIT registry entry, confirming this is the same longtime Peronist political figure — not a coincidental namesake. Public bios and party-affiliated outlets (Parlamentario, Ámbito, La Política Online) describe him as 'congresal Metropolitano del PJ CABA y congresal nacional PJ' (an internal Justicialist Party congress DELEGATE) plus a career in city/national public administration (Director General de Emergencia Habitacional 2004-era, manager roles tied to Mercado Central, Instituto de Vivienda de la Ciudad, and head of the national 'El Estado en tu Barrio' program from Oct 2022). CAUTION: some AI-generated web-search summaries mischaracterized him as a sitting 'national deputy with a mandate until 2027' — this could not be corroborated against the Honorable Cámara de Diputados de la Nación's own roster (hcdn.gob.ar), and the primary-source OFIP dictamen (which exhaustively reviews his declared activities for conflicts of interest) never mentions a seat in Congress, only simultaneous work as an employee of ADIF S.A. (national rail infrastructure agency) and an ad-honorem Secretario Administrativo y de Relaciones Institucionales at ALAF (Asociación Latinoamericana de Ferrocarriles, a rail-industry trade association). 'Congresal' (party congress delegate) is being conflated with 'diputado' (elected national deputy) in that search output; the two are not the same office, and this file treats him as NOT a current elected official absent stronger evidence. (3) Mario Sebastián Sabugo appears as a new Director Titular on the official GCBA governance page; he did not appear in the March 2026 snapshot, the January 2024 appointment-cycle press coverage, or any subsequent news article located during this research — his exact appointment date/method could not be independently verified beyond the live governance page. (4) Eduardo José Moreno and Bernarda Balestra, both present in the March 2026 file, no longer appear on the current official board listing; no departure date or reason was found in public sources. (5) Jorge Kogan — flagged in the March 2026 file only as 'probable' based on his signature on Resolution 134/2025 — is CONFIRMED ABSENT from the current Directorio; he does not appear on the official governance page, resolving the prior ambiguity (he was never durably a board member, or he departed without independent public documentation). SEEFELD CORRECTION (confirmed serious error in the March 2026 file): Guillermo 'Willy' Seefeld remains a sitting Director (the longest-serving member, on the board continuously since 2012, per the very enelSubte article the prior file cited). His actual documented background is: PRO party dirigente ('dirigente del PRO'), brother of actor Martín Seefeld, owner of a parador (beach resort) in Pinamar, and a longtime associate of Mauricio Macri's social/political circle; he was also named in reporting about corruption allegations tied to Subte graffiti-cleaning contracts. The background wrongly attributed to him in the March 2026 file — 'Secretario de Tránsito y Transporte del GCBA durante la gestión de Jorge Telerman' and 'Subsecretario de Transporte Terrestre de la Nación' (Menem era) — belongs to Gustavo Álvarez, a DIFFERENT SBASE director who served on an earlier (c. 2016) iteration of the board alongside Seefeld, Alabuenas, and Verónica López Quesada; Álvarez does not appear on the current board and this file does not include him. No professional/technical credentials or transit-management experience for Seefeld were found in any vetted source. UNVERIFIABLE / LOW-CONFIDENCE ITEMS: Sabugo's exact appointment date and appointment mechanism; the reasons/dates for Moreno's, Balestra's, and Kogan's departures from the board; Seefeld's formal education; Colombano's formal education and the complete content of his declared CV (only excerpts were quoted in the public OFIP dictamen). BLOCKED FETCHES: none — all cited domains were reachable. One caution: an early WebFetch pass at the OFIP PDF (via automatic HTML/text summarization) incorrectly reported the document contained no match for 'Colombano'; downloading the same file and running pdftotext directly resolved this and produced the accurate quotations used above, underscoring the need to verify AI-summarized fetches against raw source text for high-stakes facts.",
+ "members": [
+  {
+   "name": "Javier Ignacio Ibáñez",
+   "position": "Presidente",
+   "appointment_method": "Appointed by Jefe de Gobierno Jorge Macri (January 2024); confirmed as sitting Presidente on the official GCBA SBASE/SBASAU governance page as of August 2026, with no reported change since the January 2024 appointment.",
+   "background": "Industrial engineer with extensive public administration experience under successive PRO-party Buenos Aires city governments. Former president of INTI (Instituto Nacional de Tecnología Industrial), chief of staff (jefe de gabinete) at the city ministries of Modernization and Economic Development, general manager of Teatro Colón, and executive director of the Agencia Gubernamental de Control.",
+   "education": "Industrial Engineer, Universidad de Buenos Aires (UBA). Additional studies in organizational leadership, foreign trade, economics, and finance.",
+   "classification": "Other Management/Policy",
+   "rationale": "While Ibáñez has held numerous senior public administration roles, none involved direct transit operations or management. His career spans technology (INTI), culture (Teatro Colón), regulatory oversight, and general government management — all outside the transit sector.",
+   "sources": [
+    "https://enelsubte.com/noticias/javier-ignacio-ibanez-es-el-nuevo-presidente-de-sbase/",
+    "https://buenosaires.gob.ar/subte/noticias/subterraneos-de-buenos-aires-tiene-nuevo-presidente",
+    "https://buenosaires.gob.ar/gcaba_historico/nosotros"
+   ],
+   "confidence": "High"
+  },
+  {
+   "name": "Mauro Gastón Alabuenas",
+   "position": "Vicepresidente",
+   "appointment_method": "Appointed by GCBA; previously served as director (2016-2018), vice president (2018-2022), president (2022-2024), returned to vice president (January 2024). Confirmed as sitting Vicepresidente on the official GCBA SBASE/SBASAU governance page as of August 2026.",
+   "background": "Lawyer with long tenure at SBASE in governance roles. Before joining SBASE, served as Director General of Public Space Ordering (Dirección General de Ordenamiento del Espacio Público) under the GCBA Ministry of Environment and Public Space (2011-2016).",
+   "education": "Law degree, Universidad de Belgrano. Postgraduate studies in Commercial Bankruptcy Law (Derecho Concursal Profundizado), Universidad de Buenos Aires.",
+   "classification": "Other Management/Policy",
+   "rationale": "Alabuenas is a lawyer and public administrator. Although he has spent many years at SBASE, his roles have been in corporate governance and legal oversight rather than transit operations or engineering. His pre-SBASE career was in public space regulation, not transit.",
+   "sources": [
+    "https://enelsubte.com/noticias/mauro-alabuenas-es-el-nuevo-presidente-de-sbase/",
+    "https://www.enelsubte.com/noticias/el-presidente-de-sbase-mauro-alabuenas-en-un-dialogo-exclusivo-con-enelsubte/",
+    "https://buenosaires.gob.ar/gcaba_historico/nosotros"
+   ],
+   "confidence": "High"
+  },
+  {
+   "name": "Mario Sebastián Sabugo",
+   "position": "Director",
+   "appointment_method": "Appointed by GCBA Asamblea; appears as a current Director on the official GCBA SBASE/SBASAU governance page as of August 2026. He did not appear in the March 2026 snapshot or in press coverage of the January 2024 board appointments, and his exact appointment date/method could not be independently verified in public news sources — flagged as a gap.",
+   "background": "Architecture historian and academic. Doctor in Architecture (Doctor Arquitecto) and Profesor Titular Consulto at the Facultad de Arquitectura, Diseño y Urbanismo (FADU), Universidad de Buenos Aires, where he leads the History of Architecture chair (Cátedra Sabugo/Caride) and is a principal researcher at the Instituto de Arte Americano (IAA). Specialist in the history of Hispanic-Arab, Spanish, and Hispanic-American architecture. Previously served as Subsecretario de Planeamiento (Undersecretary of Planning) in the GCBA Ministerio de Planeamiento y Obras Públicas, approximately 2006-2008 (per Boletín Oficial CABA resignation/final-report notices).",
+   "education": "Doctor in Architecture (Doctor Arquitecto), Universidad de Buenos Aires (FADU-UBA).",
+   "classification": "Other Management/Policy",
+   "rationale": "Sabugo's public-sector role (Subsecretario de Planeamiento) was general city/urban-environmental planning, not a transit-specific planning post — the city government's transit/mobility planning function sits in a separate Subsecretaría de Planificación de la Movilidad y la Seguridad Vial. His primary career is as an architecture-history academic. No evidence of direct experience managing transit systems, rail/bus operations, or transit capital projects was found, so this does not meet the bar for Transit Ops/Management under the 'general planners don't count unless transit-focused' rule.",
+   "sources": [
+    "https://buenosaires.gob.ar/gcaba_historico/nosotros",
+    "https://www.iaa.fadu.uba.ar/?tag=dr-arq-mario-sabugo",
+    "https://boletinoficial.buenosaires.gob.ar/normativaba/norma/111578"
+   ],
+   "confidence": "Medium"
+  },
+  {
+   "name": "Juan Sebastián De Stéfano",
+   "position": "Director",
+   "appointment_method": "Appointed by GCBA (joined board circa 2020, reappointed January 2024); confirmed as a sitting Director on the official GCBA SBASE/SBASAU governance page as of August 2026.",
+   "background": "Former Director of Legal Affairs of the AFI (Agencia Federal de Inteligencia, Argentina's intelligence agency) during the Macri national administration. His appointment to the SBASE board was controversial — he appeared in a leaked video of a meeting where judicial cases against union leaders were allegedly being coordinated (the 'Gestapo' affair), prompting opposition legislators and subway unions to demand his removal. Despite the controversy, he was retained on the board and remains a director as of the current snapshot.",
+   "education": "Not publicly confirmed (legal background implied by AFI Legal Affairs role).",
+   "classification": "Other Management/Policy",
+   "rationale": "De Stéfano's background is in intelligence and legal affairs, with no known transit experience. His appointment appears politically motivated rather than based on transit or management expertise.",
+   "sources": [
+    "https://www.enelsubte.com/noticias/polemica-por-la-aparicion-de-un-director-de-sbase-en-el-video-de-la-gestapo/",
+    "https://www.enelsubte.com/noticias/escandalo-de-espionaje-oposicion-y-sindicatos-piden-que-se-remueva-a-de-stefano-del-directorio-de-sbase/",
+    "https://buenosaires.gob.ar/gcaba_historico/nosotros"
+   ],
+   "confidence": "High"
+  },
+  {
+   "name": "Guillermo Seefeld",
+   "position": "Director",
+   "appointment_method": "Appointed by GCBA; has served on the SBASE/SBASAU board continuously since 2012, across multiple city administrations (reappointed through the January 2024 cycle). Confirmed as a sitting Director on the official GCBA SBASE/SBASAU governance page as of August 2026.",
+   "background": "Described in the agency's own cited source (enelSubte, 'Quién es quién en el nuevo Directorio de SBASE') as a 'dirigente del PRO' (PRO party figure) and, as of that article, 'el único director que continúa de la gestión anterior' (the only director carried over from the prior administration), having joined SBASE in 2012 — making him the board's longest-tenured member. He is the brother of actor Martín Seefeld, owns a parador (beach resort/bar) in Pinamar, was a regular at paddle-tennis matches with Mauricio Macri, and was at one point mentioned as a possible mayoral candidate for Pinamar. He was also named, alongside other board members, in reporting on corruption allegations tied to Subte graffiti-cleaning contracts. No professional, technical, or prior transit-management background is documented for him in any source found. (The March 2026 snapshot incorrectly attributed to Seefeld the background of 'Secretario de Tránsito y Transporte del GCBA durante la gestión de Jorge Telerman' and 'Subsecretario de Transporte Terrestre de la Nación' — those roles belong to Gustavo Álvarez, a different SBASE director who served on an earlier iteration of the board (c. 2016) and is not currently on it.)",
+   "education": "Not publicly confirmed.",
+   "classification": "Other Management/Policy",
+   "rationale": "With the Telerman/Menem-era transport-official background now correctly reattributed away from him, no qualifying transit, finance, law, or other professional/technical credential is documented for Seefeld. He is best characterized as a long-tenured political appointee (PRO party figure) with a private business background (resort ownership) and no confirmed transit-sector expertise, so he defaults to the residual 'Other Management/Policy' bucket used for government appointees lacking any documented transit background — the same default applied to other thinly-documented appointees in this dataset. He has not held elected office, so 'Elected Official' does not apply.",
+   "sources": [
+    "https://enelsubte.com/noticias/nuevo-directorio-en-sbase/",
+    "https://buenosaires.gob.ar/gcaba_historico/nosotros",
+    "https://enelsubte.com/noticias/denuncian-un-escandalo-de-corrupcion-detras-de-contratos-de-limpieza-de-grafitis-en-el-subte/"
+   ],
+   "confidence": "Medium"
+  },
+  {
+   "name": "Víctor José Colombano",
+   "position": "Director Titular",
+   "appointment_method": "Designated Director Titular of SBASE via Acta de Asamblea General Ordinaria dated 15 January 2026, effective from 17 January 2026 — verified directly from the primary-source text of GCABA Oficina de Integridad Pública dictamen IF-2026-33966889-GCABA-OFIP (D.N.I. 18.069.067). Confirmed as a sitting Director on the official GCBA SBASE/SBASAU governance page as of August 2026.",
+   "background": "Longtime Peronist political figure in Buenos Aires City politics (Comuna 7): described in party-aligned and political-news sources as 'congresal Metropolitano del PJ CABA y congresal nacional PJ' (a delegate to the Justicialist Party's internal metropolitan and national congresses — NOT an elected legislative seat) and a leader of NEP (Nuevo Espacio de Participación Peronista) within the former Frente de Todos coalition. Public administration career includes: Director General de Emergencia Habitacional of the City of Buenos Aires (through 2004, per Boletín Oficial CABA resignation notice matching the same D.N.I.), roles tied to the Mercado Central de Buenos Aires and the Instituto de Vivienda de la Ciudad, and head of the national 'El Estado en tu Barrio' program from October 2022. At the time of his SBASE designation, he simultaneously declared employment as an empleado (employee, seniority/title unspecified) at ADIF S.A. (Administración de Infraestructuras Ferroviarias, the national rail-infrastructure agency) and an ad-honorem post as Secretario Administrativo y de Relaciones Institucionales of ALAF (Asociación Latinoamericana de Ferrocarriles), a rail-industry trade association — both per his own conflict-of-interest declaration.",
+   "education": "Not publicly confirmed in sources reviewed.",
+   "classification": "Other Management/Policy",
+   "rationale": "Colombano's declared simultaneous roles at the time of appointment — an unspecified-seniority ADIF employee position and an ad-honorem trade-association administrative secretaryship — do not rise to 'significant direct experience managing transit systems, rail/bus operations, or transit capital projects' as required for Transit Ops/Management; the OFIP dictamen itself characterizes the ALAF role as administrative/institutional support with no fixed hours, not operational management. The bulk of his documented career is in party political organizing and public housing/market administration, unrelated to transit. He has not been confirmed to hold elected public office (no listing found on the Honorable Cámara de Diputados de la Nación roster); his 'congresal' role is an internal party position, not an elected legislative seat, so 'Elected Official' does not apply.",
+   "classification_contested": false,
+   "classification_alt": "Transit Ops/Management",
+   "sources": [
+    "https://buenosaires.gob.ar/sites/default/files/2026-07/IF-2026-33966889-GCABA-OFIP.pdf",
+    "https://buenosaires.gob.ar/gcaba_historico/nosotros",
+    "https://www.parlamentario.com/tag/victor-jose-colombano/",
+    "https://www.ambito.com/perfil/1000700-victor-jose-colombano"
+   ],
+   "confidence": "Medium",
+   "classification_note": "Judgment call, decided the other way. At appointment he declared an employee post of unspecified seniority at ADIF, the national rail infrastructure agency, and an unpaid administrative secretaryship at a rail trade association. His documented career is party political organising and public housing administration, and the conflict-of-interest filing itself describes the trade-association role as administrative support with no fixed hours. Not counted as transit expertise. Separately: his 'congresal nacional' title is a party congress delegate, not an elected seat, so Elected Official does not apply.",
+   "judgment_call": true
+  }
+ ]
 }

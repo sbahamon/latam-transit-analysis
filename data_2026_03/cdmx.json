@@ -1,0 +1,168 @@
+{
+  "agency": "STC Metro (Sistema de Transporte Colectivo)",
+  "city": "Mexico City",
+  "country": "Mexico",
+  "governance_model": "Decentralized public body (organismo público descentralizado) governed by a Consejo de Administración (Board of Directors) composed entirely of government officials and institutional representatives. The Secretary of Mobility serves as Board President. The Board includes representatives from CDMX centralized administration (Secretarías de Gobierno, Finanzas, Obras), parastate entities (STE, Metrobús), federal government (SCT, Banobras), and the State of Mexico. The union (SNTSTC) was granted participation in Board sessions. A separate Consejo Consultivo (advisory council) of former directors and transit engineers was created in 2019. Day-to-day management is handled by a Director General appointed by the Jefe/Jefa de Gobierno. The Board has between 5 and 15 members per the Estatuto Orgánico. There are no independent or community-appointed members.",
+  "board_size": 11,
+  "date_verified": "2026-03-17",
+  "notes": "The STC Metro's Consejo de Administración is entirely composed of government officials — no independent members, community representatives, or rider advocates. The Secretary of Mobility chairs it, making it effectively a government coordination body rather than an independent oversight board. The Director General is a political appointee of the Jefa de Gobierno (Clara Brugada). The current Director General, Adrián Rubalcava, is a career politician (former mayor of Cuajimalpa, lawyer by training) with no transit operations background. The union leader Fernando Espino Arévalo has controlled the SNTSTC since 1978 (over 47 years). The Estatuto Orgánico was last modified in 2022. The Oficial Mayor position was eliminated in CDMX in 2019 and absorbed by the Secretaría de Administración y Finanzas. Board size of 11 is estimated based on statutory composition — exact current membership is difficult to verify as CDMX does not publish a public roster of sitting board members. Federal representatives (SCT, Banobras) and State of Mexico representative could not be individually identified.",
+  "members": [
+    {
+      "name": "Héctor Ulises García Nieto",
+      "position": "President of Consejo de Administración / Secretary of Mobility (SEMOVI)",
+      "appointment_method": "Ex officio — appointed as Secretary of Mobility by Jefa de Gobierno Clara Brugada (October 2024)",
+      "background": "Economist and Morena party official. Former Director General of Transport and Executive Secretary at the extinct Secretaría de Transporte y Vialidad (SETRAVI). Former coordinator and general administrator of the Central de Abasto. Served as Morena party leader in CDMX.",
+      "education": "Bachelor's in Economics from UNAM; master's and doctoral studies at UNAM Faculty of Political and Social Sciences",
+      "classification": "Other Management/Policy",
+      "rationale": "Although he heads the mobility secretariat and has transportation policy experience (SETRAVI, SEMOVI), his background is as an economist and political party leader, not as a transit operations manager. His SETRAVI role was in transport regulation/policy, not operations.",
+      "sources": [
+        "https://www.excelsior.com.mx/comunidad/hector-ulises-garcia-nieto-perfil-secretario-movilidad-cdmx/1669168",
+        "https://www.milenio.com/politica/hector-garcia-nieto-quien-es-nuevo-secretario-semovi-brugada",
+        "https://www.unotv.com/estados/ciudad-de-mexico/quien-es-hector-ulises-garcia-nieto-proximo-secretario-de-movilidad-de-la-cdmx/"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Adrián Rubalcava Suárez",
+      "position": "Director General of STC Metro",
+      "appointment_method": "Appointed by Jefa de Gobierno Clara Brugada (May 6, 2025)",
+      "background": "Career politician and lawyer. Mayor of Cuajimalpa de Morelos (2012-2015, 2018-2024). Local legislator. Head of the Unit of Policies and Strategies for Peace Construction at the Federal Citizen Security Secretariat (2024-2025). Has been affiliated with PRD, PRI, Partido Verde, and now aligned with Morena. No transit or transportation operations experience.",
+      "education": "Law degree from Universidad Anáhuac del Norte; Master's in Public Administration from INAP (National Institute of Public Administration); pursuing doctorate in Public Administration",
+      "classification": "Elected Official",
+      "rationale": "Former elected mayor of Cuajimalpa (multiple terms), former local legislator. His appointment to STC is a political appointment by the Jefa de Gobierno. He is a career elected official who moved into an appointed position.",
+      "sources": [
+        "https://www.nmas.com.mx/ciudad-de-mexico/quien-es-adrian-rubalcava-nuevo-director-metro-cdmx-sustituto-guillermo-calderon/",
+        "https://www.milenio.com/politica/grado-estudios-adrian-rubalcava-cv-nuevo-director-metro-cdmx",
+        "https://www.elfinanciero.com.mx/cdmx/2025/05/06/metro-de-cdmx-estrena-director-adrian-rubalcava-reemplaza-a-guillermo-calderon/"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "César Cravioto Romero",
+      "position": "Board Member / Secretary of Government (Secretario de Gobierno)",
+      "appointment_method": "Ex officio — appointed as Secretary of Government by Jefa de Gobierno Clara Brugada (October 2024)",
+      "background": "Career politician and communications professional. Former senator for Morena. Former Commissioner for Reconstruction under Claudia Sheinbaum (2018-2021). Former Director of Political Concertation under AMLO's CDMX government (2001-2005). Local legislator and coordinator of Morena faction in ALDF.",
+      "education": "Bachelor's in Communications Science from Universidad Iberoamericana; diploma in Public Policy from UNAM",
+      "classification": "Elected Official",
+      "rationale": "Former senator and local legislator who served in elected positions before being appointed to cabinet. His career is defined by elected office and political party leadership within Morena.",
+      "sources": [
+        "https://www.eluniversal.com.mx/metropoli/perfil-quien-es-cesar-cravioto-proximo-secretario-de-gobierno-de-la-cdmx/",
+        "https://www.milenio.com/politica/comunidad/cesar-cravioto-romero-quien-es-nuevo-secretario-gobierno-brugada",
+        "https://politica.expansion.mx/cdmx/2024/08/19/quien-es-cesar-cravioto-romero"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Juan Pablo de Botton Falcón",
+      "position": "Board Member / Secretary of Administration and Finance (Secretario de Administración y Finanzas)",
+      "appointment_method": "Ex officio — appointed as Secretary of Administration and Finance by Jefa de Gobierno Clara Brugada (October 2024)",
+      "background": "Economist and senior financial official. Former Undersecretary of Expenditures at SHCP (federal finance ministry). Former Director General of Nacional Financiera (Nafin) and Bancomext (2018-2022). Former coordinator at SAT (tax administration). Private sector experience at Citibanamex in data science.",
+      "education": "Bachelor's in Economics from CIDE; exchange studies at UCLA",
+      "classification": "Other Management/Policy",
+      "rationale": "Finance and economics professional with extensive experience in federal and city public finance. No transit operations background — expertise is in fiscal policy, banking, and financial management.",
+      "sources": [
+        "https://www.excelsior.com.mx/comunidad/juan-pablo-botton-finanzas-cdmx-quien-es-clara-brugada/1669170",
+        "https://www.milenio.com/politica/juan-pablo-de-botton-quien-es-secretario-administracion-finanzas",
+        "https://politica.expansion.mx/cdmx/2024/08/19/quien-es-juan-pablo-botton-responsable-finanzas-cdmx"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Raúl Basulto Luviano",
+      "position": "Board Member / Secretary of Works and Services (Secretario de Obras y Servicios)",
+      "appointment_method": "Ex officio — appointed as Secretary of Works and Services by Jefa de Gobierno Clara Brugada (October 2024)",
+      "background": "Architect specializing in urban construction. Former Director General of Works and Urban Development in Iztapalapa (2018-2023), where he oversaw construction of 13 'Utopías' community centers. Former advisor in the ALDF. Started career in social housing programs (Programa de Mejoramiento Barrial) and civil protection.",
+      "education": "Architecture from UAM Xochimilco; postgraduate studies at the Institute for Advanced Architecture of Catalonia",
+      "classification": "Other Management/Policy",
+      "rationale": "Architect and public works administrator. His experience is in urban construction and community infrastructure, not transit operations. The Secretary of Works oversees infrastructure broadly, not transit-specific projects.",
+      "sources": [
+        "https://www.eluniversal.com.mx/metropoli/perfil-quien-es-raul-basulto-luviano-proximo-secretario-de-obras-y-servicios-sobse/",
+        "https://www.milenio.com/politica/quien-es-raul-basulto-nuevo-secretario-de-obras-y-servicios-de-cdmx",
+        "https://www.unotv.com/estados/ciudad-de-mexico/raul-basulto-luviano-trayectoria-profesional-proximo-secretario-de-obras-cdmx/"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Martín López Delgado",
+      "position": "Board Member / Director General of Servicio de Transportes Eléctricos (STE)",
+      "appointment_method": "Ex officio — appointed as Director General of STE (since June 2021, continuing under Brugada administration)",
+      "background": "Transportation engineer with extensive career at STE. Held multiple positions within STE including Section Chief, Department Chief, Director of Transportation, and Director General. Under his leadership, STE grew from 120,000 daily users (2019) to over 380,000 daily users (2025), operating 462 modern trolleybus units across 13 routes.",
+      "education": "Transportation Engineering from UPIICSA-IPN; Master's in Public Administration from Universidad del Valle de México",
+      "classification": "Transit Ops/Management",
+      "rationale": "Career transit professional who rose through the ranks of STE (electric transport operator). Has direct operational experience managing trolleybus, Cablebús, and light rail systems. His entire career has been in transit operations.",
+      "sources": [
+        "https://www.ste.cdmx.gob.mx/secretaria/estructura/1",
+        "https://www.infobae.com/mexico/2023/12/13/quien-es-el-director-del-servicio-de-transportes-electricos-que-opera-el-trolebus-y-el-tren-ligero-de-cdmx/",
+        "https://www.pasajero7.com/rescate-del-servicio-transportes-electricos-una-apuesta-la-movilidad-sostenible-en-la-cdmx/"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Rosario Castro Escorcia",
+      "position": "Board Member / Director General of Metrobús (Sistema de Movilidad 1)",
+      "appointment_method": "Ex officio — appointed as Director General of Metrobús under Brugada administration",
+      "background": "Details of background not fully verified. Serves as Director General of the Metrobús BRT system in Mexico City.",
+      "education": "Not verified",
+      "classification": "Other Management/Policy",
+      "rationale": "Classified as Other Management/Policy pending verification of transit operations background. Insufficient public information available to confirm transit-specific expertise.",
+      "sources": [
+        "https://www.metrobus.cdmx.gob.mx/"
+      ],
+      "confidence": "Low"
+    },
+    {
+      "name": "Fernando Espino Arévalo",
+      "position": "Union Representative / President of the National Executive Committee, SNTSTC",
+      "appointment_method": "Elected by union membership — has led the SNTSTC since 1978 (over 47 years). Union participation in the Consejo de Administración was formally approved.",
+      "background": "Entered STC Metro as a worker in 1970. Elected union general secretary in 1978. Has served as federal deputy and local legislator (multiple terms, 1991-2012). Affiliated with PRI and later Partido Verde. Also serves as president of the union's oversight committee since 1995. Known for decades-long control of the union and controversies regarding nepotism.",
+      "education": "Electrical engineering (institution not verified)",
+      "classification": "Labor Representative",
+      "rationale": "Explicitly designated as the union representative on the Consejo de Administración, representing the interests of the 12,400+ STC Metro workers through the SNTSTC.",
+      "sources": [
+        "https://www.infobae.com/mexico/2023/09/18/quien-es-fernando-espino-arevalo-el-poderoso-lider-absoluto-del-sindicato-del-metro/",
+        "https://www.eluniversal.com.mx/metropoli/perfil-quien-es-fernando-espino-arevalo-lider-del-sindicato-del-metro-desde-hace-44-anos/",
+        "https://www.proceso.com.mx/reportajes/2020/3/18/el-poder-de-fernando-espino-lider-del-sindicato-del-metro-240032.html"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Federal Representative (SCT/SICT)",
+      "position": "Board Member / Representative of the Secretaría de Infraestructura, Comunicaciones y Transportes",
+      "appointment_method": "Designated by the federal Secretary of Infrastructure, Communications and Transportation",
+      "background": "Specific individual not identified. Per the Estatuto Orgánico, the federal SCT (now SICT) designates a representative or alternate to sit on the Board.",
+      "education": "Not identified",
+      "classification": "Other Management/Policy",
+      "rationale": "Federal government representative on the board. Individual not publicly identified.",
+      "sources": [
+        "https://vlex.com.mx/vid/aviso-da-conocer-modificacion-730854229"
+      ],
+      "confidence": "Low"
+    },
+    {
+      "name": "Federal Representative (Banobras)",
+      "position": "Board Member / Representative of Banco Nacional de Obras y Servicios Públicos",
+      "appointment_method": "Designated by Banobras (national development bank for public works)",
+      "background": "Specific individual not identified. Per the Estatuto Orgánico, Banobras designates a representative or alternate to sit on the Board.",
+      "education": "Not identified",
+      "classification": "Other Management/Policy",
+      "rationale": "Development bank representative providing financial oversight. Individual not publicly identified.",
+      "sources": [
+        "https://vlex.com.mx/vid/aviso-da-conocer-modificacion-730854229"
+      ],
+      "confidence": "Low"
+    },
+    {
+      "name": "State of Mexico Representative",
+      "position": "Board Member / Representative designated by the State of Mexico Government",
+      "appointment_method": "Designated by the Governor of the State of Mexico",
+      "background": "Specific individual not identified. Per the Estatuto Orgánico, the State of Mexico government designates a representative, reflecting that Metro lines extend into the neighboring state.",
+      "education": "Not identified",
+      "classification": "Other Management/Policy",
+      "rationale": "State government representative. Included because Metro lines serve municipalities in the State of Mexico. Individual not publicly identified.",
+      "sources": [
+        "https://vlex.com.mx/vid/aviso-da-conocer-modificacion-730854229"
+      ],
+      "confidence": "Low"
+    }
+  ]
+}

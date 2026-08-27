@@ -1,0 +1,137 @@
+{
+  "agency": "Metrô de São Paulo (Companhia do Metropolitano de São Paulo)",
+  "city": "São Paulo",
+  "country": "Brazil",
+  "governance_model": "State-owned mixed-capital company (sociedade de economia mista) controlled by the São Paulo state government. The Conselho de Administração (Board of Directors) has 7–11 members elected by the General Assembly for unified two-year terms with reelection permitted. The board must include the CEO (Diretor-Presidente), employee representatives, minority shareholder representatives, and independent members. The Diretoria Executiva (Executive Board) has up to 6 directors appointed by the Conselho de Administração.",
+  "board_size": 9,
+  "date_verified": "2026-03-17",
+  "notes": "Board composition sourced from the official Metrô corporate governance portal and cross-referenced with investor relations documents, Diário do Transporte coverage, and ANPTrilhos reporting. The company is supervised by the Secretaria dos Transportes Metropolitanos (STM) of São Paulo state. The governance page at governancacorporativa.metrosp.com.br returned a 503 error; data was obtained from a mirror/staging site (af0020d.azurewebsites.net) that appeared to have current board data consistent with other sources. Metrô is not listed on SEC EDGAR—it does not trade as an ADR on NYSE (unlike some other São Paulo state companies like SABESP). Wagner Fajardo Pereira is the sole employee/union representative on the board.",
+  "members": [
+    {
+      "name": "Milton Frasson",
+      "position": "Presidente do Conselho de Administração (Board Chair)",
+      "appointment_method": "Elected by the General Assembly",
+      "background": "Business administrator with career in finance and administration at São Paulo state transport companies. Served as Administrative and Financial Director at CPOS (2008–2011) and CPTM—São Paulo's commuter rail company (2011–2019). Currently serves as Executive Advisor at CPTM.",
+      "education": "Business administration degree; postgraduate degree in Financial Administration",
+      "classification": "Other Management/Policy",
+      "rationale": "While Frasson has spent his career at transit-adjacent organizations (CPTM, CPOS), his roles were administrative and financial rather than operational. He did not manage transit operations, engineering, or capital projects directly. His expertise is in finance and administration applied to transport companies.",
+      "sources": [
+        "https://af0020d.azurewebsites.net/conselho-de-administracao/",
+        "https://ri-admin.metrosp.com.br/wp-content/uploads/2025/04/Ata_2025_04_29_AGOE_PCA.pdf"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Antonio Julio Castiglioni Neto",
+      "position": "Diretor-Presidente e Conselheiro (CEO and Board Member)",
+      "appointment_method": "Appointed by Governor Tarcísio de Freitas; confirmed by the Conselho de Administração on April 27, 2023",
+      "background": "Career state attorney (Procurador do Estado) since 2005 in Espírito Santo, specializing in concessions and public-private partnerships. Served as CEO of Porto de Vitória (2019–2022), leading Brazil's first port authority privatization. Previously headed the regulatory agency (ARSP) in Espírito Santo (2015–2019).",
+      "education": "Law degree; expertise in concessions and PPP law",
+      "classification": "Other Management/Policy",
+      "rationale": "Legal background with executive experience in port management and regulatory agencies, not transit operations. His expertise is in public law, concessions, and privatization—management/policy skills applied to infrastructure, not transit-specific operations.",
+      "sources": [
+        "https://af0020d.azurewebsites.net/conselho-de-administracao/",
+        "https://anptrilhos.org.br/conselho-administrativo-do-metro-de-sao-paulo-elege-novo-presidente/"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Carlos Roberto de Albuquerque Sá",
+      "position": "Conselheiro Independente e Coordenador do Comitê de Auditoria Estatutário (Independent Board Member and Statutory Audit Committee Coordinator)",
+      "appointment_method": "Elected by the General Assembly as independent member",
+      "background": "Accountant and economist specializing in corporate governance, risk management, and compliance. Professor of Corporate Risk Management at IBGC (Brazilian Institute of Corporate Governance). Serves as Audit Committee Coordinator at Camil Alimentos since 2018. IBGC-certified board member.",
+      "education": "Accounting and economics degrees; postgraduate training in finance",
+      "classification": "Other Management/Policy",
+      "rationale": "Finance, accounting, and corporate governance professional. No transit background. His role is explicitly focused on audit oversight and risk management—core financial management expertise.",
+      "sources": [
+        "https://af0020d.azurewebsites.net/conselho-de-administracao/",
+        "https://diariodotransporte.com.br/2024/12/16/metro-de-sao-paulo-publica-ata-de-conselho-que-elegeu-novo-diretor-de-engenharia-e-planejamento/"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Cleyton Ricardo Batista",
+      "position": "Conselheiro (Board Member)",
+      "appointment_method": "Elected by the General Assembly",
+      "background": "Public attorney with over 20 years of experience, specializing in Civil Law. Heads the Judicial and Advisory Contentious Department at EMTU/SP (Empresa Metropolitana de Transportes Urbanos de São Paulo), the state's metropolitan transportation authority that coordinates bus and other transit services in the São Paulo metropolitan region.",
+      "education": "Law degree; specialist in Civil Law",
+      "classification": "Other Management/Policy",
+      "rationale": "Legal professional working at a transportation authority (EMTU/SP), but his role is judicial/legal advisory, not transit operations or management. His expertise is in law applied to the transport sector.",
+      "sources": [
+        "https://af0020d.azurewebsites.net/conselho-de-administracao/"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Luís Felipe Vidal Arellano",
+      "position": "Conselheiro (Board Member)",
+      "appointment_method": "Elected by the General Assembly; represents São Paulo municipal government interests as Secretary of Finance",
+      "background": "Career municipal attorney (Procurador do Município) and currently Secretary of Finance (Secretário da Fazenda) of the Municipality of São Paulo since June 2023. Previously served as Sub-secretary of the Municipal Treasury (2014–2018) overseeing financial management, public debt, accounting, and fiscal policy. President of the Governance Committee for Parastatal Entities. Also worked in tax audit at both municipal and federal levels.",
+      "education": "Law degree; Doctorate in Economic and Financial Law from USP; MBA in Advanced Public Finance Management from Fundação Dom Cabral; Specialist in Economic Analysis from FIPE/USP",
+      "classification": "Other Management/Policy",
+      "rationale": "Public finance and law expert serving as the city's finance secretary. While a senior government official, he is an appointed (not elected) official. His expertise is in finance, law, and fiscal policy—not transit operations.",
+      "sources": [
+        "https://af0020d.azurewebsites.net/conselho-de-administracao/",
+        "https://www.linkedin.com/in/luis-felipe-vidal-arellano-phd-mba-cca-b91b5748/",
+        "https://www.agendaspmaisverde.org.br/palestrantes/luis-felipe-vidal-arellano/"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Gustavo Villaça Vargas Sampaio Braga",
+      "position": "Conselheiro (Board Member)",
+      "appointment_method": "Elected by the General Assembly; represents the São Paulo state government (Governor's office)",
+      "background": "Attorney specializing in Constitutional Law and Public Administration. Served as advisor to Superior Court justices until January 2023. Currently Special Advisor (Assessor Especial) to São Paulo Governor Tarcísio de Freitas. His LinkedIn profile confirms his role in the São Paulo state government.",
+      "education": "Law degree; postgraduate credentials in Constitutional Law and Public Administration",
+      "classification": "Other Management/Policy",
+      "rationale": "Government legal advisor and attorney with constitutional law expertise. He is an appointed advisor to the governor, not an elected official. His background is in law and public administration, not transit.",
+      "sources": [
+        "https://af0020d.azurewebsites.net/conselho-de-administracao/",
+        "https://www.linkedin.com/in/gustavo-villa%C3%A7a-b60542146/"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Mauro Antônio Gumiero Voltarelli",
+      "position": "Conselheiro (Board Member)",
+      "appointment_method": "Elected by the General Assembly",
+      "background": "Administrator and management consultant. Former owner of Pura Transporte, a private transport company (2011–2022). Sectoral Manager at DETRAN-SP (state vehicle licensing department) since 2017. Subsequently served as Acting President (Diretor Presidente em Exercício) at SPTrans, São Paulo's municipal bus transit authority, in mid-2025.",
+      "education": "Administration degree; MBA in Business Management",
+      "classification": "Other Management/Policy",
+      "rationale": "While Voltarelli later served as Acting President at SPTrans (the municipal bus authority), his primary background is in private transport business ownership, management consulting, and vehicle licensing (DETRAN). His career is in management and administration applied to the transport sector rather than hands-on transit operations management.",
+      "sources": [
+        "https://af0020d.azurewebsites.net/conselho-de-administracao/",
+        "https://prefeitura.sp.gov.br/web/mobilidade/w/agenda-do-diretor-presidente-em-exerc%C3%ADcio-mauro-ant%C3%B4nio-gumiero-voltarelli-13-de-agosto-de-2025"
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "name": "João Jorge Fadel Filho",
+      "position": "Conselheiro Independente (Independent Board Member)",
+      "appointment_method": "Elected by the General Assembly as independent member",
+      "background": "Limited publicly available biographical information. Appears in São Paulo legal databases with extensive litigation history, suggesting a legal or business background. Designated as an independent member of the board, meaning he has no direct ties to the controlling shareholder (state government) or management.",
+      "education": "Not publicly available",
+      "classification": "Other Management/Policy",
+      "rationale": "Independent board member with apparent legal/business background. No evidence of transit operations experience. Classified as Other Management/Policy by default given independent member designation typically requires business, finance, or legal expertise. Low confidence due to limited biographical data.",
+      "sources": [
+        "https://af0020d.azurewebsites.net/conselho-de-administracao/",
+        "https://www.jusbrasil.com.br/processos/nome/27787895/joao-jorge-fadel-filho"
+      ],
+      "confidence": "Low"
+    },
+    {
+      "name": "Wagner Fajardo Pereira",
+      "position": "Conselheiro Representante dos Empregados (Employee Representative Board Member)",
+      "appointment_method": "Elected by Metro employees as their representative on the board (mandated by Brazilian state-enterprise law)",
+      "background": "Social Communications graduate and longtime Metrô de São Paulo employee since 1981, specializing in workplace safety. Extensive career in labor representation: former worker representative on the CBTU (Companhia Brasileira de Trens Urbanos) board, councilor at the Cities Ministry, and General Secretary Coordinator of the São Paulo Metro Workers Union (Sindicato dos Metroviários de São Paulo). Voted against the appointment of the current CEO in 2023, raising concerns about qualifications.",
+      "education": "Degree in Social Communication",
+      "classification": "Labor Representative",
+      "rationale": "Explicitly designated employee/union representative seat on the board. Wagner is the General Secretary Coordinator of the Metro Workers Union and has served as a labor representative on multiple transit-related boards. His role on the Conselho de Administração is as the mandated employee representative.",
+      "sources": [
+        "https://af0020d.azurewebsites.net/conselho-de-administracao/",
+        "https://anptrilhos.org.br/conselho-administrativo-do-metro-de-sao-paulo-elege-novo-presidente/"
+      ],
+      "confidence": "High"
+    }
+  ]
+}

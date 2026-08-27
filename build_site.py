@@ -284,11 +284,14 @@ def build_hero(agencies):
         for cat_i, cat in enumerate(CATEGORIES):
             for _ in range(d["counts"].get(cat, 0)):
                 dots.append(f'<i class="dot s{cat_i}" title="{html.escape(cat)}"></i>')
+        seats = (f'{len(d["members"])}/{d["seats_total"]}'
+                 if d.get("seats_total") and d["seats_total"] != len(d["members"])
+                 else str(len(d["members"])))
         rows.append(
             f'<div class="hrow"><span class="hname">{html.escape(d["city"])}'
             f'<em>{html.escape(d["country"])}</em></span>'
             f'<span class="dots">{"".join(dots)}</span>'
-            f'<span class="hn">{len(d["members"])}</span></div>'
+            f'<span class="hn">{seats}</span></div>'
         )
     return "".join(rows)
 
@@ -304,6 +307,12 @@ def build_table(agencies):
                 if u.startswith("http")
             )
             conf = m.get("confidence", "Unknown")
+            # A judgment call is a classification that could defensibly have gone the
+            # other way. The reasoning is published beside it rather than buried.
+            jc = ('<span class="jc" title="This classification could reasonably have gone '
+                  'the other way.">judgment call</span>') if m.get("judgment_call") else ""
+            note = ('<span class="jcnote">' + html.escape(m["classification_note"]) + "</span>"
+                    if m.get("classification_note") else "")
             rows.append(
                 f'<tr data-agency="{html.escape(d["city"])}"'
                 f' data-cat="{html.escape(m["classification"])}"'
@@ -311,10 +320,11 @@ def build_table(agencies):
                 f'<td class="tname">{html.escape(m["name"])}</td>'
                 f'<td>{html.escape(d["city"])}</td>'
                 f'<td class="tpos">{html.escape(m.get("position",""))}</td>'
-                f'<td class="tcat"><i class="sw s{cat_i}"></i>{html.escape(SHORT[m["classification"]])}</td>'
+                f'<td class="tcat"><i class="sw s{cat_i}"></i>'
+                f'{html.escape(SHORT[m["classification"]])}{jc}</td>'
                 f'<td><span class="conf c{html.escape(conf.lower())}">{html.escape(conf)}</span></td>'
                 f'<td class="tsrc">{srcs or "—"}</td>'
-                f'<td class="trat">{html.escape(m.get("rationale",""))}</td></tr>'
+                f'<td class="trat">{html.escape(m.get("rationale",""))}{note}</td></tr>'
             )
     return "".join(rows)
 
@@ -482,6 +492,9 @@ thead th{
   border:1px solid var(--rule); border-radius:3px; color:var(--ink2); text-decoration:none;
 }
 .tsrc a:hover{border-color:var(--ink); color:var(--ink)}
+.jc{display:inline-block; margin-left:7px; padding:1px 6px; border-radius:99px; font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.06em; text-transform:uppercase; border:1px solid var(--s1); color:var(--s1); white-space:nowrap; vertical-align:1px}
+.jcnote{display:block; margin-top:7px; padding-top:7px; border-top:1px dashed var(--rule); color:var(--ink3); font-size:12.5px; line-height:1.5}
+.lede .jc{margin-left:2px}
 .conf{font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; padding:2px 7px; border-radius:99px; border:1px solid var(--rule); color:var(--ink2); white-space:nowrap}
 .chigh{border-color:var(--ink2); color:var(--ink)}
 .clow{border-color:var(--s2); color:var(--s2)}
@@ -581,17 +594,20 @@ JS = """
 
 PROVENANCE = """<h2>How this was made — read before citing</h2>
 <p>The board rosters and classifications on this page were <strong>researched and
-written by Claude (Anthropic's AI)</strong>, in a single session on
-<strong>17 March 2026</strong>, from agency websites, government gazettes, and
-regulatory filings. The classifications are <strong>Claude's judgment</strong>
-applied to Richard Day's five categories — not an official designation by any
-agency.</p>
-<p><strong>Steffany Bahamon spot-checked portions by hand. This has not been
-verified line by line.</strong> Every one of the 43 member records below carries a
-confidence rating and its source links, so any individual claim can be checked.
-Treat medium- and low-confidence rows as leads, not findings.</p>
-<p>Board composition also changes. These rosters are a snapshot of March 2026 and
-will go stale.</p>"""
+written by Claude (Anthropic's AI)</strong>, from agency filings, official gazettes,
+and regulatory disclosures. The classifications are <strong>Claude's judgment</strong>
+applied to Richard Day's five categories — not an official designation by any agency.</p>
+<p>The research was done in <strong>March 2026</strong> and then <strong>independently
+re-verified and fully re-researched on 27 August 2026</strong>. That second pass found
+real errors in the first, including two biographies attributed to the wrong people. They
+are documented in the methodology section below rather than quietly removed.</p>
+<p><strong>Steffany Bahamon adjudicated the seven classification calls that could
+reasonably have gone either way</strong>, and each is flagged on this page. Beyond those,
+this has <strong>not been verified line by line</strong>. Every member record carries a
+confidence rating and its source links, so any individual claim can be checked. Treat
+medium- and low-confidence rows as leads, not findings.</p>
+<p>Board composition changes fast — four of these five boards replaced members within five
+months. These rosters are current as of 27 August 2026 and will go stale.</p>"""
 
 PAGE = """<!doctype html>
 <html lang="en"><head>
@@ -600,7 +616,7 @@ PAGE = """<!doctype html>
 <title>Who Runs Latin America's Metros</title>
 <meta name="description" content="Board composition for five major Latin American metro agencies, classified with Richard Day's five-category framework. AI-assisted research; sources and confidence ratings per member.">
 <meta property="og:title" content="Who Runs Latin America's Metros">
-<meta property="og:description" content="43 board members across Santiago, Medellin, Mexico City, Sao Paulo and Buenos Aires, classified and sourced.">
+<meta property="og:description" content="Every board member of five Latin American metro agencies, classified with Richard Day's framework, sourced and confidence-rated.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http%3A//www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='2' fill='%23fcfcfb'/><rect x='2' y='3'  width='12' height='2.4' rx='.6' fill='%23488fe6'/><rect x='2' y='6.8' width='12' height='2.4' rx='.6' fill='%23ca6a10'/><rect x='2' y='10.6' width='8'  height='2.4' rx='.6' fill='%23733b97'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -615,18 +631,18 @@ PAGE = """<!doctype html>
   <p class="standfirst">Richard Day found that the world's best transit systems are run by
   boards of transit experts, and the worst by boards of politicians. He measured sixteen
   agencies across Asia, Europe and the United States. He measured none in Latin America.
-  This is that missing column: <strong>43 board members, five agencies, five countries.</strong></p>
+  This is that missing column: <strong>__N__ board members, five agencies, five countries.</strong></p>
   <div class="byline">
     <span class="eyebrow">Research by Claude (AI)</span>
     <span class="eyebrow">Edited by Steffany Bahamon</span>
-    <span class="eyebrow">Verified 17 Mar 2026</span>
+    <span class="eyebrow">Rosters verified 27 Aug 2026</span>
   </div>
   <div class="prov">__PROV__</div>
 </div></header>
 
 <main>
 <section><div class="wrap">
-  <div class="sechead"><h2 class="sec dsp">Every seat, all forty-three</h2></div>
+  <div class="sechead"><h2 class="sec dsp">Every seat on every board</h2></div>
   <p class="lede">One mark per board member, coloured by category. The whole dataset,
   before any averaging.</p>
   <div class="hero">
@@ -634,8 +650,9 @@ PAGE = """<!doctype html>
     <div class="legend" style="margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--rule2);border-bottom:0">__LEGEND__</div>
     <div class="herofoot">
       <span class="zero dsp">0</span>
-      <span class="zerolab">community advocates among all 43 members. Not one seat, in any
-      of the five agencies. In Day's US sample the same category runs as high as 50%.</span>
+      <span class="zerolab">community advocates among all __N__ members. Not one seat, in any
+      of the five agencies, in either the March or the August roster. In Day's US sample the
+      same category runs as high as 50%.</span>
     </div>
   </div>
 </div></section>
@@ -647,23 +664,28 @@ PAGE = """<!doctype html>
   <div class="chartbox">
     <div class="legend">__LEGEND__</div>
     __CHART__
-    <p class="chartnote">The sixteen Asian, European and US rows are Richard Day's work,
+    <p class="chartnote"><strong>The two halves of this chart are five months apart.</strong>
+    The sixteen Asian, European and US rows are Richard Day's work, as of March 2026,
     computed from the
     <a href="https://docs.google.com/spreadsheets/d/12KmU7QuP1y_RL8nuinrsIOYETISfXiLqXqi0EtSa_1Y/edit?gid=0" rel="noopener">member-level list he published</a>
     alongside
     <a href="https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies" rel="noopener">“Put real experts in charge of transit”</a>
     (A City That Works, March 2026) — 222 board members — rather than read off his chart
-    image. Two rows sum to 99% or 101% from rounding. One figure differs from his
-    published chart: LTA Singapore's other-management share is 76% in his data
-    (13 of 17 seats) where his chart labels it 77%. The five Latin American rows are
-    computed from the member records below. Chart rebuilt, not reproduced.</p>
+    image. His agencies have not been re-verified here and some have likely changed since.
+    The five Latin American rows are computed from the member records below and are current
+    as of <strong>27 August 2026</strong>. Two of Day's rows sum to 99% or 101% from
+    rounding; one figure differs from his published chart, where LTA Singapore's
+    other-management share is 76% in his data (13 of 17 seats) but labelled 77%. Chart
+    rebuilt, not reproduced.</p>
   </div>
 </div></section>
 
 <section><div class="wrap">
-  <div class="sechead"><h2 class="sec dsp">The 43 members</h2></div>
+  <div class="sechead"><h2 class="sec dsp">The __N__ members</h2></div>
   <p class="lede">Every classification with its rationale, confidence rating and sources.
-  This table is the evidence for everything above — if a claim matters to you, check it here.</p>
+  This table is the evidence for everything above — if a claim matters to you, check it here.
+  Rows marked <span class="jc">judgment call</span> could reasonably have been classified the
+  other way; the rationale column says what was weighed.</p>
   <div class="controls">
     <select id="f-agency"><option value="">All agencies</option>__OPT_AGENCY__</select>
     <select id="f-cat"><option value="">All categories</option>__OPT_CAT__</select>
@@ -701,8 +723,10 @@ def main():
     agencies = load_agencies()
     day = load_day()
     total, counts = build_composite(agencies)
-    if total != 43:
-        raise SystemExit(f"expected 43 members, found {total}")
+    # Deliberate: 42 across the 2026-08-27 rosters (Medellin carries 2 vacant seats).
+    # Update when data/ changes, so a silent roster edit can never slip through unnoticed.
+    if total != 42:
+        raise SystemExit(f"expected 42 members, found {total} — update this check if data/ changed")
 
     md = ANALYSIS.read_text(encoding="utf-8")
     prose = markdown_to_html(md)
@@ -726,7 +750,8 @@ def main():
             .replace("__ROWS__", build_table(agencies))
             .replace("__OPT_AGENCY__", opt_agency)
             .replace("__OPT_CAT__", opt_cat)
-            .replace("__PROSE__", prose))
+            .replace("__PROSE__", prose)
+            .replace("__N__", str(total)))
 
     leaks = verify_no_markdown_leaked(page)
     if leaks:
