@@ -59,7 +59,7 @@ Each `data/<city>.json` is one object:
 {
   "agency": "...", "city": "...", "country": "...",
   "governance_model": "...", "board_size": 7,
-  "date_verified": "2026-03-17", "notes": "...",
+  "date_verified": "2026-08-27", "notes": "...",
   "members": [
     {
       "name": "...", "position": "...", "appointment_method": "...",

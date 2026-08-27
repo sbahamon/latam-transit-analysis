@@ -2,7 +2,7 @@
 
 ## Context
 
-Richard Day's "A City That Works" Substack published [Put real experts in charge of transit](https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies) (March 2026), analyzing transit board composition across Asia, Europe, and the US. The chart (see `transit_board_chart.png` in this directory) categorizes every board member of 16 agencies into five buckets:
+Richard Day's "A City That Works" Substack published [Put real experts in charge of transit](https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies) (March 2026), analyzing transit board composition across Asia, Europe, and the US. His chart (`transit_board_chart.png`) categorizes every board member of 16 agencies into five buckets:
 
 1. **Transit Ops/Management** — significant experience managing transit operations or capital projects
 2. **Other Management/Policy** — complementary skills: finance, IT, law, public policy, engineering (non-transit)
@@ -11,6 +11,8 @@ Richard Day's "A City That Works" Substack published [Put real experts in charge
 5. **Elected Official** — current or recently-retired elected officials without other qualifying experience
 
 The piece argues Asian/European boards are loaded with transit experts and engineers while US boards are dominated by community advocates and elected officials — and that this explains much of the performance gap.
+
+**Use his data, not his chart.** Day footnotes a member-level Google Sheet of all 221 board members: <https://docs.google.com/spreadsheets/d/12KmU7QuP1y_RL8nuinrsIOYETISfXiLqXqi0EtSa_1Y/edit?gid=0>. That sheet is the source of truth for any claim about his 16 agencies; it is transcribed into `day_chart_reference.json`. Reading percentages off the chart image caused several errors in the first version of this analysis — the gold (Community Advocate) and olive (Elected Official) segments are easy to confuse. Do not do it.
 
 **The gap**: The analysis only covers Asia, Europe, and the US. No Latin American agencies are included. We want to fill that gap.
 
@@ -78,7 +80,7 @@ For **each board member**, collect:
 - **Other Management/Policy**: Finance executives, lawyers, IT leaders, non-transit engineers, public policy experts, management consultants. Government planning officials who are not elected go here.
 - **Labor Representative**: Explicitly designated employee/union representative seat.
 - **Community Advocate**: Rider advocacy orgs, demographic group representatives, community organizations. NOT the same as "community advocate who is also a finance executive" — use primary background.
-- **Elected Official**: Current or recently-retired mayors, governors, legislators, council members sitting on the board *in their capacity as elected officials*. Political party operatives who have held elected office also go here. Government planning directors who serve ex officio as delegates of elected officials are tricky — classify them as Other Management/Policy if they have professional planning credentials, Elected Official if they're pure political appointees.
+- **Elected Official**: Current or recently-retired mayors, governors, legislators, and council members. Political party operatives who have held elected office also go here. **Holding the seat by virtue of an appointed post does not exempt someone** — what matters is whether the person is a politician, not whether the chair they sit in is an elected one. This was ambiguous in the first version of these rules and produced two contradictory readings of the same people; it was settled on 2026-08-27 by checking Day's own data, which counts former mayors sitting as appointees (Pace, RTA Chicago) and appointed cabinet officials (BVG Berlin's transport senator) as Elected Official. Government planning directors serving ex officio are the genuine edge case: Other Management/Policy if they have professional planning credentials, Elected Official if they are pure political appointees with none.
 
 ### Important Nuances
 
@@ -86,7 +88,9 @@ For **each board member**, collect:
 - **LinkedIn is your friend** for individual bios when agency websites are thin.
 - **Annual reports (memorias anuales / relatórios anuais)** often have the most detailed board member bios.
 - **SEC filings** for São Paulo Metrô (it trades as an ADR).
-- **Verify currency**. LatAm boards change with political cycles. A board composition from 2023 may be stale.
+- **Verify currency**. LatAm boards change with political cycles. Four of these five boards replaced members within five months in 2026, and Santiago replaced its entire board. Agency websites lag reality by weeks — Metro de Medellín listed a member after the decree replacing him, and left a departed member's bio page live beside a roster marking that seat vacant. Prefer securities filings, official gazettes and governor's decrees over agency "about us" pages.
+- **Verify each person against a source that names that specific person.** The two most serious errors in the first version both came from attributing text to the wrong individual in a list — one board member's career was written into another's record, and a mirror site's stale roster was read as current. If a source describes several people, confirm which one the sentence is about.
+- **Flag judgment calls rather than burying them.** Where a classification could defensibly go either way, set `judgment_call: true` and write a `classification_note` explaining both readings. These render publicly on the site and in the spreadsheet.
 
 ## Deliverables
 

@@ -273,7 +273,7 @@ def build_legend():
 
 
 def build_hero(agencies):
-    """Every one of the 43 members as a single mark, grouped by agency.
+    """Every board member as a single mark, grouped by agency.
 
     The whole dataset fits above the fold, and the finding reads straight off
     it: the community-advocate colour never appears.

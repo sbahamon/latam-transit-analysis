@@ -66,7 +66,8 @@ def create_board_members_sheet(wb, agencies):
     headers = [
         "Agency", "City", "Country", "Member Name", "Position",
         "Appointment Method", "Professional Background", "Education",
-        "Day Classification", "Classification Rationale", "Source URL(s)",
+        "Day Classification", "Judgment Call?", "Why This Call",
+        "Classification Rationale", "Source URL(s)",
         "Confidence Level", "Date Verified"
     ]
     for col, h in enumerate(headers, 1):
@@ -81,12 +82,15 @@ def create_board_members_sheet(wb, agencies):
                 agency["agency"], agency["city"], agency["country"],
                 m["name"], m["position"], m.get("appointment_method", ""),
                 m.get("background", ""), m.get("education", ""),
-                m["classification"], m.get("rationale", ""),
+                m["classification"],
+                "Yes" if m.get("judgment_call") else "",
+                m.get("classification_note", ""),
+                m.get("rationale", ""),
                 sources, m.get("confidence", ""), agency.get("date_verified", "")
             ]
             for col, val in enumerate(values, 1):
                 cell = ws.cell(row=row, column=col, value=val)
-                style_data_cell(cell, wrap=(col in (5, 6, 7, 8, 10, 11)))
+                style_data_cell(cell, wrap=(col in (5, 6, 7, 8, 11, 12, 13)))
 
             cls_cell = ws.cell(row=row, column=9)
             cls = m["classification"]
