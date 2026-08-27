@@ -1,0 +1,26 @@
+{
+  "_comment": "Richard Day's 16 agencies, read from transit_board_chart.png (labels + pixel-sampled segment colors). Percentages are his; some rows sum to 99 or 101 from his own rounding. Source: https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies",
+  "source": "Richard Day, A City That Works, March 2026",
+  "categories": ["Transit Ops/Management","Other Management/Policy","Labor Representative","Community Advocate","Elected Official"],
+  "regions": [
+    {"region":"Asia","agencies":[
+      {"name":"Tokyo Metro","pct":[57,43,0,0,0]},
+      {"name":"Seoul Metro","pct":[40,53,0,7,0]},
+      {"name":"MTR (Hong Kong)","pct":[22,72,0,0,6]},
+      {"name":"SMRT (Singapore)","pct":[15,85,0,0,0]},
+      {"name":"LTA (Singapore)","pct":[12,77,6,6,0]}]},
+    {"region":"Europe","agencies":[
+      {"name":"RATP (Paris)","pct":[27,27,33,7,7]},
+      {"name":"BVG (Berlin)","pct":[25,19,50,0,6]},
+      {"name":"Metro de Madrid","pct":[20,50,0,0,30]},
+      {"name":"TfL (London)","pct":[13,56,6,13,13]}]},
+    {"region":"United States","agencies":[
+      {"name":"LA Metro","pct":[7,0,0,7,86]},
+      {"name":"MTA (New York)","pct":[0,60,15,20,5]},
+      {"name":"WMATA (Washington DC)","pct":[0,70,0,0,30]},
+      {"name":"RTA (Chicago)","pct":[21,50,14,0,14]},
+      {"name":"CTA (Chicago)","pct":[0,50,0,50,0]},
+      {"name":"Metra (Chicago)","pct":[9,55,9,9,18]},
+      {"name":"Pace (Chicago)","pct":[0,8,0,0,92]}]}
+  ]
+}

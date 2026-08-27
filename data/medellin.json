@@ -1,0 +1,141 @@
+{
+  "agency": "Metro de Medellín (Empresa de Transporte Masivo del Valle de Aburrá)",
+  "city": "Medellín",
+  "country": "Colombia",
+  "governance_model": "Mixed-ownership company (sociedad de economía mixta) with 9-member board: 4 ex-officio seats from subnational government (Mayor of Medellín, Director of Planning of Medellín, Governor of Antioquia, Director of Planning of Antioquia) and 5 members appointed by the President of the Republic (2 ministry representatives from Transport and Finance, plus 3 independents). National government holds majority control through its 5 presidential appointees.",
+  "board_size": 9,
+  "date_verified": "2026-03-17",
+  "notes": "Board composition reflects September 2023 presidential appointments (Decree 1561) plus local officials elected in October 2023 who took office January 2024. The 5 national-government seats give the Petro administration majority control. Some controversy arose because two of the independent appointees (Hinestroza, Tafur) had business ties to former Medellín mayor Daniel Quintero. Manuel Naranjo may have shifted roles within the Antioquia government (to Secretary of Economic Development), but was listed on the official Metro board page as of verification date.",
+  "members": [
+    {
+      "name": "Federico Gutiérrez Zuluaga",
+      "position": "President of the Board (Mayor of the District of Medellín)",
+      "appointment_method": "Ex-officio as Mayor of Medellín",
+      "background": "Civil engineer and politician. Previously served as Mayor of Medellín 2016–2019. Was a member of the Medellín City Council 2004–2007. Ran for President of Colombia in 2022. Elected again as Mayor of Medellín for 2024–2027 term.",
+      "education": "Civil engineering degree from Universidad de Medellín; specialization in Senior Management from Universidad de los Andes",
+      "classification": "Elected Official",
+      "rationale": "Currently serving as elected Mayor of Medellín. Sits on the board in his capacity as mayor, which is an ex-officio position tied to his elected office.",
+      "sources": [
+        "https://www.metrodemedellin.gov.co/en/who-we-are/corporate-governance/board-of-directors",
+        "https://es.wikipedia.org/wiki/Federico_Guti%C3%A9rrez"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Ana Cathalina Ochoa Yepes",
+      "position": "Director of the Administrative Department of Planning, District of Medellín",
+      "appointment_method": "Ex-officio as Director of Planning of Medellín (appointed by Mayor)",
+      "background": "22 years of experience in public sector, including 17 years at EPM (Empresas Públicas de Medellín). Served as Deputy Manager of Strategic Planning at the Urban Development Agency (EDU) and as Director of the Office of the Administrative Department of Planning. Also served as Head of Gas Planning at EPM.",
+      "education": "Civil engineer with specialization in Administration; Master's in Administrative Engineering",
+      "classification": "Other Management/Policy",
+      "rationale": "Appointed government planning official, not an elected official. Background is in civil engineering, urban planning, and public administration — not transit operations specifically.",
+      "sources": [
+        "https://www.metrodemedellin.gov.co/quienes-somos/gobierno-corporativo/junta-directiva/ana-cathalina-ochoa-yepes",
+        "https://www.minuto30.com/ana-cathalina-ochoa-yepes-directora-departamento-administrativo-de-planeacion-medellin/1550354/"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Andrés Julián Rendón Cardona",
+      "position": "Governor of Antioquia",
+      "appointment_method": "Ex-officio as Governor of Antioquia",
+      "background": "Economist and politician. Previously served as Secretary of Government of Antioquia (2008–2012) and as Mayor of Rionegro (2016–2019). Elected Governor of Antioquia in 2023 with 944,239 votes, the most-voted governor in the department's history. Born in Rionegro, Antioquia, 1978.",
+      "education": "Economist and specialist in Economic Regulation from EAFIT University; Master's in Economics and Public Administration from Universidad de los Andes and American University in Washington, D.C.",
+      "classification": "Elected Official",
+      "rationale": "Currently serving as the elected Governor of Antioquia. Sits on the board in his ex-officio capacity as governor.",
+      "sources": [
+        "https://www.metrodemedellin.gov.co/quienes-somos/gobierno-corporativo/junta-directiva/andres-julian-rendon-cardona",
+        "https://www.lasillavacia.com/quien-es-quien/andres-julian-rendon-cardona/",
+        "https://es.wikipedia.org/wiki/Andr%C3%A9s_Juli%C3%A1n_Rend%C3%B3n"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Manuel Alejandro Naranjo Giraldo",
+      "position": "Director of the Administrative Department of Planning, Department of Antioquia",
+      "appointment_method": "Ex-officio as Director of Planning of Antioquia (appointed by Governor)",
+      "background": "Economist and professor. Served as Director General of the Monitoring and Control Center and Subsecretary of Strategic Planning and Evaluation at the Municipality of Rionegro. Undergraduate professor of micro and macroeconomic policy at EAFIT University. May have transitioned to Secretary of Economic Development for Antioquia in 2026.",
+      "education": "Economist; Master's in Government and Public Policies from EAFIT University",
+      "classification": "Other Management/Policy",
+      "rationale": "Appointed government planning official (not elected). Background in economics, public policy, and government planning — not transit operations.",
+      "sources": [
+        "https://antioquia.gov.co/manuel-alejandro-naranjo-giraldo",
+        "https://www.elcolombiano.com/antioquia/plan-de-desarrollo-de-antioquia-tiene-cinco-lineas-estrategicas-AI23901881"
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "name": "Ferney Camacho",
+      "position": "Representative of the Ministry of Transport (Director of Infrastructure)",
+      "appointment_method": "Appointed by the President of the Republic as Ministry of Transport representative",
+      "background": "Civil engineer with over 20 years of experience. Director of Infrastructure at the Ministry of Transport. Previously served as advisor to the Vice-Ministry of Transport (2012–2015), Secretary of Infrastructure of Cali, Secretary of Infrastructure of Palmira. Worked at the National Institute of Concessions and Superintendence of Domestic Public Services. Expertise in real estate project management, PPP projects, transport planning, and sustainability.",
+      "education": "Civil engineer from Universidad Nacional de Colombia; specializations in Finance and Land Transport from the Polytechnic University of Madrid",
+      "classification": "Other Management/Policy",
+      "rationale": "While he works in the Ministry of Transport and has transport planning expertise, his career has focused on road infrastructure, highway concessions, and general transport infrastructure — not specifically on managing transit systems (rail/bus operations). Classified as Other Management/Policy per the rule that general civil engineers do not qualify for Transit Ops unless they specifically worked in transit.",
+      "sources": [
+        "https://www.linkedin.com/in/ferney-camacho-90aa0119/",
+        "https://www.metrodemedellin.gov.co/quienes-somos/gobierno-corporativo/junta-directiva/ferney-camacho",
+        "https://www.cali.gov.co/publicaciones/145526/ferney-camacho-el-vallecaucano-que-asume-como-secretario-de-infraestructura-de-cali/"
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "name": "Luis Alexander López Ruíz",
+      "position": "Representative of the Ministry of Finance (Subdirector of Domestic Financing)",
+      "appointment_method": "Appointed by the President of the Republic as Ministry of Finance representative",
+      "background": "Finance professional at the Ministry of Finance and Public Credit. Currently serves as Subdirector of Domestic Financing of the Nation (Subdirección de Financiamiento Interno de la Nación). Born in Bogotá.",
+      "education": "Professional degree in Finance and International Relations; specialization in International Business",
+      "classification": "Other Management/Policy",
+      "rationale": "Finance professional representing the national Ministry of Finance. No transit operations background — purely a financial/administrative role.",
+      "sources": [
+        "https://www.metrodemedellin.gov.co/en/who-we-are/corporate-government/board-of-directors/luis-alexander-lopez-ruiz",
+        "https://www.funcionpublica.gov.co/web/sigep/hdv/-/directorio/S76010-0004-4/view"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Juan Carlos Tafur Hernández",
+      "position": "Independent Member (Presidential Appointee)",
+      "appointment_method": "Appointed by the President of the Republic as independent member (Decree 1561, September 2023)",
+      "background": "Economist with experience as economic, financial, administrative, and urban-regional affairs advisor. Worked at the International Labour Organization (ILO), Convenio Andrés Bello, Universidad Santo Tomás, Ministry of National Defense, Colombian Liberal Party, and Universidad del Rosario. Co-founder and president of Mela's Craft Beer.",
+      "education": "Economist from Universidad de Los Andes; specialization and Master's in Planning and Administration of Regional Development from Universidad de los Andes / Universidad Santo Tomás",
+      "classification": "Other Management/Policy",
+      "rationale": "Economist and regional development specialist with no transit-specific experience. His background spans academia, international organizations, and entrepreneurship — not transit operations.",
+      "sources": [
+        "https://www.metrodemedellin.gov.co/en/who-we-are/corporate-government/board-of-directors/juan-carlos-tafur-hernandez",
+        "https://www.elcolombiano.com/medellin/presidencia-nombra-representantes-en-la-junta-directiva-del-metro-de-medellin-HD22472140"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Sebastián Hinestroza Arango",
+      "position": "Independent Member (Presidential Appointee)",
+      "appointment_method": "Appointed by the President of the Republic as independent member (Decree 1561, September 2023)",
+      "background": "Over 12 years of administrative, technical, and professional experience in supervision and construction of infrastructure, industrial, and building projects in public and private sectors. Entrepreneur and legal representative of Megaproyecto Vial Siglo XXI SAS (road paving/infrastructure), HR Constructora SAS, and Castellón Ingeniería SAS. Held a major paving contract with the Secretary of Infrastructure of Medellín worth 65 billion pesos.",
+      "education": "Engineering/construction background (specific degree not confirmed)",
+      "classification": "Other Management/Policy",
+      "rationale": "Construction and infrastructure entrepreneur focused on road/highway projects, not transit systems. His experience is in general civil infrastructure and paving, not rail/bus operations.",
+      "sources": [
+        "https://www.metrodemedellin.gov.co/en/who-we-are/corporate-government/board-of-directors/sebastian-hinestroza-arango",
+        "https://www.elespectador.com/investigacion/los-megacontratos-del-empresario-elegido-por-el-gobierno-de-gustavo-petro-en-el-metro-de-medellin-noticias-hoy/",
+        "https://www.elcolombiano.com/medellin/nueva-junta-directiva-del-metro-de-medellin-tiene-dos-contratistas-de-la-alcaldia-JD22476087"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Mary Luz Escobar Rivera",
+      "position": "Independent Member (Presidential Appointee)",
+      "appointment_method": "Appointed by the President of the Republic as independent member (Decree 1561, September 2023)",
+      "background": "Over 18 years of experience in entrepreneurship, innovation, competitiveness, and regional development. Former advisor and Director of Entrepreneurship and Innovation at iNNpulsa Colombia, Colciencias, and the Presidency of the Republic. Founder of Propulsor Latinoamérica, an entrepreneurship and innovation consulting firm.",
+      "education": "Not confirmed from available sources",
+      "classification": "Other Management/Policy",
+      "rationale": "Innovation and entrepreneurship policy expert with government experience at national agencies (iNNpulsa, Colciencias, Presidency). No transit operations background — her expertise is in economic development and innovation policy.",
+      "sources": [
+        "https://www.metrodemedellin.gov.co/en/who-we-are/corporate-government/board-of-directors/mary-luz-escobar-rivera",
+        "https://www.elcolombiano.com/medellin/presidencia-nombra-representantes-en-la-junta-directiva-del-metro-de-medellin-HD22472140",
+        "https://propulsor.com.co/author/mary-luz-escobar-rivera/"
+      ],
+      "confidence": "High"
+    }
+  ]
+}

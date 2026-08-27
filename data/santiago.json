@@ -1,0 +1,120 @@
+{
+  "agency": "Metro de Santiago (Metro S.A.)",
+  "city": "Santiago",
+  "country": "Chile",
+  "governance_model": "State-owned corporation (Empresa de Transporte de Pasajeros Metro S.A.) with a 7-member board (Directorio) appointed by the national government through the shareholders' meeting (Junta de Accionistas). The Chilean state, represented by the Treasury (Fisco de Chile) and CORFO, holds 100% of shares. Board members serve two-year terms and may be reelected indefinitely.",
+  "board_size": 7,
+  "date_verified": "2026-03-17",
+  "notes": "Board composition confirmed via official Metro governance page (updated March 11, 2026) and CMF filings. The current board was largely appointed in April 2022 under President Boric's administration, with one replacement (Salazar Zegers for Elgueta Poblete) in October 2023 and two new members (Estrada Quezada confirmed, González Leiva reconfirmed) at the April 2024 shareholders' meeting. Board renewal expected around late April 2026.",
+  "members": [
+    {
+      "name": "Guillermo Tadao Muñoz Senda",
+      "position": "President (Presidente del Directorio)",
+      "appointment_method": "Appointed by national government via shareholders' meeting (April 25, 2022)",
+      "background": "Chilean civil engineer specializing in transportation. Held various positions at the Metropolitan Transportation Planning Secretariat (Sectra) from 1997 to 2006. Served as infrastructure management manager at Empresa de los Ferrocarriles del Estado (EFE) and director of its subsidiaries until 2008. Executive Director of the Metropolitan Public Transportation Directorate (DTPM/Transantiago) from 2014. Advisor to the World Bank evaluating public transportation systems in Latin American cities.",
+      "education": "Civil Engineer, Universidad de Chile (thesis on optimal operation of public transport routes in Santiago, 1998)",
+      "classification": "Transit Ops/Management",
+      "rationale": "Extensive direct experience managing transit systems: led DTPM/Transantiago (Santiago's integrated public transit system), held management roles at EFE (state railway company), worked at Sectra (transport planning), and consulted for the World Bank on public transit operations in Latin America. Career is entirely in transit planning and operations.",
+      "sources": [
+        "https://www.metro.cl/gobierno-corporativo/informacion-del-directorio-y-del-personal",
+        "https://es.wikipedia.org/wiki/Guillermo_Mu%C3%B1oz_Senda",
+        "https://www.linkedin.com/in/guillermo-mu%C3%B1oz-03194865/",
+        "https://cooperativa.cl/noticias/pais/transportes/metro/guillermo-munoz-ex-director-de-transantiago-es-el-nuevo-presidente-de/2022-04-27/020546.html"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Marcela Adriana Munizaga Muñoz",
+      "position": "Vice President (Vicepresidenta del Directorio)",
+      "appointment_method": "Appointed by national government via shareholders' meeting (April 25, 2022)",
+      "background": "Full Professor and Vice Dean of the Faculty of Physical and Mathematical Sciences at Universidad de Chile. Leading researcher in transportation demand modeling and public transit data analytics. Developed the Adatrap software, a key tool for public transport management in Santiago. Principal researcher at the Complex Engineering Systems Institute (ISCI). Elected member of the Academy of Engineering of Chile.",
+      "education": "Civil Engineer, Universidad de Chile; PhD in Engineering Sciences, Pontificia Universidad Católica de Chile",
+      "classification": "Transit Ops/Management",
+      "rationale": "Transit engineering professor with deep specialization in public transportation systems. Her entire research career focuses on transit demand modeling and public transport data analytics. She developed Adatrap, a transit management tool used operationally in Santiago. Per classification rules, transit engineering professors count as Transit Ops/Management.",
+      "sources": [
+        "https://www.metro.cl/gobierno-corporativo/informacion-del-directorio-y-del-personal",
+        "https://ingenieria.uchile.cl/sobre-la-fcfm/organizacion/personas/equipo-directivo/marcela-munizaga-munoz",
+        "https://ingcivil.uchile.cl/noticias/221854/marcela-munizaga-miembro-de-numero-academia-de-ingenieria-de-chile"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Susana Bernardita González Leiva",
+      "position": "Director (Directora)",
+      "appointment_method": "Appointed by national government via shareholders' meeting (initially April 25, 2022; reconfirmed April 29, 2024)",
+      "background": "Over 30 years of career at DIPRES (Chile's Budget Directorate, Ministry of Finance). Started as budget analyst in 1993, rose to lead the Budget Development Unit, then headed the Defense and Justice Sector (2004-2019), and the Social Development sector until becoming Subdirector of DIPRES in March 2022. Extensive experience in public finance, budget management, and implementation of public policies.",
+      "education": "Commercial Engineer (Ingeniera Comercial) with specialization in Economics, Universidad de Chile; Master in Management and Public Policies, Universidad Adolfo Ibáñez",
+      "classification": "Other Management/Policy",
+      "rationale": "Finance and public budget management professional. Entire 30+ year career was in the national Budget Directorate (DIPRES), focused on government fiscal management and public policy implementation. No transit-specific experience.",
+      "sources": [
+        "https://www.metro.cl/gobierno-corporativo/informacion-del-directorio-y-del-personal",
+        "https://www.cmfchile.cl/institucional/mercados/entidad.php?mercado=V&rut=61219000&tipoentidad=EMPUB&vig=VI&control=svs&pestania=46",
+        "https://www.dipres.gob.cl/598/w3-article-115570.html"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Nicolás Darío Valenzuela Levi",
+      "position": "Director",
+      "appointment_method": "Appointed by national government via shareholders' meeting (April 25, 2022)",
+      "background": "Academic at the Architecture Department of Universidad Técnica Federico Santa María. Postdoctoral researcher at the Center for Sustainable Urban Development (CEDEUS). Former Director of the Communal Planning Secretariat (SECPLA) of the Municipality of Providencia (2012-2015). Research focuses on urban inequality, infrastructure networks, and territorial economics. Participated in President Boric's programmatic team on infrastructure policy. Affiliated with Revolución Democrática party.",
+      "education": "Architect, Pontificia Universidad Católica de Chile; MPhil in Development Studies, University of Cambridge; PhD in Urban/Territorial Economics, University of Cambridge",
+      "classification": "Other Management/Policy",
+      "rationale": "Urban planning academic and architect. While he has researched metro systems comparatively (Santiago and Medellín), his career is in urban planning, territorial economics, and municipal government — not direct transit operations or management. His municipal planning role and academic work are in general urban policy, not transit-specific management.",
+      "sources": [
+        "https://www.metro.cl/gobierno-corporativo/informacion-del-directorio-y-del-personal",
+        "https://arquitectura.usm.cl/dr-nicolas-valenzuela-asume-como-miembro-del-directorio-de-metro-santiago/",
+        "https://www.latercera.com/la-tercera-pm/noticia/quien-es-nicolas-valenzuela-rd-el-director-de-metro-que-tensiona-la-aprobacion-del-presupuesto-2023/W6O2JV4MTRADPB5BKYTXIVMNJA/",
+        "https://valenzuelalevi.com"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Tadashi Alberto Takaoka Caqueo",
+      "position": "Director",
+      "appointment_method": "Appointed by national government via shareholders' meeting (April 25, 2022)",
+      "background": "Innovation and entrepreneurship specialist. Former Manager of Venture Entrepreneurship at CORFO (Chile's economic development agency). Experience spanning consulting, general management, entrepreneurship, university teaching, and business acceleration. Board member of Fundación Generación Empresarial and Universidad Arturo Prat (UNAP). Strategic focus on bringing innovation to public transportation services at Metro.",
+      "education": "Industrial Civil Engineer (Ingeniero Civil Industrial); Master in Operations Management, Universidad de Chile",
+      "classification": "Other Management/Policy",
+      "rationale": "Innovation and entrepreneurship management professional. Career centered on business innovation at CORFO and consulting, not on transit operations. While he brings a strategic innovation lens to Metro's board, his background is in general management and entrepreneurship rather than transit-specific experience.",
+      "sources": [
+        "https://www.metro.cl/gobierno-corporativo/informacion-del-directorio-y-del-personal",
+        "https://www.linkedin.com/in/tadashitakaoka/",
+        "https://economiayadministracion.uc.cl/assets/uploads/2024/07/CV-Tadashi.pdf",
+        "https://statealumni.cl/en/tadashi-takaoka/"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Francisca Javiera Estrada Quezada",
+      "position": "Director (Directora)",
+      "appointment_method": "Appointed by national government via shareholders' meeting (confirmed April 29, 2024)",
+      "background": "Corporate lawyer with extensive experience in state-owned enterprises and mining. Senior corporate lawyer and director of subsidiaries at Codelco (Chile's national copper company). First woman to serve as fiscal (chief legal officer) of an operating division at Codelco (División Gabriela Mistral). Currently serves as Fiscal (chief legal officer) at ENAMI (Empresa Nacional de Minería). Expertise in regulatory law and corporate governance of state enterprises.",
+      "education": "Lawyer (Abogada), Universidad de Chile; Master in Regulatory Law, Pontificia Universidad Católica de Chile",
+      "classification": "Other Management/Policy",
+      "rationale": "Corporate lawyer specializing in regulatory law and state-owned enterprise governance. Career primarily in mining sector legal roles (Codelco, ENAMI). Brings legal and corporate governance expertise but no transit-specific background.",
+      "sources": [
+        "https://www.metro.cl/gobierno-corporativo/informacion-del-directorio-y-del-personal",
+        "https://www.linkedin.com/in/javieraestradaquezada/",
+        "https://www.cmfchile.cl/institucional/mercados/entidad.php?mercado=V&rut=61219000&tipoentidad=EMPUB&vig=VI&control=svs&pestania=46"
+      ],
+      "confidence": "High"
+    },
+    {
+      "name": "Matías Ambrosio Salazar Zegers",
+      "position": "Director",
+      "appointment_method": "Appointed by national government (October 10, 2023, replacing Gabriela Elgueta Poblete; confirmed at shareholders' meeting April 29, 2024)",
+      "background": "Lawyer and public policy professional. Served as Regional Secretary of Transport (Seremi de Transportes) of the Metropolitan Region during President Michelle Bachelet's second government (2014-2018). Head of the Division of Planning and Regional Development at the Santiago Metropolitan Regional Government (from June 2023). Member of the Socialist Party. Expertise in regulatory law, economic law, and administrative law.",
+      "education": "Lawyer (Abogado); Master in Law with specialization in Regulatory Law",
+      "classification": "Other Management/Policy",
+      "rationale": "Government policy and legal professional. While he served as Regional Secretary of Transport (an appointed government position, not elected), this was a policy/regulatory oversight role rather than direct transit operations management. His broader career is in law, regulatory policy, and regional government planning. The Seremi role is an appointed administrative position representing the national ministry at regional level, classified here as policy/management rather than transit operations.",
+      "sources": [
+        "https://www.metro.cl/gobierno-corporativo/informacion-del-directorio-y-del-personal",
+        "https://www.latercera.com/pulso/noticia/metro-designa-a-ex-seremi-de-transporte-como-director-de-la-compania/AX72LBIBVJADVA5R2QMIWSTWXM/",
+        "https://corporacionrm.cl/sr-matias-salazar-zegers/",
+        "https://www.linkedin.com/in/matias-salazar-46265225/"
+      ],
+      "confidence": "Medium"
+    }
+  ]
+}
