@@ -8,6 +8,7 @@ page so the site needs no fetch and works from file:// too.
 Usage:  python3 build_site.py
 """
 
+import decimal
 import html
 import json
 import pathlib
@@ -196,6 +197,13 @@ PALETTE_DARK = {
 }
 
 
+def pct(k, n):
+    """Half-up. Python's round() is banker's rounding, which turns 12.5% into
+    12% - the exact discrepancy that showed up against Day's TfL row."""
+    return int(decimal.Decimal(k * 100 / n).quantize(decimal.Decimal("1"),
+                                                     rounding=decimal.ROUND_HALF_UP))
+
+
 def load_agencies():
     """The five LatAm agencies, as researched. data/ is the source of truth."""
     out = []
@@ -207,7 +215,7 @@ def load_agencies():
             raise SystemExit(f"{path.name}: unknown classification(s) {unknown}")
         n = len(d["members"])
         d["counts"] = counts
-        d["pct"] = [round(counts.get(c, 0) / n * 100) for c in CATEGORIES]
+        d["pct"] = [pct(counts.get(c, 0), n) for c in CATEGORIES]
         out.append(d)
     out.sort(key=lambda d: -d["pct"][0])
     return out
@@ -217,7 +225,7 @@ def load_day():
     return json.load(open(ROOT / "day_chart_reference.json", encoding="utf-8"))
 
 
-def bar(pct, label, sub="", is_latam=False):
+def bar(pct, label, sub="", is_latam=False, n=None):
     """One stacked row. 2px surface gaps between segments (never a border);
     the free end of the last segment gets the 4px round."""
     segs = [(i, p) for i, p in enumerate(pct) if p > 0]
@@ -230,7 +238,7 @@ def bar(pct, label, sub="", is_latam=False):
         cells.append(
             f'<i class="seg s{i}{" end" if last else ""}" style="flex:{p}"'
             f' data-cat="{html.escape(CATEGORIES[i])}" data-pct="{p}"'
-            f' data-agency="{html.escape(label)}">{text}</i>'
+            f' data-agency="{html.escape(label)}"{f" data-n={n}" if n else ""}>{text}</i>'
         )
     cls = "row latam" if is_latam else "row"
     subhtml = f'<span class="sub">{html.escape(sub)}</span>' if sub else ""
@@ -246,12 +254,13 @@ def build_chart(agencies, day):
         parts.append(f'<div class="region"><h4>{html.escape(region["region"])}'
                      f'<span class="rcount">{len(region["agencies"])} agencies · Day</span></h4>')
         for a in region["agencies"]:
-            parts.append(bar(a["pct"], a["name"]))
+            parts.append(bar(a["pct"], a["name"], n=a.get("n")))
         parts.append("</div>")
     parts.append('<div class="region new"><h4>Latin America'
                  '<span class="rcount">5 agencies · this research</span></h4>')
     for d in agencies:
-        parts.append(bar(d["pct"], d["city"], sub=d["country"], is_latam=True))
+        parts.append(bar(d["pct"], d["city"], sub=d["country"], is_latam=True,
+                         n=len(d["members"])))
     parts.append("</div>")
     return "".join(parts)
 
@@ -526,7 +535,8 @@ JS = """
   }
   document.querySelectorAll('.seg').forEach(function(s){
     s.addEventListener('mouseenter',function(e){
-      show(e,'<b>'+s.dataset.agency+'</b>'+s.dataset.cat+' — '+s.dataset.pct+'%');
+      var n=s.dataset.n?' of '+s.dataset.n+' seats':'';
+      show(e,'<b>'+s.dataset.agency+'</b>'+s.dataset.cat+' — '+s.dataset.pct+'%'+n);
     });
     s.addEventListener('mousemove',move);
     s.addEventListener('mouseleave',function(){tip.style.opacity=0;});
@@ -638,11 +648,15 @@ PAGE = """<!doctype html>
     <div class="legend">__LEGEND__</div>
     __CHART__
     <p class="chartnote">The sixteen Asian, European and US rows are Richard Day's work,
-    read from his chart in
+    computed from the
+    <a href="https://docs.google.com/spreadsheets/d/12KmU7QuP1y_RL8nuinrsIOYETISfXiLqXqi0EtSa_1Y/edit?gid=0" rel="noopener">member-level list he published</a>
+    alongside
     <a href="https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies" rel="noopener">“Put real experts in charge of transit”</a>
-    (A City That Works, March 2026); a few of his rows sum to 99% or 101% from his own
-    rounding. The five Latin American rows are computed from the member records below.
-    Chart rebuilt rather than reproduced.</p>
+    (A City That Works, March 2026) — 222 board members — rather than read off his chart
+    image. Two rows sum to 99% or 101% from rounding. One figure differs from his
+    published chart: LTA Singapore's other-management share is 76% in his data
+    (13 of 17 seats) where his chart labels it 77%. The five Latin American rows are
+    computed from the member records below. Chart rebuilt, not reproduced.</p>
   </div>
 </div></section>
 

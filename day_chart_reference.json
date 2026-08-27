@@ -1,26 +1,335 @@
 {
-  "_comment": "Richard Day's 16 agencies, read from transit_board_chart.png (labels + pixel-sampled segment colors). Percentages are his; some rows sum to 99 or 101 from his own rounding. Source: https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies",
-  "source": "Richard Day, A City That Works, March 2026",
-  "categories": ["Transit Ops/Management","Other Management/Policy","Labor Representative","Community Advocate","Elected Official"],
-  "regions": [
-    {"region":"Asia","agencies":[
-      {"name":"Tokyo Metro","pct":[57,43,0,0,0]},
-      {"name":"Seoul Metro","pct":[40,53,0,7,0]},
-      {"name":"MTR (Hong Kong)","pct":[22,72,0,0,6]},
-      {"name":"SMRT (Singapore)","pct":[15,85,0,0,0]},
-      {"name":"LTA (Singapore)","pct":[12,77,6,6,0]}]},
-    {"region":"Europe","agencies":[
-      {"name":"RATP (Paris)","pct":[27,27,33,7,7]},
-      {"name":"BVG (Berlin)","pct":[25,19,50,0,6]},
-      {"name":"Metro de Madrid","pct":[20,50,0,0,30]},
-      {"name":"TfL (London)","pct":[13,56,6,13,13]}]},
-    {"region":"United States","agencies":[
-      {"name":"LA Metro","pct":[7,0,0,7,86]},
-      {"name":"MTA (New York)","pct":[0,60,15,20,5]},
-      {"name":"WMATA (Washington DC)","pct":[0,70,0,0,30]},
-      {"name":"RTA (Chicago)","pct":[21,50,14,0,14]},
-      {"name":"CTA (Chicago)","pct":[0,50,0,50,0]},
-      {"name":"Metra (Chicago)","pct":[9,55,9,9,18]},
-      {"name":"Pace (Chicago)","pct":[0,8,0,0,92]}]}
-  ]
+ "_comment": "Richard Day's 16 agencies, computed from his own member-level spreadsheet (the 'full categorized list' footnoted in his article), not read off his chart image. Percentages are counts/board size rounded half-up.",
+ "source": "Richard Day, A City That Works, March 2026",
+ "source_article": "https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies",
+ "source_data": "https://docs.google.com/spreadsheets/d/12KmU7QuP1y_RL8nuinrsIOYETISfXiLqXqi0EtSa_1Y/edit?gid=0#gid=0",
+ "members_total": 222,
+ "categories": [
+  "Transit Ops/Management",
+  "Other Management/Policy",
+  "Labor Representative",
+  "Community Advocate",
+  "Elected Official"
+ ],
+ "regions": [
+  {
+   "region": "Asia",
+   "agencies": [
+    {
+     "name": "Tokyo Metro",
+     "where": "Tokyo / Japan",
+     "n": 14,
+     "counts": [
+      8,
+      6,
+      0,
+      0,
+      0
+     ],
+     "pct": [
+      57,
+      43,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "Seoul Metro",
+     "where": "Seoul / South Korea",
+     "n": 15,
+     "counts": [
+      6,
+      8,
+      0,
+      1,
+      0
+     ],
+     "pct": [
+      40,
+      53,
+      0,
+      7,
+      0
+     ]
+    },
+    {
+     "name": "MTR (Hong Kong)",
+     "where": "Hong Kong / China",
+     "n": 18,
+     "counts": [
+      4,
+      13,
+      0,
+      0,
+      1
+     ],
+     "pct": [
+      22,
+      72,
+      0,
+      0,
+      6
+     ]
+    },
+    {
+     "name": "SMRT (Singapore)",
+     "where": "Singapore",
+     "n": 13,
+     "counts": [
+      2,
+      11,
+      0,
+      0,
+      0
+     ],
+     "pct": [
+      15,
+      85,
+      0,
+      0,
+      0
+     ]
+    },
+    {
+     "name": "LTA (Singapore)",
+     "where": "Singapore",
+     "n": 17,
+     "counts": [
+      2,
+      13,
+      1,
+      1,
+      0
+     ],
+     "pct": [
+      12,
+      76,
+      6,
+      6,
+      0
+     ]
+    }
+   ]
+  },
+  {
+   "region": "Europe",
+   "agencies": [
+    {
+     "name": "RATP (Paris)",
+     "where": "Paris / France",
+     "n": 15,
+     "counts": [
+      4,
+      4,
+      5,
+      1,
+      1
+     ],
+     "pct": [
+      27,
+      27,
+      33,
+      7,
+      7
+     ]
+    },
+    {
+     "name": "BVG (Berlin)",
+     "where": "Berlin / Germany",
+     "n": 16,
+     "counts": [
+      4,
+      3,
+      8,
+      0,
+      1
+     ],
+     "pct": [
+      25,
+      19,
+      50,
+      0,
+      6
+     ]
+    },
+    {
+     "name": "Metro de Madrid",
+     "where": "Madrid / Spain",
+     "n": 10,
+     "counts": [
+      2,
+      5,
+      0,
+      0,
+      3
+     ],
+     "pct": [
+      20,
+      50,
+      0,
+      0,
+      30
+     ]
+    },
+    {
+     "name": "TfL (London)",
+     "where": "London / UK",
+     "n": 16,
+     "counts": [
+      2,
+      9,
+      1,
+      2,
+      2
+     ],
+     "pct": [
+      13,
+      56,
+      6,
+      13,
+      13
+     ]
+    }
+   ]
+  },
+  {
+   "region": "United States",
+   "agencies": [
+    {
+     "name": "LA Metro",
+     "where": "Los Angeles / USA",
+     "n": 14,
+     "counts": [
+      1,
+      0,
+      0,
+      1,
+      12
+     ],
+     "pct": [
+      7,
+      0,
+      0,
+      7,
+      86
+     ]
+    },
+    {
+     "name": "MTA (New York)",
+     "where": "New York / USA",
+     "n": 20,
+     "counts": [
+      0,
+      12,
+      3,
+      4,
+      1
+     ],
+     "pct": [
+      0,
+      60,
+      15,
+      20,
+      5
+     ]
+    },
+    {
+     "name": "WMATA (Washington DC)",
+     "where": "Washington DC / USA",
+     "n": 10,
+     "counts": [
+      0,
+      7,
+      0,
+      0,
+      3
+     ],
+     "pct": [
+      0,
+      70,
+      0,
+      0,
+      30
+     ]
+    },
+    {
+     "name": "RTA (Chicago)",
+     "where": "Chicago / United States",
+     "n": 14,
+     "counts": [
+      3,
+      7,
+      2,
+      0,
+      2
+     ],
+     "pct": [
+      21,
+      50,
+      14,
+      0,
+      14
+     ]
+    },
+    {
+     "name": "CTA (Chicago)",
+     "where": "Chicago / United States",
+     "n": 6,
+     "counts": [
+      0,
+      3,
+      0,
+      3,
+      0
+     ],
+     "pct": [
+      0,
+      50,
+      0,
+      50,
+      0
+     ]
+    },
+    {
+     "name": "Metra (Chicago)",
+     "where": "Chicago / United States",
+     "n": 11,
+     "counts": [
+      1,
+      6,
+      1,
+      1,
+      2
+     ],
+     "pct": [
+      9,
+      55,
+      9,
+      9,
+      18
+     ]
+    },
+    {
+     "name": "Pace (Chicago)",
+     "where": "Chicago / United States",
+     "n": 13,
+     "counts": [
+      0,
+      1,
+      0,
+      0,
+      12
+     ],
+     "pct": [
+      0,
+      8,
+      0,
+      0,
+      92
+     ]
+    }
+   ]
+  }
+ ]
 }

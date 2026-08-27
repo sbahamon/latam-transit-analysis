@@ -39,6 +39,7 @@ not findings. Board composition also changes — these rosters are a snapshot of
 | `build_site.py` | Builds `index.html` from the JSON + the markdown. Standard library only. |
 | `create_spreadsheet.py` | Builds the xlsx from the JSON. Requires `openpyxl`. |
 | `latam_transit_boards.xlsx` | Generated spreadsheet: member-level sheet + agency summary |
+| `day_chart_reference.json` | Day's 16 agencies, computed from his published member-level list |
 | `transit_board_chart.png` | Richard Day's original chart, kept for reference. Not republished on the site. |
 
 ## Data shape
@@ -78,8 +79,15 @@ repository root.
 ## Credit
 
 The comparison chart on the site includes Day's 16 agencies alongside the five studied
-here. Those 16 rows and the five-category framework are his work; see
-[A City That Works](https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies).
+here. Those 16 rows and the five-category framework are his work, computed from the
+[member-level list](https://docs.google.com/spreadsheets/d/12KmU7QuP1y_RL8nuinrsIOYETISfXiLqXqi0EtSa_1Y/edit?gid=0)
+he published alongside
+[“Put real experts in charge of transit”](https://citythatworks.substack.com/p/who-should-lead-our-transit-agencies)
+(222 board members), not read off his chart image.
+
+One figure differs from his published chart: LTA Singapore's other-management share is
+76% in his data (13 of 17 seats) where the chart labels it 77%. `day_chart_reference.json`
+follows the data.
 
 ## License
 

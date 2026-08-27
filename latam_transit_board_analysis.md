@@ -9,7 +9,7 @@
 Richard Day's analysis of transit board composition across 16 agencies in Asia, Europe, and the United States reveals a striking pattern: the best-performing transit systems tend to be governed by boards dominated by transit operations experts and professional managers, while the worst-performing systems are governed by elected officials and community advocates with no transit background.
 
 Day's chart shows:
-- **Asian boards** are 89--100% transit experts + professional management (Tokyo Metro: 57% transit ops, Seoul: 40%, MTR Hong Kong: 22%)
+- **Asian boards** are 88--100% transit experts + professional management (Tokyo Metro: 57% transit ops, Seoul: 40%, MTR Hong Kong: 22%)
 - **European boards** are mixed, with significant labor representation (BVG Berlin: 50% labor, RATP Paris: 33% labor) alongside transit and management professionals
 - **US boards** are dominated by elected officials and community advocates (LA Metro: 86% elected officials; CTA Chicago: 50% community advocates + 50% other management/policy with zero transit expertise)
 
